@@ -160,9 +160,9 @@ The recommended procedure is creating a virtual environment and installing Huggi
 
 ```bash
 sudo apt install python3-venv
-python3 -m venv ./blinkg
-source ./blinkg/bin/activate
-pip install --upgrade huggingface_hub
+python3 -m venv .blinkg
+source .blinkg/bin/activate
+pip install huggingface_hub
 ```
 
 To run the script, you must pass as arguments the prompt file, the chosen model from the dictionary list, and the name of the output file (if not passed, “output.txt” will be used).
