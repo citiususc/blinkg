@@ -1,6 +1,6 @@
 # Results
 
-Results of our experimental evaluation can be found in `evaluation`. We evaluated six different LLMs: 
+We evaluated six different LLMs: 
 Deepseek, Gemini 2.5 pro, GPT-4 Omni, LLama-3.3-70B, Mixtral 8x22B and OpenAI o3. First, we present the similarity scores to analyze how each LLM performs across mapping tasks. Then, we show the F-score values for each evaluation setting (expert-based, raw, and post-processed). For adapting similarity measures to F1-score graphics, a threshold of 0.8 is used.
 
 ## Scenario 1

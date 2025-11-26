@@ -1,0 +1,310 @@
+I have these CSV files, and I want to build a knowledge graph with all possible mappings between both using this ontology and SKOS file. Could you make a table with the column names with the reference to the ontology property? Link all the ontology properties that you can with the information that you have. Provide also the class of the entities or both the classes that it relates and a way to generate the subject for all of them and the condition to join entities. Use functions when it is necessary, adapting to ontology restrictions or transforming input values into the corresponding values in the SKOS file. For every function, give the expected output template or all the possible values. Use the following header: CSV Column, Ontology Property, Entity Class, Related Entity Class, Subject Generation, Join Condition, Datatype, Function Name, Function Output.
+agency.csv
+agency_id,agency_name,agency_url,agency_timezone,agency_lang,agency_phone,agency_fare_url
+CRTM,Consorcio Regional de Transportes de Madrid,http://www.crtm.es,Europe/Madrid,es,012,https://www.crtm.es/billetes-y-tarifas
+routes.csv
+route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_url,route_color,route_text_color
+4__1___,CRTM,1,Pinar de Chamartín-Valdecarros,,1,http://www.crtm.es/tu-transporte-publico/metro/lineas/4__1___.aspx,2DBEF0,FFFFFF
+4__10___,CRTM,10,Hospital del Norte-Puerta del Sur,,1,http://www.crtm.es/tu-transporte-publico/metro/lineas/4__10___.aspx,005AA9,FFFFFF
+4__11___,CRTM,11,Plaza Elíptica-La Fortuna,,1,http://www.crtm.es/tu-transporte-publico/metro/lineas/4__11___.aspx,009B3A,FFFFFF
+4__12___,CRTM,12,MetroSur,,1,http://www.crtm.es/tu-transporte-publico/metro/lineas/4__12___.aspx,A49800,FFFFFF
+4__2___,CRTM,2,Las Rosas-Cuatro Caminos,,1,http://www.crtm.es/tu-transporte-publico/metro/lineas/4__2___.aspx,ED1C24,FFFFFF
+4__3___,CRTM,3,Villaverde Alto-Moncloa,,1,http://www.crtm.es/tu-transporte-publico/metro/lineas/4__3___.aspx,FFD000,000000
+4__4___,CRTM,4,Pinar de Chamartín-Argüelles,,1,http://www.crtm.es/tu-transporte-publico/metro/lineas/4__4___.aspx,B65518,FFFFFF
+4__5___,CRTM,5,Alameda de Osuna-Casa de Campo,,1,http://www.crtm.es/tu-transporte-publico/metro/lineas/4__5___.aspx,8FD400,FFFFFF
+4__6___,CRTM,6,Circular,,1,http://www.crtm.es/tu-transporte-publico/metro/lineas/4__6___.aspx,98989B,FFFFFF
+4__7___,CRTM,7,Hospital del Henares-Pitis,,1,http://www.crtm.es/tu-transporte-publico/metro/lineas/4__7___.aspx,EE7518,FFFFFF
+4__8___,CRTM,8,Nuevos Ministerios - Aeropuerto T4,,1,http://www.crtm.es/tu-transporte-publico/metro/lineas/4__8___.aspx,EC82B1,FFFFFF
+4__9___,CRTM,9,Paco de Lucía-Arganda del Rey,,1,http://www.crtm.es/tu-transporte-publico/metro/lineas/4__9___.aspx,A60084,FFFFFF
+4__R___,CRTM,R,Opera-Príncipe Pío,,1,http://www.crtm.es/tu-transporte-publico/metro/lineas/4__R___.aspx,FFFFFF,005AA9
+skos.ttl
+@prefix : <http://vocab.gtfs.org/terms#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix gtfs: <http://vocab.gtfs.org/terms#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix schema: <http://schema.org/> .
+@prefix status: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix transit: <http://vocab.org/transit/terms/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@base <http://vocab.gtfs.org/terms#> .
+
+<http://transport.linkeddata.es/kos/route-type> a skos:ConceptScheme;
+    skos:hasTopConcept <http://transport.linkeddata.es/kos/route-type/tram> ;
+    skos:hasTopConcept <http://transport.linkeddata.es/kos/route-type/subway> ;
+    skos:hasTopConcept <http://transport.linkeddata.es/kos/route-type/rail> ;
+    skos:hasTopConcept <http://transport.linkeddata.es/kos/route-type/bus> ;
+    skos:hasTopConcept <http://transport.linkeddata.es/kos/route-type/ferry> ;
+    skos:hasTopConcept <http://transport.linkeddata.es/kos/route-type/cable-tram> ;
+    skos:hasTopConcept <http://transport.linkeddata.es/kos/route-type/aerial-lift> ;
+    skos:hasTopConcept <http://transport.linkeddata.es/kos/route-type/funicular> ;
+    skos:hasTopConcept <http://transport.linkeddata.es/kos/route-type/trolleybus> ;
+    skos:hasTopConcept <http://transport.linkeddata.es/kos/route-type/monorail> ;
+    skos:prefLabel "Route Type"@en ;
+    dc:title "Type of transportation used on a route. Tram, subway, rail, bus, ferry, cable tram, aerial lift, funicular, trolleybus and monorail."@en .
+
+<http://transport.linkeddata.es/kos/route-type/tram>  a skos:Concept ;
+  skos:inScheme <http://transport.linkeddata.es/kos/route-type> ;
+  skos:notation "Tram" ;
+  skos:prefLabel "Tram"@en .
+
+<http://transport.linkeddata.es/kos/route-type/subway>  a skos:Concept ;
+  skos:inScheme <http://transport.linkeddata.es/kos/route-type> ;
+  skos:notation "Subway" ;
+  skos:prefLabel "Subway"@en .
+
+<http://transport.linkeddata.es/kos/route-type/rail>  a skos:Concept ;
+  skos:inScheme <http://transport.linkeddata.es/kos/route-type> ;
+  skos:notation "Rail" ;
+  skos:prefLabel "Rail"@en .
+
+<http://transport.linkeddata.es/kos/route-type/bus>  a skos:Concept ;
+  skos:inScheme <http://transport.linkeddata.es/kos/route-type> ;
+  skos:notation "Bus" ;
+  skos:prefLabel "Bus"@en .
+
+<http://transport.linkeddata.es/kos/route-type/ferry>  a skos:Concept ;
+  skos:inScheme <http://transport.linkeddata.es/kos/route-type> ;
+  skos:notation "Ferry" ;
+  skos:prefLabel "Ferry"@en .
+
+<http://transport.linkeddata.es/kos/route-type/cable-tram>  a skos:Concept ;
+  skos:inScheme <http://transport.linkeddata.es/kos/route-type> ;
+  skos:notation "Cable Tram" ;
+  skos:prefLabel "Cable Tram"@en .
+
+<http://transport.linkeddata.es/kos/route-type/aerial-lift>  a skos:Concept ;
+  skos:inScheme <http://transport.linkeddata.es/kos/route-type> ;
+  skos:notation "Aerial Lift" ;
+  skos:prefLabel "Aerial Lift"@en .
+
+<http://transport.linkeddata.es/kos/route-type/funicular>  a skos:Concept ;
+  skos:inScheme <http://transport.linkeddata.es/kos/route-type> ;
+  skos:notation "Funicular" ;
+  skos:prefLabel "Funicular"@en .
+
+<http://transport.linkeddata.es/kos/route-type/trolleybus>  a skos:Concept ;
+  skos:inScheme <http://transport.linkeddata.es/kos/route-type> ;
+  skos:notation "Trolleybus" ;
+  skos:prefLabel "Trolleybus"@en .  
+
+<http://transport.linkeddata.es/kos/route-type/monorail>  a skos:Concept ;
+  skos:inScheme <http://transport.linkeddata.es/kos/route-type> ;
+  skos:notation "Monorail" ;
+  skos:prefLabel "Monorail"@en .
+ontology.ttl
+@prefix : <http://vocab.gtfs.org/terms#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix gtfs: <http://vocab.gtfs.org/terms#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix schema: <http://schema.org/> .
+@prefix status: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@base <http://vocab.gtfs.org/terms#> .
+
+gtfs:agency rdf:type owl:ObjectProperty ;
+            rdfs:domain gtfs:Route ;
+            rdfs:range gtfs:Agency ;
+            rdfs:comment "Enlaza una ruta a una agencia de la que es parte."@es ,
+                         "Links a route to an agency that is part of."@en ;
+            rdfs:label "agency"@en ,
+                       "empresa"@es .
+
+gtfs:routeType rdf:type owl:ObjectProperty ;
+               rdfs:domain gtfs:Route ;
+               rdfs:range [ owl:intersectionOf ( <http://www.w3.org/2004/02/skos/core#Concept>
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty <http://www.w3.org/2004/02/skos/core#inScheme> ;
+                                                   owl:hasValue <http://transport.linkeddata.es/kos/route-type> ;
+                                                  ]
+                                               ) ;
+                            rdf:type owl:Class
+                          ] ;
+               rdfs:comment "Enlaza al tipo de vehículo que opera en esta ruta"@es ,
+                            "Indicates the type of transportation used on a route."@en ;
+               rdfs:label "Route type"@en ,
+                          "Tipo de ruta"@es ;
+               rdfs:seeAlso <https://developers.google.com/transit/gtfs/examples/display-to-users#RouteType> .
+
+gtfs:id rdf:type owl:DatatypeProperty ;
+        rdfs:domain [ rdf:type owl:Class ;
+                      owl:unionOf ( gtfs:Agency
+                                    gtfs:Route
+                                    gtfs:Shape
+                                    gtfs:Service
+                                    gtfs:Location
+                                    gtfs:Trip
+                                  )
+                    ] ;
+        rdfs:range [
+                   a rdfs:Datatype ;
+                   owl:onDatatype xsd:string;
+                   owl:withRestrictions ([ xsd:pattern "^([A-Z][a-z]*)(\\s[A-Z][a-z]*)*$" ])
+               ];
+        rdfs:subPropertyOf dct:identifier ;
+        rdfs:comment "Identifies a transit agency, a route, a shape, a set of dates when service is available, a location, a trip or a zone for a stop."@en ,
+                     "Identifica una agencia de tránsito, una ruta, un trayecto, un conjunto de fechas en las que un servicio está disponible, un viaje o una zona para una parada"@es ;
+        rdfs:label "ID"@en ,
+                   "ID"@es .
+
+gtfs:name rdf:type owl:DatatypeProperty ;
+          rdfs:domain [rdf:type owl:Class ;
+                       owl:unionOf (gtfs:Agency
+                                    gtfs:Location
+                                   )
+                       ];
+          rdfs:range foaf:name ;
+          rdfs:comment "Full name of the transit agency or the location."@en ,
+                       "Nombre completo de la agencia de tránsito o de la localización"@es ;
+          rdfs:label "Name"@en ,
+                     "Nombre"@es .
+
+ 
+gtfs:url rdf:type owl:DatatypeProperty ;
+         rdfs:domain [rdf:type owl:Class ;
+                      owl:unionOf (gtfs:Agency
+                                   gtfs:Route
+                                   gtfs:Location
+                                   gtfs:Feed
+                                  )
+                      ];
+         rdfs:range foaf:page ;
+         rdfs:comment "URL of the transit agency, a particular route, a location, a publisher of a feed or a contact information URL."@en ,
+                      "URL de la agencia de tránsito, una ruta particular, una localización, un editor de un feed o una URL de información de contacto."@es ;
+         rdfs:label "URL"@en , 
+                    "URL"@es .
+
+gtfs:timezone rdf:type owl:DatatypeProperty ;
+              rdfs:domain [rdf:type owl:Class ; 
+                           owl:unionOf (gtfs:Agency
+                                        gtfs:Location
+                                      )
+                           ];
+              rdfs:range xsd:string ;
+              rdfs:comment "Timezone of the agency or the location."@en ;
+              rdfs:label "Timezone"@en .
+
+gtfs:language rdf:type owl:DatatypeProperty ;
+              rdfs:domain [rdf:type owl:Class; 
+                           owl:unionOf (gtfs:Agency
+                                        gtfs:Feed
+                                       )
+                           ];
+              rdfs:range [
+                   a rdfs:Datatype ;
+                   owl:onDatatype xsd:string;
+                   owl:withRestrictions ([ xsd:pattern "^([A-Z][a-z]*)(\\s[A-Z][a-z]*)*$" ])
+               ];
+              rdfs:subPropertyOf dct:language ;
+              rdfs:comment "Language used by a transit agency, used for the text in the GTFS dataset or default language used when the data consumer doesn’t know the language of the rider."@en ;
+              rdfs:label "Language"@en .
+
+gtfs:phoneNumber rdf:type owl:DatatypeProperty ;
+                 rdfs:domain gtfs:Agency ;
+                 rdfs:range foaf:phone ;
+                 rdfs:comment "A voice telephone number for the specified agency."@en ;
+                 rdfs:label "PhoneNumber"@en .
+
+gtfs:fareUrl rdfs:comment "La URL de una página web que permite a un usuario comprar online billetes u otros productos de transporte de esa empresa"@es ,
+                          "The URL of a web page that allows a rider to purchase tickets or other fare instruments for that agency online"@en ;
+             rdfs:label "URL de tarifas"@es ,
+                        "fare URL"@en ;
+             rdfs:seeAlso <https://developers.google.com/transit/gtfs/reference#agency_fields> ;
+             rdf:type owl:DatatypeProperty ;
+             rdfs:range foaf:page ;
+             rdfs:domain gtfs:Agency .
+
+gtfs:longName rdfs:comment "Long name given to a route. This name is generally more descriptive than the gtfs:shortName and often includes the route's destination or stop."@en ,
+                           "Nombre completo de una ruta"@es ;
+              rdfs:label "Long name"@en ,
+                         "nombre completo"@es ;
+              rdfs:seeAlso <https://developers.google.com/transit/gtfs/examples/display-to-users#RouteLongName> ;
+              rdf:type owl:DatatypeProperty ;
+              rdfs:range [
+                   a rdfs:Datatype ;
+                   owl:onDatatype xsd:string;
+                   owl:withRestrictions ([ xsd:pattern "^([A-Z][a-z]*)(\\s[A-Z][a-z]*)*$" ])
+               ];
+              rdfs:subPropertyOf dct:title ;
+              rdfs:domain gtfs:Route .
+
+gtfs:shortName rdfs:comment "Nombre corto dado a una ruta o viaje"@es ,
+                            "Short name given to a route or a trip"@en ;
+               rdfs:label "Short name"@en ,
+                          "nombre corto"@es ;
+               rdfs:seeAlso <https://developers.google.com/transit/gtfs/examples/display-to-users#RouteShortName> ;
+               rdf:type owl:DatatypeProperty ;
+               rdfs:range [
+                   a rdfs:Datatype ;
+                   owl:onDatatype xsd:string;
+                   owl:withRestrictions ([ xsd:pattern "^([A-Z][a-z]*)(\\s[A-Z][a-z]*)*$" ])
+               ];
+               rdfs:subPropertyOf dct:title ;
+               rdfs:domain [rdf:type owl:Class; 
+                            owl:unionOf (gtfs:Route
+                                         gtfs:Trip
+                                        )
+                           ].                           
+
+gtfs:desc rdf:type owl:DatatypeProperty ;
+          rdfs:domain [rdf:type owl:Class; 
+                            owl:unionOf (gtfs:Route
+                                         gtfs:Location
+                                        )
+                           ];
+          rdfs:range [
+                   a rdfs:Datatype ;
+                   owl:onDatatype xsd:string;
+                   owl:withRestrictions ([ xsd:pattern "^([A-Z][a-z]*)(\\s[A-Z][a-z]*)*$" ])
+               ];
+          rdfs:subPropertyOf dct:description ;
+          rdfs:comment "Description of a route or a location that provides useful, quality information."@en ;
+          rdfs:label "RouteDesc"@en .
+
+gtfs:color rdf:type owl:DatatypeProperty ;
+           rdfs:domain gtfs:Route ;
+           rdfs:range xsd:string ;
+           rdfs:comment "A 6 character hexidecimal color (without #) that matches the route color in public facing material"@en ,
+                        "Un color expresado con 6 caracteres hexadecimales (sin #)"@es ;
+           rdfs:label "Color"@en ,
+                      "color"@es .
+
+gtfs:textColor rdf:type owl:DatatypeProperty ;
+               rdfs:domain gtfs:Route ;
+               rdfs:range xsd:string ;
+               rdfs:comment "A 6 character hexidecimal color (without #) asigned to a text label that is legible when written on top of a background of gtfs:color."@en ,
+                            "Un color expresado con 6 caracteres hexadecimales (sin #) asignado a una etiqueta de texto."@es ;
+               rdfs:label "Text color"@en ,
+                          "color de texto"@es .
+
+gtfs:Agency rdf:type owl:Class ;
+            rdfs:subClassOf foaf:Agent ;
+            rdfs:comment "An agency operates a certain schedule based transport mode"@en ,
+                         "Una empresa opera un cierto modo de transporte de manera programada"@es ;
+            rdfs:label "Agency"@en ,
+                       "Empresa"@es ;
+            rdfs:seeAlso <https://developers.google.com/transit/gtfs/reference#agency_fields> .
+
+gtfs:Route rdf:type owl:Class ;
+           rdfs:comment "A gtfs:Route is a commercial route followed entirely or partly by gtfs:Trips"@en ,
+                        "Una gtfs:Route es un grupo de viajes (gtfs:Trips) que se muestran a los usuarios como servicio independiente"@es ;
+           rdfs:label "Route"@en ,
+                      "Ruta"@es ;
+           rdfs:seeAlso <https://developers.google.com/transit/gtfs/reference#routes_fields> .
