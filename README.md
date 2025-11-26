@@ -160,7 +160,7 @@ The recommended procedure is creating a virtual environment and installing Huggi
 
 ```bash
 sudo apt install python3-venv
-python3 -m venv blinkg
+python3 -m venv ./blinkg
 source blinkg/bin/activate
 pip install --upgrade huggingface_hub
 ```
