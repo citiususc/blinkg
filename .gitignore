@@ -2,7 +2,8 @@
 .venv
 src/old
 .DS_Store
-src/__pycache__
+__pycache__
 evaluation/*/mean_column_transpose_prf.csv
 evaluation/*/results
-evaluation/*/*.png                                                                                                                                                                                                                                                                                                                                                                                                             (.venv) dchavesf@MacBoo
+evaluation/*/*.png
+*.egg-info

@@ -1,7 +1,7 @@
 
 import argparse
 import os
-from utils import *
+from utils import parse_md_table
 import glob
 from evaluate import calculate_metrics
 from merge_results import merge_csvs_similarity, merge_csvs_with_prf, merge_prf_to_f, aggregate_results, merge_prf_to_multi_pivot

@@ -1,50 +1,13 @@
 import os
-import Levenshtein
-from utils import *
+import glob
+from blinkg.evaluate import match_tables, calculate_prf, get_header_mapping, normalized_levenshtein, calculate_bert, calculate_bert_lex, calculate_levenshtein
+from blinkg.utils import clean_values, empty_values, model
+from utils import parse_md_table
+from rdflib import Graph
+import pandas as pd
 import numpy as np
 from sentence_transformers import util
-from rdflib import Graph
-import re
-import glob
-# Patterns to detect canonical fields regardless of exact header text
-_field_patterns = {
-    #'column': re.compile(r'\bcsv\s*_?\s*column\b|\bcolumn\b', re.IGNORECASE),
-    'column': re.compile(r'\bXML\s*_?\s*Path\b|\bPath\b', re.IGNORECASE),
-    'ontology_prop': re.compile(r'\bontology\s*_?\s*property\b|\bprop(er)?\b', re.IGNORECASE),
-    'entity_class': re.compile(r'\bentity\s*_?\s*class\b|\bclass\b', re.IGNORECASE),
-    'related_entity_class': re.compile(
-        r'\brelated\s*_?\s*entity\s*_?\s*class\b|\bobject\s*_?\s*property\b',
-        re.IGNORECASE
-    ),
-    'subject_generation': re.compile(
-        r'\b(subject\s*_?\s*generation|uri|template)\b',
-        re.IGNORECASE
-    ),
-    'datatype': re.compile(r'\b(datatype|data\s*_?\s*type|dtype)\b', re.IGNORECASE),
-    'join_condition': re.compile(
-        r'\bjoin\s*_?\s*condition\b|\bjoin\b',
-        re.IGNORECASE
-    ),
-}
 
-def get_header_mapping(headers):
-    mapping = {}
-    for key, pat in _field_patterns.items():
-        for h in headers:
-            if pat.search(h):
-                mapping[key] = h
-                break
-    return mapping
-
-
-
-def normalized_levenshtein(s1: str, s2: str) -> float:
-    """
-    Compute normalized Levenshtein similarity in [0,1].
-    """
-    dist = Levenshtein.distance(s1, s2)
-    max_len = max(len(s1), len(s2), 1)
-    return 1.0 - dist / max_len
 
 def find_row_matches(folder_path: str, t2: pd.DataFrame):
     row_pairs = []
@@ -59,136 +22,14 @@ def find_row_matches(folder_path: str, t2: pd.DataFrame):
         exp_md = open(os.path.join(folder_path, md_file), "r", encoding="utf-8").read()
         t1 = parse_md_table(exp_md)
 
-        # Header mappings
-        mapping_pred = get_header_mapping(list(t1.columns))
-        mapping_gt   = get_header_mapping(list(t2.columns))
-        all_keys = ['column', 'ontology_prop', 'entity_class']
-        metrics_keys = [k for k in all_keys if k in mapping_pred and k in mapping_gt]
+        pairs, cols, pairs_col = match_tables(t1, t2)
+        common_cols = cols
 
-        # Common cols
-        common_cols = [c for c in sorted(set(t1.columns)|set(t2.columns)) if c != 'index']
-
-        # Prepare used-sets
-        used_pred = set()
-        used_gt   = set()
-
-        # === 1) FAST-PATH UNIQUE ONTOLOGY_PROP MATCHES ===
-        if 'ontology_prop' in metrics_keys:
-            h1 = mapping_pred['ontology_prop']
-            h2 = mapping_gt['ontology_prop']
-            if h1 in t1.columns and h2 in t2.columns:
-                threshold = 0.9
-                vc1 = t1[h1].value_counts()
-                uniques_pred = vc1[vc1 == 1].index
-                for val in uniques_pred:
-                    sims = t2[h2].apply(lambda v2: max(normalized_levenshtein(val, v2),calculate_bert(val,v2)))
-                    # get all candidate ground-truth indices with sim > threshold
-                    candidate_idxs = sims[sims > threshold].index
-                    # find the first unused candidate
-                    for r2 in candidate_idxs:
-                        j = t2.index.get_loc(r2)
-                        if j not in used_gt:
-                            # perform the match
-                            r1 = t1.index[t1[h1] == val][0]
-                            matched_val = t2.at[r2, h2]
-                            sim_score = sims[r2]
-                            i = t1.index.get_loc(r1)
-                            row_pairs.append((md_file, r2, r1))
-                            used_pred.add(i)
-                            used_gt.add(j)
-                            print(
-                                f"  [FAST] matched pred='{val}' ↔ gt='{matched_val}' "
-                                f"(sim={sim_score:.3f}) → EXP {r1} ↔ GT {r2}"
-                            )
-                            break
-
-        # === 2) BUILD FULL COST MATRIX ===
-        n_pred, n_gt = len(t1), len(t2)
-        cost_matrix = np.zeros((n_pred, n_gt))
-        for i, r1 in enumerate(t1.index):
-            for j, r2 in enumerate(t2.index):
-                # skip pairs already matched
-                if i in used_pred or j in used_gt:
-                    cost_matrix[i, j] = 1.0  # max cost = skip in next step
-                    continue
-
-                # gather values for metrics_keys
-                v1_list = []
-                v2_list = []
-                for key in metrics_keys:
-                    h1, h2 = mapping_pred[key], mapping_gt[key]
-                    v1 = t1.at[r1, h1] if h1 in t1.columns else ""
-                    v2 = t2.at[r2, h2] if h2 in t2.columns else ""
-                    if v1 and v2 and v1 not in empty_values and v2 not in empty_values:
-                        v1_list.append(v1)
-                        v2_list.append(v2)
-
-                # compute similarity
-                if ", ".join(v1_list) == ", ".join(v2_list):
-                    sim = 1.0
-                else:
-                    sim_lev = normalized_levenshtein(", ".join(v1_list), ", ".join(v2_list))
-                    sim_bert = calculate_bert(", ".join(v1_list), ", ".join(v2_list))
-                    sim = max(sim_lev, sim_bert)
-
-                cost_matrix[i, j] = 1.0 - sim
-
-        # === 3) ASSIGN REMAINING PREDICTED ROWS ===
-        for i, r1 in enumerate(t1.index):
-            if i in used_pred:
-                continue
-            sorted_js = np.argsort(cost_matrix[i])
-            # pick best unused GT row
-            for j_best in sorted_js:
-                if j_best not in used_gt:
-                    used_pred.add(i)
-                    used_gt.add(j_best)
-                    break
-            else:
-                j_best = sorted_js[0]
-                used_pred.add(i)
-                used_gt.add(j_best)
-
-            r2 = t2.index[j_best]
-            sim = 1.0 - cost_matrix[i, j_best]
-
-            # Reconstruct the values used for matching
-            v1_list, v2_list = [], []
-            for key in metrics_keys:
-                h1, h2 = mapping_pred[key], mapping_gt[key]
-                v1 = t1.at[r1, h1] if h1 in t1.columns else ""
-                v2 = t2.at[r2, h2] if h2 in t2.columns else ""
-                if v1 and v2 and v1 not in empty_values and v2 not in empty_values:
-                    v1_list.append(v1)
-                    v2_list.append(v2)
-            v1_str = ", ".join(v1_list)
-            v2_str = ", ".join(v2_list)
-
-            print(
-                f"  EXP row '{r1}' → GT row '{r2}' "
-                f"(sim={sim:.4f})\n"
-                f"    matched values: pred=\"{v1_str}\"  gt=\"{v2_str}\""
-            )
+        for r2, r1 in pairs:
             row_pairs.append((md_file, r2, r1))
 
-        # === 4) ASSIGN REMAINING GT ROWS BACK TO PREDICTED ===
-        used_pred2 = set()
-        for j, r2 in enumerate(t2.index):
-            if j in used_gt:
-                continue
-            sorted_i = np.argsort(cost_matrix[:, j])
-            for i_best in sorted_i:
-                if i_best not in used_pred2:
-                    used_pred2.add(i_best)
-                    break
-            else:
-                i_best = sorted_i[0]
-                used_pred2.add(i_best)
-
-            r1 = t1.index[i_best]
-            sim = 1.0 - cost_matrix[i_best, j]
+        for r2, r1 in pairs_col:
             row_pairs_column.append((md_file, r2, r1))
-            print(f"  GT row '{r2}' → EXP row '{r1}' (sim={sim:.4f})")
 
     return row_pairs, common_cols, row_pairs_column
 
@@ -397,16 +238,7 @@ def eval_bert_lexical(t2: pd.DataFrame, row_pairs:list, common_cols: list, folde
                     if v1 == v2:
                         sim = 1.0
                     else:
-                        v1 = expand_to_full_uri(v1)
-                        v2 = expand_to_full_uri(v2)
-                        lex_v1, lex_v2 = get_property_lexicalization(v1, ontology), get_property_lexicalization(v2,ontology)
-                        if lex_v1 == v1 and lex_v2 == v2:
-                            v1, v2 = strip_shared_prefixes(v1, v2)
-                        else:
-                            v1, v2 = lex_v1, lex_v2
-                        emb1 = model.encode(v1, convert_to_tensor=True)
-                        emb2 = model.encode(v2, convert_to_tensor=True)
-                        sim = util.pytorch_cos_sim(emb1, emb2).item()
+                        sim = calculate_bert_lex(v1, v2, ontology)
                         print(f"  Pair GT {r2} ('{v2}') vs exp {r1} ('{v1}'): {sim:.4f}")
                     sims.append(sim)
             mean_sim = sum(sims) / len(sims) if sims else 0.0
@@ -432,31 +264,6 @@ def eval_bert_lexical(t2: pd.DataFrame, row_pairs:list, common_cols: list, folde
     df_summary.to_csv(output_csv, index=False)
     print(f'Saved mean column results to {output_csv}')
 
-
-def calculate_bert_lex(v1, v2, ontology):
-    v1 = expand_to_full_uri(v1)
-    v2 = expand_to_full_uri(v2)
-    lex_v1, lex_v2 = get_property_lexicalization(v1, ontology), get_property_lexicalization(v2, ontology)
-    if lex_v1 == v1 and lex_v2 == v2:
-        v1, v2 = strip_shared_prefixes(v1, v2)
-    else:
-        v1, v2 = lex_v1, lex_v2
-    emb1 = model.encode(v1, convert_to_tensor=True)
-    emb2 = model.encode(v2, convert_to_tensor=True)
-    sim = util.pytorch_cos_sim(emb1, emb2).item()
-    return sim
-
-def calculate_bert(v1, v2):
-    v1, v2 = clean_values(v1, v2)
-    emb1 = model.encode(v1, convert_to_tensor=True)
-    emb2 = model.encode(v2, convert_to_tensor=True)
-    sim = util.pytorch_cos_sim(emb1, emb2).item()
-    return sim
-
-def calculate_levenshtein(v1, v2):
-    v1, v2 = clean_values(v1, v2)
-    sim = normalized_levenshtein(v1, v2)
-    return sim
 
 def eval_max(t2: pd.DataFrame, row_pairs:list, common_cols: list, folder_path, name:str):
     metrics = []
@@ -547,52 +354,12 @@ def eval_max_pr_aggregated(t2: pd.DataFrame,
         t1 = parse_md_table(exp_md)
         assigned = pairs_by_file.get(md_file, [])
 
-        for col in common_cols:
-            # Primer pase: los que fueron emparejados (matched)
-            for r2, r1 in assigned:
-                if col not in t1.columns or col not in t2.columns:
-                    continue
-                v1, v2 = str(t1.at[r1, col]), str(t2.at[r2, col])
-                if v1 in empty_values or v2 in empty_values:
-                    continue
-                # calculamos la similitud máxima
-                sims = [
-                    calculate_levenshtein(v1, v2),
-                    calculate_bert(v1, v2),
-                    calculate_bert_lex(v1, v2, ontology)
-                ]
-                sim = max(sims)
-                # TP o FN
-                if sim >= threshold:
-                    agg[col]['TP'] += 1
-                else:
-                    agg[col]['FN'] += 1
+        file_agg = calculate_prf(t1, t2, assigned, common_cols, ontology, threshold)
 
-            # Segundo pase: predichos no emparejados → posibles FP
-            used_r1 = {r1 for _, r1 in assigned}
-            for r1 in t1.index:
-                if r1 in used_r1 or col not in t1.columns:
-                    continue
-                v1 = str(t1.at[r1, col])
-                if v1 in empty_values:
-                    continue
-                # buscamos mejor sim en todo t2
-                best_sim = 0.0
-                for r2 in t2.index:
-                    if col not in t2.columns:
-                        continue
-                    v2 = str(t2.at[r2, col])
-                    if v2 in empty_values:
-                        continue
-                    sims = [
-                        calculate_levenshtein(v1, v2),
-                        calculate_bert(v1, v2),
-                        calculate_bert_lex(v1, v2, ontology)
-                    ]
-                    best_sim = max(best_sim, max(sims))
-                # si ese mejor sim supera el umbral → FP
-                if best_sim >= threshold:
-                    agg[col]['FP'] += 1
+        for col in common_cols:
+            agg[col]['TP'] += file_agg[col]['TP']
+            agg[col]['FP'] += file_agg[col]['FP']
+            agg[col]['FN'] += file_agg[col]['FN']
 
     # Tras acumular, construimos la tabla de métricas
     rows = []

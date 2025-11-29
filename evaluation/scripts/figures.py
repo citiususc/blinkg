@@ -112,17 +112,3 @@ def figures_f1(results_path, output_path):
     plt.tight_layout()
     fig.savefig(output_path, dpi=300)
     plt.close(fig)
-
-#figures_f1("../evaluation/scenario1_manual/measure_f.csv", "../evaluation/scenario1_manual/measure_f.png")
-#figures_f1("../evaluation/scenario2_manual/measure_f.csv", "../evaluation/scenario2_manual/measure_f.png")
-#figures_f1("../evaluation/scenario3_manual/measure_f.csv", "../evaluation/scenario3_manual/measure_f.png")
-
-
-#figures_f1("../evaluation/scenario3_clean/mean_column_f_80.csv", "../evaluation/scenario3_clean/f1_3_clean.png")
-#figures_f1("../evaluation/scenario3_no_clean/mean_column_f_80_no_clean.csv", "../evaluation/scenario3_no_clean/f1_3_noclean.png")
-
-#figures_f1("../evaluation/scenario1_clean/mean_column_f_80.csv", "../evaluation/scenario1_clean/f1_1_clean.png")
-#figures_f1("../evaluation/scenario1_no_clean/mean_column_f_80.csv", "../evaluation/scenario1_no_clean/f1_1_noclean.png")
-
-figures_f1("../evaluation/scenario2_clean/mean_column_f_80.csv", "../evaluation/scenario2_clean/f1_2_clean.png")
-figures_f1("../evaluation/scenario2_no_clean/mean_column_f_80.csv", "../evaluation/scenario2_no_clean/f1_2_noclean.png")

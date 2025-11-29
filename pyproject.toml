@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "blinkg"
+version = "0.1.0"
+description = "Benchmark for LLM-Integrated Knowledge Graph Generation"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+requires-python = ">=3.9"
+authors = [
+    {name = "David Chaves-Fraga", email = "david.chaves@usc.es"},
+    {name = "Carla Castedo"},
+]
+dependencies = [
+    "pandas",
+    "numpy",
+    "Levenshtein",
+    "sentence-transformers",
+    "rdflib",
+]
+
+[project.optional-dependencies]
+evaluation = [
+    "matplotlib",
+]
+examples = [
+    "huggingface-hub",
+]
+
+[project.urls]
+Repository = "https://github.com/citiususc/blinkg"
+
+[tool.setuptools.packages.find]
+where = ["src"]
