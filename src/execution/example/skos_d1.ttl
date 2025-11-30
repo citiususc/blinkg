@@ -1,0 +1,83 @@
+@prefix : <http://vocab.gtfs.org/terms#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix gtfs: <http://vocab.gtfs.org/terms#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix schema: <http://schema.org/> .
+@prefix status: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix transit: <http://vocab.org/transit/terms/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@base <http://vocab.gtfs.org/terms#> .
+
+<http://transport.linkeddata.es/kos/route-type> a skos:ConceptScheme;
+    skos:hasTopConcept <http://transport.linkeddata.es/kos/route-type/tram> ;
+    skos:hasTopConcept <http://transport.linkeddata.es/kos/route-type/subway> ;
+    skos:hasTopConcept <http://transport.linkeddata.es/kos/route-type/rail> ;
+    skos:hasTopConcept <http://transport.linkeddata.es/kos/route-type/bus> ;
+    skos:hasTopConcept <http://transport.linkeddata.es/kos/route-type/ferry> ;
+    skos:hasTopConcept <http://transport.linkeddata.es/kos/route-type/cable-tram> ;
+    skos:hasTopConcept <http://transport.linkeddata.es/kos/route-type/aerial-lift> ;
+    skos:hasTopConcept <http://transport.linkeddata.es/kos/route-type/funicular> ;
+    skos:hasTopConcept <http://transport.linkeddata.es/kos/route-type/trolleybus> ;
+    skos:hasTopConcept <http://transport.linkeddata.es/kos/route-type/monorail> ;
+    skos:prefLabel "Route Type"@en ;
+    dc:title "Type of transportation used on a route. Tram, subway, rail, bus, ferry, cable tram, aerial lift, funicular, trolleybus and monorail."@en .
+
+<http://transport.linkeddata.es/kos/route-type/tram>  a skos:Concept ;
+  skos:inScheme <http://transport.linkeddata.es/kos/route-type> ;
+  skos:notation "Tram" ;
+  skos:prefLabel "Tram"@en .
+
+<http://transport.linkeddata.es/kos/route-type/subway>  a skos:Concept ;
+  skos:inScheme <http://transport.linkeddata.es/kos/route-type> ;
+  skos:notation "Subway" ;
+  skos:prefLabel "Subway"@en .
+
+<http://transport.linkeddata.es/kos/route-type/rail>  a skos:Concept ;
+  skos:inScheme <http://transport.linkeddata.es/kos/route-type> ;
+  skos:notation "Rail" ;
+  skos:prefLabel "Rail"@en .
+
+<http://transport.linkeddata.es/kos/route-type/bus>  a skos:Concept ;
+  skos:inScheme <http://transport.linkeddata.es/kos/route-type> ;
+  skos:notation "Bus" ;
+  skos:prefLabel "Bus"@en .
+
+<http://transport.linkeddata.es/kos/route-type/ferry>  a skos:Concept ;
+  skos:inScheme <http://transport.linkeddata.es/kos/route-type> ;
+  skos:notation "Ferry" ;
+  skos:prefLabel "Ferry"@en .
+
+<http://transport.linkeddata.es/kos/route-type/cable-tram>  a skos:Concept ;
+  skos:inScheme <http://transport.linkeddata.es/kos/route-type> ;
+  skos:notation "Cable Tram" ;
+  skos:prefLabel "Cable Tram"@en .
+
+<http://transport.linkeddata.es/kos/route-type/aerial-lift>  a skos:Concept ;
+  skos:inScheme <http://transport.linkeddata.es/kos/route-type> ;
+  skos:notation "Aerial Lift" ;
+  skos:prefLabel "Aerial Lift"@en .
+
+<http://transport.linkeddata.es/kos/route-type/funicular>  a skos:Concept ;
+  skos:inScheme <http://transport.linkeddata.es/kos/route-type> ;
+  skos:notation "Funicular" ;
+  skos:prefLabel "Funicular"@en .
+
+<http://transport.linkeddata.es/kos/route-type/trolleybus>  a skos:Concept ;
+  skos:inScheme <http://transport.linkeddata.es/kos/route-type> ;
+  skos:notation "Trolleybus" ;
+  skos:prefLabel "Trolleybus"@en .  
+
+<http://transport.linkeddata.es/kos/route-type/monorail>  a skos:Concept ;
+  skos:inScheme <http://transport.linkeddata.es/kos/route-type> ;
+  skos:notation "Monorail" ;
+  skos:prefLabel "Monorail"@en .
