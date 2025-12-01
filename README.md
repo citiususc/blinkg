@@ -58,7 +58,7 @@ This step ensures that each predicted row is compared against the most appropria
 
 ## How can I add a different LLM model to the comparison? And how can I create a new scenario?
 
-To replicate the procedure, you can use the script ```hf_inference.py``` from the ```example``` folder. This script allows you to add any model that supports inference in HuggingFace to the comparison. In our comparison, it has been used for the *Llama-3.3-70B-Instruct* and *Mixtral-8x22B-Instruct-v0.1 models*.
+To replicate the procedure, you can use the script ```hf_inference.py``` from the ```examples/hf``` folder. This script allows you to add any model that supports inference in HuggingFace to the comparison. In our comparison, it has been used for the *Llama-3.3-70B-Instruct* and *Mixtral-8x22B-Instruct-v0.1 models*.
 
 ```python
 import argparse
@@ -162,7 +162,7 @@ The recommended procedure is creating a virtual environment and installing Huggi
 sudo apt install python3-venv
 python3 -m venv .blinkg
 source .blinkg/bin/activate
-pip install huggingface_hub
+pip install -e .[examples]
 ```
 
 To run the script, you must pass as arguments the prompt file, the chosen model from the dictionary list, and the name of the output file (if not passed, “output.txt” will be used).
@@ -171,8 +171,17 @@ To run the script, you must pass as arguments the prompt file, the chosen model 
 python hf_inference.py prompt.txt -m 0 -o your_output_file.txt
 ```
 
-With the inference script, the only thing needed to adding a LLM or creating a new scenario is a new prompt. One example prompt from Scenario 2 is given in the ```example``` folder. 
+With the inference script, the only thing needed to adding a LLM or creating a new scenario is a new prompt. One example prompt from Scenario 2 is given in the ```examples/hf``` folder.
 
+## How can I use BLINKG as a library
+
+You can use BLINKG as a library in your own code. After installing with:
+
+```bash
+pip install git+https://github.com/citiususc/blinkg.git
+```
+
+Use the `evaluate()` function to evaluate your mapping predictions against ground truth. See ```examples/lib/main.py``` for a complete working example. 
 
 ## Results
 Results of our evaluation can be found in folder ```evaluation```.
