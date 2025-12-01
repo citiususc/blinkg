@@ -77,7 +77,15 @@ To run the script, you must pass as arguments the prompt file, the chosen model 
 python3 hf_inference.py prompt.txt -m 0 -o your_output_file.txt
 ```
 
-With the inference script, the only thing needed to adding a LLM or creating a new scenario is a new prompt. One example prompt from Scenario 2 is given in the ```examples/hf``` folder.
+With the inference script, the only thing needed to adding a LLM or creating a new scenario is a new prompt. Users can use their own prompt, but one example prompt from Scenario 2 is given in the ```src/execution/example``` folder. This prompt was generated using the script ```promtp_template.py``` from the ```src/execution``` folder. All the input files are in the ```example``` folder.  
+
+The script must be called as follows:
+
+```bash
+python3 prompt_template.py -i input_file1 input_file2 -g ontology_file -s skos_file -o output_file
+```
+
+It's mandatory to introduce at least one input file and the ontology file. If no output file is provided prompt.txt will be used.
 
 ## How can I use BLINKG as a library
 
