@@ -85,7 +85,7 @@ The script must be called as follows:
 python3 prompt_template.py -i input_file1 input_file2 -g ontology_file -s skos_file -o output_file
 ```
 
-It's mandatory to introduce at least one input file and the ontology file. If no output file is provided prompt.txt will be used.
+It's mandatory to introduce at least one input file and the ontology file. If no output file is provided, prompt.txt will be used.
 
 ## How can I use BLINKG as a library
 
