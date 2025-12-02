@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | /entry/id | :hasID | :ProcurementObject | :ID | Concatenate baseEntityURI and "/" and the value of id | N/A | String | URI Construction | URI |
 | /entry/link/@href | :hasID | :Document | :ID | Concatenate baseEntityURI and the value of href | N/A | String | URI Construction | URI |

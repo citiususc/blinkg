@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | /entry/id | hasID | ProcurementObject | Identifier | <http://data.europa.eu/a4g/ontology#ProcurementObject>_<ID_Value> | - | xsd:string | GetIDValue | <ID_Value> |
 | /entry/link[@href] | hasURL | ProcurementObject | Document | <http://data.europa.eu/a4g/ontology#ProcurementObject>_<ID_Value> | - | xsd:anyURI | GetLinkHref | <Link_Href_Value> |

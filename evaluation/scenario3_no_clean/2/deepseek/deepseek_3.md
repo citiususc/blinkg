@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | `cbc:ContractFolderID` | `:hasID` | `:Procedure` | - | `:proc_{text()}` | - | - | - | - |
 | `cac:TenderingProcess/cbc:ProcedureCode` | `:hasProcedureType` | `:Procedure` | `skos:Concept` | `:proc_{../cbc:ContractFolderID}` | `skos:inScheme = <http://publications.europa.eu/resource/authority/procurement-procedure-type>` | `xsd:anyURI` | `mapProcedureType` | `http://publications.europa.eu/resource/authority/procurement-procedure-type/{mapped_code}` |

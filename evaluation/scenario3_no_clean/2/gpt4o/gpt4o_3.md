@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | entry/cac-place-ext:ContractFolderStatus/cbc:ContractFolderID | :hasID | :Procedure | :Identifier | concat('proc_', ContractFolderID) |  | xsd:string | generate_procedure_id | proc_561770M |
 | entry/cac-place-ext:ContractFolderStatus/cac:ProcurementProject/cbc:Name | rdfs:label | :Procedure |  | concat('proc_', ContractFolderID) |  | xsd:string | identity | Suministro de vehículos usados para servicio del Parque Movil... |

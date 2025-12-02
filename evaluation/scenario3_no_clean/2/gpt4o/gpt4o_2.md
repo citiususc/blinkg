@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | entry/id | :hasID | :Procedure | :Identifier | concat('proc-', hash(entry/id)) | N/A | IRI | generateProcedureID | proc-[SHA256(entry/id)] |
 | cac-place-ext:ContractFolderStatus/cbc:ContractFolderID | :hasID | :Procedure | :Identifier | same as generateProcedureID | entry/id maps to contract folder | string | extractContractFolderID | 561770M |

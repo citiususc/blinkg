@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | `/entry/cac-place-ext:ContractFolderStatus/cbc:ContractFolderID` | `:hasID` | `:Procedure` | `:Identifier` | `procure:procedure/{ContractFolderID}` | N/A |  |  |  |
 | `/entry/cac-place-ext:ContractFolderStatus/cac:ProcurementProject/cbc:TypeCode` | `:hasProcedureType` | `:Procedure` | `skos:Concept` | `procure:procedure/{ContractFolderID}` | Match code to `procurement-procedure-type` |  | `map_procedure_type` | `open`, `restricted`, etc. (see SKOS) |

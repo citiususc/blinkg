@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | entry/id | :hasID | :Procedure | :Identifier | generate_procurement_uri(entry/id) |  | xsd:anyURI | generate_procurement_uri | http://data.example.org/procurement/561770M |
 | entry/cac-place-ext:ContractFolderStatus/cac-place-ext:LocatedContractingParty/cac:Party/cac:PartyIdentification[cbc:ID@schemeName='NIF']/cbc:ID | :hasID | org:Organization | :Identifier | generate_organization_uri(NIF) |  | xsd:string | generate_organization_uri | http://data.example.org/organization/NIF-P0200000H |

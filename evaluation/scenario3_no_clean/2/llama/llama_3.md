@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | /entry/id | :hasID | :ProcurementObject | - | https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/{id} | id | xsd:string | generateProcurementObjectId | https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/{id} |
 | /entry/cac-place-ext:ContractFolderStatus/cbc:ContractFolderID | :hasID | :ContractFolder | :ProcurementObject | https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/{id}/contractFolder/{contractFolderId} | contractFolderId | xsd:string | generateContractFolderId | https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/{id}/contractFolder/{contractFolderId} |

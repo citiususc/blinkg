@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | `/entry/cac-place-ext:ContractFolderStatus/cbc:ContractFolderID` | `:hasIdentifierValue` | `:Identifier` |  | `ex:identifier/{value}` | The `:Procedure` (`ex:procedure/{value}`) is linked via `:hasID` to this Identifier. | `xsd:string` |  |  |
 | `/entry/cac-place-ext:ContractFolderStatus/cac:ProcurementProject/cbc:Name` | `dcterms:title` | `:Procedure` |  | `ex:procedure/{ContractFolderID}` |  | `xsd:string` |  |  |
@@ -16,7 +16,7 @@
 | (Implicit) | `:refersToRole` | `:ResultNotice` | `:Buyer` | `ex:notice/{ContractFolderID}` | The object is the `:Buyer` role instance: `ex:buyer/{ContractFolderID}`. |  |  |  |
 | (Implicit) | `:playedByOrganisation` | `:Buyer` | `org:Organization` | `ex:buyer/{ContractFolderID}` | The object is the `org:Organization` instance: `ex:organization/{OrgNIF}`. |  |  |  |
 
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | `map_procedure_type` | Maps the `ProcedureCode` from the XML to the corresponding SKOS concept URI for procurement procedure types. This requires a mapping dictionary from the code (e.g., '9') to the concept name (e.g., 'open'). | `http://publications.europa.eu/resource/authority/procurement-procedure-type/{CONCEPT}` |
 | `map_country_code` | Converts the 2-letter country code (ISO 3166-1 alpha-2) from the XML (e.g., "ES") to the 3-letter code (ISO 3166-1 alpha-3) used in the SKOS file (e.g., "ESP") and constructs the full URI. | `http://publications.europa.eu/resource/authority/country/{3_LETTER_CODE}` |
