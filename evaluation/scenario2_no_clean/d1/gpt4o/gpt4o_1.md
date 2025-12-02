@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | agency_id | gtfs:id | gtfs:Agency |  | `ex:agency/{agency_id}` |  | xsd:string | None | formatAgencyId ex:agency/CRTM |
 | agency_name | gtfs:name | gtfs:Agency |  | `ex:agency/{agency_id}` |  | foaf:name | None |  Direct mapping |

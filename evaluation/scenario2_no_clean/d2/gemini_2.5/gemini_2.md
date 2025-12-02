@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | `shape_id` | `gtfs:id` | `gtfs:Shape` | N/A | `"gtfs:shape/" + {shape_id}` | N/A | `xsd:string` | N/A | N/A |
 | `shape_id`, `shape_pt_sequence` | `gtfs:shapePoint` | `gtfs:Shape` | `gtfs:ShapePoint` | Subject: `"gtfs:shape/" + {shape_id}`<br>Object: `"gtfs:shapepoint/" + {shape_id} + "-" + {shape_pt_sequence}` | A `gtfs:Shape` is linked to each of its `gtfs:ShapePoint`s. This relationship is created for every row in the CSV. | Object Property | N/A | N/A |

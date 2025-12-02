@@ -29,12 +29,12 @@ Function Output,gpt4o,0.32047663175030866
 Function Output,llama,0.19396857050281135
 Function Output,mixtral,0.21297050901354084
 Function Output,o3,0.1902980497374611
-Join Condition,deepseek,0.4685477460544832
-Join Condition,gemini,0.5495942854305246
-Join Condition,gpt4o,0.582118675655839
-Join Condition,llama,0.1590686318708031
-Join Condition,mixtral,0.21610275355383632
-Join Condition,o3,0.4810456140885142
+Join,deepseek,0.4685477460544832
+Join,gemini,0.5495942854305246
+Join,gpt4o,0.582118675655839
+Join,llama,0.1590686318708031
+Join,mixtral,0.21610275355383632
+Join,o3,0.4810456140885142
 Ontology Property,deepseek,0.929702086019033
 Ontology Property,gemini,0.8473269544363452
 Ontology Property,gpt4o,0.9581092684376299

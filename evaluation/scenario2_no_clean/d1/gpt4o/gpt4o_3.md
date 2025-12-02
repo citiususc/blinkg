@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | agency_id | gtfs:id | gtfs:Agency | - | ex:agency/{agency_id} | agency_id in both CSVs | xsd:string | None | generateAgencyID ex:agency/{agency_id} (e.g., ex:agency/CRTM) |
 | agency_name | gtfs:name | gtfs:Agency | - | Same as agency_id | Same as agency_id | foaf:name | @es, @en | - Direct mapping (e.g., "Consorcio Regional de Transportes de Madrid") |

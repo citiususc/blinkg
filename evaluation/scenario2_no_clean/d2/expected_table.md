@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | shape_id | gtfs:id | gtfs:Shape | - | ex:shape/{shape_id} | - | xsd:string | - | - |
 | shape_pt_lat | gtfs:latitude | gtfs:ShapePoint | - | ex:shape/{shape_id}_{shape_pt_sequence} | - | geo:lat | - | - |

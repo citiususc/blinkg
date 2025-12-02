@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | agency_id | gtfs:id | gtfs:Agency | - | CONCAT("http://transport.linkeddata.es/agency/", agency_id) | Not applicable | xsd:string | - | Identifier for agency in the form of a URL |
 | agency_name | gtfs:name | gtfs:Agency | - | Not applicable | Not applicable | foaf:name | - | Name of the agency |

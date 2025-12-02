@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | agency_id | gtfs:id | gtfs:Agency | - | "http://transport.linkeddata.es/agency/" + value | - | string | upperCamelCase | UpperCamelCase (e.g., CRTM) |
 | agency_name | gtfs:name | gtfs:Agency | - | "http://transport.linkeddata.es/agency/" + value | - | string | stringValue | OriginalStringValue (e.g., "CRTM") |
