@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | /entry/id | :hasID | :Document | :Identifier | URI of the document | - | URI | getURI | https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/6854467 |
 | /entry/summary[@type='text'] | :title | :Document | rdfs:Literal | Concatenate '/entry/' and the value of the @id attribute | - | string | getTitle | Suministro de piezas de recambio originales... |

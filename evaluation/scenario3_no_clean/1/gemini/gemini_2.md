@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | `entry/id` | `owl:sameAs` (for Notice ID) | `:Notice` | N/A | `{noticeUri}` = value of `entry/id` | N/A | `xsd:anyURI` | N/A | URI |
 | `entry/title` | `rdfs:label` | `:Notice` | N/A | `{noticeUri}` | N/A | `xsd:string` | N/A | Text |

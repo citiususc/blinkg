@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | entry/id | :hasID | :ProcurementObject |  | https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/{id} |  | xsd:string | generateId | https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/{id} |
 | entry/summary | :describesLot | :LotAwardOutcome | :Lot | https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/{id}#summary | :describesLot | xsd:string | generateSummary | https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/{id}#summary |

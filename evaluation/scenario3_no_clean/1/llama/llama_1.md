@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | /entry/id | :hasID | :ProcurementObject |  | concat("https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/", ./id) |  | string |  | "https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/6854467" |
 | /entry/summary | :describesLot | :LotAwardOutcome | :Lot | ./summary | ./lot = ./summary/@lot | string |  | "Suministro de piezas de recambio originales para equipos mecánicos y eléctricos de EMAYA." |

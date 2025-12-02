@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | entry/cac-place-ext:ContractFolderStatus/cbc:ContractFolderID | :hasID | :Lot | None | lot:{ContractFolderID} | None | xsd:string | None | None |
 | entry/cac-place-ext:ContractFolderStatus/cac-place-ext:LocatedContractingParty/cac:Party/cac:PartyIdentification/cbc:ID | :hasID | org:Organization | None | org:{ID} | None | xsd:string | None | None |

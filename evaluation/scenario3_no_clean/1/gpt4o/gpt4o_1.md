@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | `/entry/id` | `:hasID` | `Procedure` | `Identifier` | `concat('lot-', substring-after(text(), 'licitacionesPerfilContratante/'))` |  | `xsd:anyURI` | `generate_procedure_uri` | `lot-6854467` |
 | `/entry/cac-place-ext:ContractFolderStatus/cbc:ContractFolderID` | `:hasID` | `Lot` | `Identifier` | `concat('lot-', normalize-space(text()))` |  | `xsd:string` | `generate_lot_id` | `lot-942P_LOTE_2` |

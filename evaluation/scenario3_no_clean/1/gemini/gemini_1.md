@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | `entry/cac-place-ext:ContractFolderStatus/cbc:ContractFolderID` | `:hasID` | `:Lot` | `:Identifier` | Subject (`:Lot`): `concat("ex:lot/", urlencode(cbc:ContractFolderID))` <br>Object (`:Identifier`): `concat("ex:identifier/ContractFolderID/", urlencode(cbc:ContractFolderID))` | The `:Lot` instance is identified by this `:Identifier` instance. This `:Lot` is part of a `:Procedure` (see `hasProcurementScopeDividedIntoLot` below). | Object Ref | N/A | N/A |
 | `entry/cac-place-ext:ContractFolderStatus/cbc:ContractFolderID` | `:hasIdentifierValue` | `:Identifier` | N/A | Subject (`:Identifier`): `concat("ex:identifier/ContractFolderID/", urlencode(cbc:ContractFolderID))` | This `:Identifier` instance is the object of the `:hasID` property for the `:Lot`. | `xsd:string` | N/A | N/A |

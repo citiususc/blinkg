@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | /entry/id | :hasID | :ResultNotice | :Identifier | `CONCAT("https://contrataciondelestado.es/notice/", SUBSTRING_AFTER(/, 'licitacionesPerfilContratante/'))` | Identifier.value = id text | - | - | - |
 | /entry/id | :hasIdentifierValue | :Identifier | - | `CONCAT(notice_uri, "#identifier")` | - | xsd:anyURI | - | - |

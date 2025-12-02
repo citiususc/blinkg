@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | /entry/id | rdf:type | :ResultNotice |  | Value of `<id>` |  |  |  |  |
 | /entry/updated | :hasDispatchDate | :ResultNotice |  | Value of `<id>` |  | xsd:dateTime |  |  |

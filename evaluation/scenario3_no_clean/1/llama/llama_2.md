@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | /entry/id | :hasID | :ProcurementObject |  | uuid() |  | string |  | urn:uuid:<uuid> |
 | /entry/summary | :hasDescription | :ProcurementObject |  | concat("Summary: ", /entry/summary) |  | string |  | Summary: <text> |

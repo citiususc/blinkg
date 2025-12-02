@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | id | :hasID | :ProcurementObject | :Identifier | id_value | N/A | xsd:string | get_id_value | Returns the id value |
 | link/@href | owl:sameAs | :ProcurementObject | :Document | get_document_uri(id_value) | N/A | xsd:anyURI | get_document_uri | Constructs the document URI |

@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | `/entry/id` | `a4g:hasID` | `a4g:Procedure` | `a4g:Identifier` | IRI of Procedure is `/entry/id` | Identifier used as object in `a4g:hasID` | `IRI` |  |  |
 | `/entry/cac-place-ext:ContractFolderStatus/cbc:ContractFolderID` | `a4g:hasID` | `a4g:Lot` | `a4g:Identifier` | IRI using `/entry/id` + `/lot/` + normalized ContractFolderID | Identifier used as object in `a4g:hasID` | `xsd:string` | `normalizeID` | `942P_LOTE_2` |

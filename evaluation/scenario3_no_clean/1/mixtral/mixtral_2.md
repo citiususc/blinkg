@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | /entry/id | :hasID | :Identifier | :ProcurementObject | Concatenate 'id/' + value | - | - |  | <http://data.europa.eu/a4g/id/XXX> |
 | /entry/link/@href | :refersTo | :ResultNotice | :Procedure | Concatenate 'proc/' + value | - | - |  | <http://data.europa.eu/a4g/proc/XXX> |
