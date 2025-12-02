@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | **calendar.csv** |  |  |  |  |  |  |  |  |
 | service_id | gtfs:id | gtfs:Service | - | `http://transport.linkeddata.es/services/{service_id}` | - | xsd:string | - | - |

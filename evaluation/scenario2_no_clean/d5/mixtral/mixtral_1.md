@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | `trip_id` | `gtfs:id` | `gtfs:Trip` | - | Concatenate `agency_id` and `trip_id` with a hyphen | Replace first `_` with `-` | `xsd:string` | `clean_trip_id` | Cleaned Trip ID (e.g. `agency-1234`) |
 | `start_time` | `gtfs:startTime` | `gtfs:Frequency` | - | - | - | `schema:startTime` | `parse_duration` | Parsed duration object or error message |

@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | **frequencies.csv** |  |  |  |  |  |  |  |  |
 | trip_id | gtfs:trip | gtfs:Frequency | gtfs:Trip | `http://transport.linkeddata.es/resource/Frequency/{trip_id}-{start_time}` | `frequencies.trip_id = trips.trip_id` |  |  |  |

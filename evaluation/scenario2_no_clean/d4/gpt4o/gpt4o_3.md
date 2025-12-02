@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | `service_id` | `gtfs:id` | `gtfs:Service` |  | `ex:Service/{service_id}` |  | string |  |  e.g., `ex:Service/4_I12` |
 | `monday` | `gtfs:monday` | `gtfs:CalendarRule` | `skos:Concept` | `ex:CalendarRule/{service_id}` | `service_id = service_id` | boolean |  | `mapDayAvailability` "Available" or "Not Available" (linked to SKOS concepts) |

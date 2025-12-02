@@ -4,7 +4,7 @@ Datatype,0.2946428571428571,gemini,bert
 Entity Class,1.0,gemini,bert
 Function Name,0.0,gemini,bert
 Function Output,0.3080310653586516,gemini,bert
-Join Condition,0.0,gemini,bert
+Join,0.0,gemini,bert
 Ontology Property,1.0,gemini,bert
 Rel. Entity Class,1.0,gemini,bert
 Subject Generation,0.5409419535388528,gemini,bert
@@ -13,7 +13,7 @@ Datatype,0.4728763765758939,gemini,levenshtein
 Entity Class,1.0,gemini,levenshtein
 Function Name,0.1365720853209495,gemini,levenshtein
 Function Output,0.5356593877077103,gemini,levenshtein
-Join Condition,0.0,gemini,levenshtein
+Join,0.0,gemini,levenshtein
 Ontology Property,1.0,gemini,levenshtein
 Rel. Entity Class,1.0,gemini,levenshtein
 Subject Generation,0.6305999689631993,gemini,levenshtein
@@ -22,7 +22,7 @@ Datatype,0.4728763765758939,gemini,bert_lexical
 Entity Class,1.0,gemini,bert_lexical
 Function Name,0.1365720853209495,gemini,bert_lexical
 Function Output,0.5356593877077103,gemini,bert_lexical
-Join Condition,0.0,gemini,bert_lexical
+Join,0.0,gemini,bert_lexical
 Ontology Property,1.0,gemini,bert_lexical
 Rel. Entity Class,1.0,gemini,bert_lexical
 Subject Generation,0.6305999689631993,gemini,bert_lexical
@@ -31,7 +31,7 @@ Datatype,0.3569045076412715,gemini,max
 Entity Class,0.8432533379086262,gemini,max
 Function Name,0.1340691668015939,gemini,max
 Function Output,0.5032547971967495,gemini,max
-Join Condition,0.0970019580175479,gemini,max
+Join,0.0970019580175479,gemini,max
 Ontology Property,0.800976141783993,gemini,max
 Rel. Entity Class,0.78833554937984,gemini,max
 Subject Generation,0.5676066649769262,gemini,max
@@ -40,7 +40,7 @@ Datatype,0.1995701058201058,mixtral,bert
 Entity Class,0.9173669467787114,mixtral,bert
 Function Name,0.0,mixtral,bert
 Function Output,0.172511717283493,mixtral,bert
-Join Condition,0.0,mixtral,bert
+Join,0.0,mixtral,bert
 Ontology Property,1.0,mixtral,bert
 Rel. Entity Class,0.1605209423836875,mixtral,bert
 Subject Generation,0.1883717184504985,mixtral,bert
@@ -49,7 +49,7 @@ Datatype,0.270949506925212,mixtral,bert_lexical
 Entity Class,0.921167949292188,mixtral,bert_lexical
 Function Name,0.0365617578623421,mixtral,bert_lexical
 Function Output,0.1794600410509215,mixtral,bert_lexical
-Join Condition,0.0758233445662039,mixtral,bert_lexical
+Join,0.0758233445662039,mixtral,bert_lexical
 Ontology Property,1.0,mixtral,bert_lexical
 Rel. Entity Class,0.0908609819457386,mixtral,bert_lexical
 Subject Generation,0.3806631995571983,mixtral,bert_lexical
@@ -58,7 +58,7 @@ Datatype,0.290450723090348,mixtral,max
 Entity Class,0.8946056918623002,mixtral,max
 Function Name,0.0375607662603386,mixtral,max
 Function Output,0.2313823286666829,mixtral,max
-Join Condition,0.0767583591815753,mixtral,max
+Join,0.0767583591815753,mixtral,max
 Ontology Property,0.9780989661812782,mixtral,max
 Rel. Entity Class,0.1694637116918031,mixtral,max
 Subject Generation,0.3883103928114315,mixtral,max
@@ -67,7 +67,7 @@ Datatype,0.270949506925212,mixtral,levenshtein
 Entity Class,0.921167949292188,mixtral,levenshtein
 Function Name,0.0365617578623421,mixtral,levenshtein
 Function Output,0.1794600410509215,mixtral,levenshtein
-Join Condition,0.0758233445662039,mixtral,levenshtein
+Join,0.0758233445662039,mixtral,levenshtein
 Ontology Property,1.0,mixtral,levenshtein
 Rel. Entity Class,0.0908609819457386,mixtral,levenshtein
 Subject Generation,0.3806631995571983,mixtral,levenshtein
@@ -76,7 +76,7 @@ Datatype,0.618002299633291,o3,bert_lexical
 Entity Class,0.8396870742241541,o3,bert_lexical
 Function Name,0.1001795254093485,o3,bert_lexical
 Function Output,0.267075905378795,o3,bert_lexical
-Join Condition,0.1027752924146074,o3,bert_lexical
+Join,0.1027752924146074,o3,bert_lexical
 Ontology Property,1.0,o3,bert_lexical
 Rel. Entity Class,0.8907056450843811,o3,bert_lexical
 Subject Generation,0.3343085639385714,o3,bert_lexical
@@ -85,7 +85,7 @@ Datatype,0.618002299633291,o3,levenshtein
 Entity Class,0.8396870742241541,o3,levenshtein
 Function Name,0.1001795254093485,o3,levenshtein
 Function Output,0.267075905378795,o3,levenshtein
-Join Condition,0.1027752924146074,o3,levenshtein
+Join,0.1027752924146074,o3,levenshtein
 Ontology Property,1.0,o3,levenshtein
 Rel. Entity Class,0.8907056450843811,o3,levenshtein
 Subject Generation,0.3343085639385714,o3,levenshtein
@@ -94,7 +94,7 @@ Datatype,0.5723825491041454,o3,max
 Entity Class,0.8152203733722369,o3,max
 Function Name,0.0988022912030991,o3,max
 Function Output,0.2965106494561002,o3,max
-Join Condition,0.1265462318865152,o3,max
+Join,0.1265462318865152,o3,max
 Ontology Property,0.904620719390611,o3,max
 Rel. Entity Class,0.7757199967900913,o3,max
 Subject Generation,0.3600531983780979,o3,max
@@ -103,7 +103,7 @@ Datatype,0.5468658142269253,o3,bert
 Entity Class,0.8333333333333334,o3,bert
 Function Name,0.0,o3,bert
 Function Output,0.2187162816217134,o3,bert
-Join Condition,0.0,o3,bert
+Join,0.0,o3,bert
 Ontology Property,1.0,o3,bert
 Rel. Entity Class,0.7609126984126985,o3,bert
 Subject Generation,0.2704665866003075,o3,bert
@@ -112,7 +112,7 @@ Datatype,0.7320422463946872,deepseek,bert_lexical
 Entity Class,1.0,deepseek,bert_lexical
 Function Name,0.0978545943895975,deepseek,bert_lexical
 Function Output,0.8826556578278542,deepseek,bert_lexical
-Join Condition,0.081937162619498,deepseek,bert_lexical
+Join,0.081937162619498,deepseek,bert_lexical
 Ontology Property,1.0,deepseek,bert_lexical
 Rel. Entity Class,0.5759553970010193,deepseek,bert_lexical
 Subject Generation,0.3241052859359317,deepseek,bert_lexical
@@ -121,7 +121,7 @@ Datatype,0.6617063492063493,deepseek,bert
 Entity Class,1.0,deepseek,bert
 Function Name,0.0,deepseek,bert
 Function Output,0.8750100167781033,deepseek,bert
-Join Condition,0.0,deepseek,bert
+Join,0.0,deepseek,bert
 Ontology Property,1.0,deepseek,bert
 Rel. Entity Class,0.3321333935561578,deepseek,bert
 Subject Generation,0.3276843667781919,deepseek,bert
@@ -130,7 +130,7 @@ Datatype,0.7254505998685828,deepseek,max
 Entity Class,1.0,deepseek,max
 Function Name,0.0978545943895975,deepseek,max
 Function Output,0.9151561597690862,deepseek,max
-Join Condition,0.0794817150880893,deepseek,max
+Join,0.0794817150880893,deepseek,max
 Ontology Property,0.98886354917135,deepseek,max
 Rel. Entity Class,0.5534853688728661,deepseek,max
 Subject Generation,0.3904977531785274,deepseek,max
@@ -139,7 +139,7 @@ Datatype,0.7320422463946872,deepseek,levenshtein
 Entity Class,1.0,deepseek,levenshtein
 Function Name,0.0978545943895975,deepseek,levenshtein
 Function Output,0.8826556578278542,deepseek,levenshtein
-Join Condition,0.081937162619498,deepseek,levenshtein
+Join,0.081937162619498,deepseek,levenshtein
 Ontology Property,1.0,deepseek,levenshtein
 Rel. Entity Class,0.5759553970010193,deepseek,levenshtein
 Subject Generation,0.3241052859359317,deepseek,levenshtein
@@ -148,7 +148,7 @@ Datatype,0.2945553312699,gpt4o,levenshtein
 Entity Class,1.0,gpt4o,levenshtein
 Function Name,0.0719006760045886,gpt4o,levenshtein
 Function Output,0.5846487997720639,gpt4o,levenshtein
-Join Condition,0.1368511146442456,gpt4o,levenshtein
+Join,0.1368511146442456,gpt4o,levenshtein
 Ontology Property,1.0,gpt4o,levenshtein
 Rel. Entity Class,1.0,gpt4o,levenshtein
 Subject Generation,0.3691290182371934,gpt4o,levenshtein
@@ -157,7 +157,7 @@ Datatype,0.3171647053407516,gpt4o,max
 Entity Class,1.0,gpt4o,max
 Function Name,0.0719006760045886,gpt4o,max
 Function Output,0.5679795340417687,gpt4o,max
-Join Condition,0.1368511146442456,gpt4o,max
+Join,0.1368511146442456,gpt4o,max
 Ontology Property,1.0,gpt4o,max
 Rel. Entity Class,1.0,gpt4o,max
 Subject Generation,0.4584836622573779,gpt4o,max
@@ -166,7 +166,7 @@ Datatype,0.1885416666666667,gpt4o,bert
 Entity Class,1.0,gpt4o,bert
 Function Name,0.0006410256410256,gpt4o,bert
 Function Output,0.4586213975061813,gpt4o,bert
-Join Condition,0.0,gpt4o,bert
+Join,0.0,gpt4o,bert
 Ontology Property,1.0,gpt4o,bert
 Rel. Entity Class,1.0,gpt4o,bert
 Subject Generation,0.3405938735396099,gpt4o,bert
@@ -175,7 +175,7 @@ Datatype,0.2945553312699,gpt4o,bert_lexical
 Entity Class,1.0,gpt4o,bert_lexical
 Function Name,0.0719006760045886,gpt4o,bert_lexical
 Function Output,0.5846487997720639,gpt4o,bert_lexical
-Join Condition,0.1368511146442456,gpt4o,bert_lexical
+Join,0.1368511146442456,gpt4o,bert_lexical
 Ontology Property,1.0,gpt4o,bert_lexical
 Rel. Entity Class,1.0,gpt4o,bert_lexical
 Subject Generation,0.3691290182371934,gpt4o,bert_lexical
@@ -184,7 +184,7 @@ Datatype,0.4163888034542304,o1,max
 Entity Class,0.9160645196736646,o1,max
 Function Name,0.0459955235322316,o1,max
 Function Output,0.4990523928675694,o1,max
-Join Condition,0.1025478913640928,o1,max
+Join,0.1025478913640928,o1,max
 Ontology Property,0.878927553007527,o1,max
 Rel. Entity Class,0.8109163081104104,o1,max
 Subject Generation,0.598943491874597,o1,max
@@ -193,7 +193,7 @@ Datatype,0.2594187675070028,o1,bert
 Entity Class,1.0,o1,bert
 Function Name,0.0,o1,bert
 Function Output,0.3236773846196856,o1,bert
-Join Condition,0.0,o1,bert
+Join,0.0,o1,bert
 Ontology Property,0.9826388888888888,o1,bert
 Rel. Entity Class,0.8518518518518517,o1,bert
 Subject Generation,0.5836007043685472,o1,bert
@@ -202,7 +202,7 @@ Datatype,0.4587436351511213,o1,levenshtein
 Entity Class,1.0,o1,levenshtein
 Function Name,0.0,o1,levenshtein
 Function Output,0.5544968915896283,o1,levenshtein
-Join Condition,0.0705679500795374,o1,levenshtein
+Join,0.0705679500795374,o1,levenshtein
 Ontology Property,0.9879355116022958,o1,levenshtein
 Rel. Entity Class,0.9130469375738391,o1,levenshtein
 Subject Generation,0.6046249055200152,o1,levenshtein
@@ -211,7 +211,7 @@ Datatype,0.4587436351511213,o1,bert_lexical
 Entity Class,1.0,o1,bert_lexical
 Function Name,0.0,o1,bert_lexical
 Function Output,0.5544968915896283,o1,bert_lexical
-Join Condition,0.0705679500795374,o1,bert_lexical
+Join,0.0705679500795374,o1,bert_lexical
 Ontology Property,0.9879355116022958,o1,bert_lexical
 Rel. Entity Class,0.9130469375738391,o1,bert_lexical
 Subject Generation,0.6046249055200152,o1,bert_lexical
@@ -220,7 +220,7 @@ Datatype,0.2559523809523809,llama,bert
 Entity Class,1.0,llama,bert
 Function Name,0.0,llama,bert
 Function Output,0.2687057959866868,llama,bert
-Join Condition,0.0,llama,bert
+Join,0.0,llama,bert
 Ontology Property,1.0,llama,bert
 Rel. Entity Class,0.1212121212121211,llama,bert
 Subject Generation,0.5755699685534591,llama,bert
@@ -229,7 +229,7 @@ Datatype,0.3532529547810554,llama,bert_lexical
 Entity Class,1.0,llama,bert_lexical
 Function Name,0.0952203379711136,llama,bert_lexical
 Function Output,0.309670993700774,llama,bert_lexical
-Join Condition,0.071702267184402,llama,bert_lexical
+Join,0.071702267184402,llama,bert_lexical
 Ontology Property,1.0,llama,bert_lexical
 Rel. Entity Class,0.1313477531075477,llama,bert_lexical
 Subject Generation,0.4287595624725024,llama,bert_lexical
@@ -238,7 +238,7 @@ Datatype,0.3532529547810554,llama,max
 Entity Class,1.0,llama,max
 Function Name,0.0952203379711136,llama,max
 Function Output,0.3815956354291752,llama,max
-Join Condition,0.071702267184402,llama,max
+Join,0.071702267184402,llama,max
 Ontology Property,1.0,llama,max
 Rel. Entity Class,0.1384958636128541,llama,max
 Subject Generation,0.5778125535767034,llama,max
@@ -247,7 +247,7 @@ Datatype,0.3532529547810554,llama,levenshtein
 Entity Class,1.0,llama,levenshtein
 Function Name,0.0952203379711136,llama,levenshtein
 Function Output,0.309670993700774,llama,levenshtein
-Join Condition,0.071702267184402,llama,levenshtein
+Join,0.071702267184402,llama,levenshtein
 Ontology Property,1.0,llama,levenshtein
 Rel. Entity Class,0.1313477531075477,llama,levenshtein
 Subject Generation,0.4287595624725024,llama,levenshtein

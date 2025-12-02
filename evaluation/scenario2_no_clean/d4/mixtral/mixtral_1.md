@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | `service_id` | `gtfs:id` | `gtfs:Service` | - | Service ID from CSV file | - | `xsd:string` | - | - |
 | `monday` | `gtfs:monday` | `gtfs:CalendarRule` | `gtfs:Service` | `ServiceID + '/' + Day` | `gtfs:serviceRule` | `owl:ObjectProperty` | `get_day_value` | `1` (available) / `0` (not available) |
@@ -11,7 +11,7 @@
 | `start_date` | `gtfs:startDate` | `gtfs:CalendarRule` | - | `ServiceID + '/' + Date property` | - | `schema:startDate` | `convert_date_format` | `yyyy-mm-dd` formatted date as `xsd:date` |
 | `end_date` | `gtfs:endDate` | `gtfs:CalendarRule` | - | `ServiceID + '/' + Date property` | - | `schema:endDate` | `convert_date_format` | `yyyy-mm-dd` formatted date as `xsd:date` |
 
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | `service_id` | `gtfs:id` | `gtfs:Service` | - | Service ID from CSV file | - | `xsd:string` | - | - |
 | `date` | `gtfs:date` | `gtfs:CalendarDateRule` | `gtfs:Service` | `ServiceID + '/' + Date` | `gtfs:service` | `rdf:ObjectProperty` | `convert_date_format` | Date in `yyyy-mm-dd` format as `xsd:date` |

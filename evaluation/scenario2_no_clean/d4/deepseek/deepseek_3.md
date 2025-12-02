@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | service_id (calendar) | gtfs:id | gtfs:Service | - | http://example.org/service/{service_id} | - | xsd:string | - | - |
 | monday | gtfs:monday | gtfs:CalendarRule | skos:Concept (day scheme) | http://example.org/calendar_rule/{service_id} | service_id | - | - | map_day_availability 1 → <http://transport.linkeddata.es/kos/day/available>, 0 → .../not-available |

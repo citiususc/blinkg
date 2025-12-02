@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | trip_id | gtfs:trip | StopTime | Trip | stoptime/{trip_id}_{stop_sequence} | stop_times.trip_id = trips.trip_id | - | - | - |
 | arrival_time | gtfs:arrivalTime | StopTime | - | - | - | schema:Time (xsd:time) | - | - |
@@ -10,7 +10,7 @@
 | drop_off_type | gtfs:dropOffType | StopTime | skos:Concept | - | - | skos:Concept | - | mapDropOffType Same pattern as pickup_type mappings |
 | shape_dist_traveled | gtfs:distanceTraveled | StopTime | - | - | - | gtfs:nonNegativeFloat | - | - |
 
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | stop_id | gtfs:id | Stop | - | stop/{stop_id} | - | xsd:string | - | - |
 | stop_name | rdfs:label | Stop | - | - | - | xsd:string | es | - |
@@ -20,7 +20,7 @@
 | parent_station | gtfs:parentStation | Stop | Station | - | stops.parent_station = stops.stop_id | - | - | - |
 | wheelchair_boarding | gtfs:wheelchairAccessible | Stop | skos:Concept | - | - | skos:Concept | - | mapWheelchairAccessibility 0 → <http://transport.linkeddata.es/kos/wheelchair-accesible/no-information>, 1 → .../accesible, 2 → .../inaccesible |
 
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | trip_id | gtfs:id | Trip | - | trip/{trip_id} | - | xsd:string | - | - |
 | trip_headsign | gtfs:headsign | Trip | - | - | - | xsd:string | es | - |

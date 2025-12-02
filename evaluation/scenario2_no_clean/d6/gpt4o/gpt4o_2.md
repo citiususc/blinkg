@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | trip_id | gtfs:trip | gtfs:StopTime | gtfs:Trip | `http://transport.linkeddata.es/resource/stopTime/{trip_id}_{stop_sequence}` | stop_times.trip_id = trips.trip_id | xsd:string | None | generateStopTimeURI `http://transport.linkeddata.es/resource/stopTime/{trip_id}_{stop_sequence}` |
 | arrival_time | gtfs:arrivalTime | gtfs:StopTime | None | `http://transport.linkeddata.es/resource/stopTime/{trip_id}_{stop_sequence}` | None | schema:Time | None | None HH:MM:SS |

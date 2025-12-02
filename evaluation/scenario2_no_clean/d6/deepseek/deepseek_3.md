@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | trip_id (stop_times) | gtfs:trip | gtfs:StopTime | gtfs:Trip | stop_time/{trip_id}/{stop_sequence} | trip_id = trips.trip_id | xsd:anyURI |  |  |
 | arrival_time | gtfs:arrivalTime | gtfs:StopTime |  |  |  | schema:Time |  |  |

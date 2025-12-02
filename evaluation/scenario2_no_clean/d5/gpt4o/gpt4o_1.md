@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | trip_id | gtfs:trip | gtfs:Frequency | gtfs:Trip | ex:frequency/{trip_id}/{start_time} | frequencies.trip_id = trips.trip_id | xsd:string |  |  |
 | start_time | gtfs:startTime | gtfs:Frequency |  | ex:frequency/{trip_id}/{start_time} |  | schema:startTime |  |  |

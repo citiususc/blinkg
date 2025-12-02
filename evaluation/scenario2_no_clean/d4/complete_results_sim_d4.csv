@@ -4,7 +4,7 @@ Datatype,0.3765342001886131,gemini,max_all
 Entity Class,0.8347661816415783,gemini,max_all
 Function Name,0.1340691668015939,gemini,max_all
 Function Output,0.4669581666065935,gemini,max_all
-Join Condition,0.0970019580175479,gemini,max_all
+Join,0.0970019580175479,gemini,max_all
 Ontology Property,0.7881412285505314,gemini,max_all
 Rel. Entity Class,0.7251583002621556,gemini,max_all
 Subject Generation,0.5644015589214245,gemini,max_all
@@ -13,7 +13,7 @@ Datatype,0.290450723090348,mixtral,max_all
 Entity Class,0.8946056918623002,mixtral,max_all
 Function Name,0.0375607662603386,mixtral,max_all
 Function Output,0.2313823286666829,mixtral,max_all
-Join Condition,0.0767583591815753,mixtral,max_all
+Join,0.0767583591815753,mixtral,max_all
 Ontology Property,0.9780989661812782,mixtral,max_all
 Rel. Entity Class,0.1694637116918031,mixtral,max_all
 Subject Generation,0.3883103928114315,mixtral,max_all
@@ -22,7 +22,7 @@ Datatype,0.5723825491041454,o3,max_all
 Entity Class,0.8152203733722369,o3,max_all
 Function Name,0.0988022912030991,o3,max_all
 Function Output,0.2965106494561002,o3,max_all
-Join Condition,0.1265462318865152,o3,max_all
+Join,0.1265462318865152,o3,max_all
 Ontology Property,0.904620719390611,o3,max_all
 Rel. Entity Class,0.7757199967900913,o3,max_all
 Subject Generation,0.3600531983780979,o3,max_all
@@ -31,7 +31,7 @@ Datatype,0.7254505998685828,deepseek,max_all
 Entity Class,1.0,deepseek,max_all
 Function Name,0.0978545943895975,deepseek,max_all
 Function Output,0.9151561597690862,deepseek,max_all
-Join Condition,0.0794817150880893,deepseek,max_all
+Join,0.0794817150880893,deepseek,max_all
 Ontology Property,0.98886354917135,deepseek,max_all
 Rel. Entity Class,0.5534853688728661,deepseek,max_all
 Subject Generation,0.3904977531785274,deepseek,max_all
@@ -40,7 +40,7 @@ Datatype,0.3171647053407516,gpt4o,max_all
 Entity Class,1.0,gpt4o,max_all
 Function Name,0.0719006760045886,gpt4o,max_all
 Function Output,0.5679795340417687,gpt4o,max_all
-Join Condition,0.1368511146442456,gpt4o,max_all
+Join,0.1368511146442456,gpt4o,max_all
 Ontology Property,1.0,gpt4o,max_all
 Rel. Entity Class,1.0,gpt4o,max_all
 Subject Generation,0.4584836622573779,gpt4o,max_all
@@ -49,7 +49,7 @@ Datatype,0.3532529547810554,llama,max_all
 Entity Class,1.0,llama,max_all
 Function Name,0.0952203379711136,llama,max_all
 Function Output,0.3815956354291752,llama,max_all
-Join Condition,0.071702267184402,llama,max_all
+Join,0.071702267184402,llama,max_all
 Ontology Property,1.0,llama,max_all
 Rel. Entity Class,0.1384958636128541,llama,max_all
 Subject Generation,0.5778125535767034,llama,max_all

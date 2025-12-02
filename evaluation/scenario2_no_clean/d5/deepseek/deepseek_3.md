@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | frequencies.csv |  |  |  |  |  |  |  |  |
 | trip_id | gtfs:trip | Frequency | Trip | generateFrequencyID() | trip_id = Trip.id | URI |  | generateFrequencyID http://example.org/frequency/{trip_id}_{start_time}_{end_time} |

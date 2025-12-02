@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | **trips.csv** |  |  |  |  |  |  |  |  |
 | trip_id | gtfs:id | gtfs:Trip |  | `generate_trip_subject(trip_id)` |  | xsd:string |  | `http://transport.linkeddata.es/resource/Trip/{trip_id}` |

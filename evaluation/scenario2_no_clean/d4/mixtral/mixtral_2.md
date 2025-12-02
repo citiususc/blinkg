@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | `service_id` | `gtfs:id` | `gtfs:Service` | - | Generate a URI using: `http://gtfs.org/services/{service_id}` | Join with `gtfs:id` of `gtfs:Service` | String | `URI Construction` | `http://gtfs.org/services/{service_id}` |
 | `monday` | `gtfs:monday` | `gtfs:CalendarRule` | `gtfs:Day` | Use `http://transport.linkeddata.es/kos/day/available` as subject if value is true | Join with URI of day concept | Boolean | `Boolean to URI` | If true, return URI; otherwise, return `null` |

@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | `trip_id` | `gtfs:id` | `gtfs:Trip` | - | `URI("http://linked.data.es/resource/" + trip_id)` | - | `xsd:string` | - | `http://linked.data.es/resource/4_I12-001_2016I12` |
 | `arrival_time` | `gtfs:arrivalTime` | `gtfs:StopTime` | - | `subject + "/arrival_time"` | StopTime.trip_id = Trip.id | `schema:Time` | formatTime | `HH:MM:SS` |

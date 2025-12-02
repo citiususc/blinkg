@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | `gtfs` | `http://vocab.gtfs.org/terms#` |
 | `kos-day` | `http://transport.linkeddata.es/kos/day/` |
@@ -7,7 +7,7 @@
 | `xsd` | `http://www.w3.org/2001/XMLSchema#` |
 | `skos` | `http://www.w3.org/2004/02/skos/core#` |
 
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | **calendar.csv** |
 | `service_id` | `gtfs:id` | `gtfs:Service` | N/A | `resource:Service/{service_id}` | N/A | `xsd:string` | N/A | N/A |

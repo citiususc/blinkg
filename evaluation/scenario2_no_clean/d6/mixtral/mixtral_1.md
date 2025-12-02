@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | `trip_id` | `gtfs:trip` | `gtfs:Trip` | - | `http://vocab.gtfs.org/id/{trip_id}` | - | `xsd:string` | - | URI of the Trip |
 | `arrival_time` | `gtfs:arrivalTime` | `gtfs:StopTime` | - | Inferred from Trip/Stop combo | `gtfs:trip` | `schema:Time` | - | e.g., `"08:30:00"` |
