@@ -4,7 +4,7 @@ Datatype,15,0,9,1.0,0.625,0.7692307692307693,o3_clean_0.80_all
 Entity Class,14,0,19,1.0,0.4242424242424242,0.5957446808510638,o3_clean_0.80_all
 Function Name,0,0,5,0.0,0.0,0.0,o3_clean_0.80_all
 Function Output,6,0,0,1.0,1.0,1.0,o3_clean_0.80_all
-Join Condition,3,0,0,1.0,1.0,1.0,o3_clean_0.80_all
+Join,3,0,0,1.0,1.0,1.0,o3_clean_0.80_all
 Ontology Property,33,0,0,1.0,1.0,1.0,o3_clean_0.80_all
 Related Entity Class,3,0,6,1.0,0.3333333333333333,0.5,o3_clean_0.80_all
 Subject Generation,0,0,22,0.0,0.0,0.0,o3_clean_0.80_all
@@ -13,7 +13,7 @@ Datatype,16,0,0,1.0,1.0,1.0,mixtral_clean_0.80_all
 Entity Class,4,0,30,1.0,0.1176470588235294,0.2105263157894736,mixtral_clean_0.80_all
 Function Name,0,0,6,0.0,0.0,0.0,mixtral_clean_0.80_all
 Function Output,4,0,2,1.0,0.6666666666666666,0.8,mixtral_clean_0.80_all
-Join Condition,0,0,1,0.0,0.0,0.0,mixtral_clean_0.80_all
+Join,0,0,1,0.0,0.0,0.0,mixtral_clean_0.80_all
 Ontology Property,33,0,1,1.0,0.9705882352941176,0.9850746268656716,mixtral_clean_0.80_all
 Related Entity Class,5,0,0,1.0,1.0,1.0,mixtral_clean_0.80_all
 Subject Generation,0,0,34,0.0,0.0,0.0,mixtral_clean_0.80_all
@@ -22,7 +22,7 @@ Datatype,23,0,1,1.0,0.9583333333333334,0.9787234042553192,llama_clean_0.80_all
 Entity Class,3,0,30,1.0,0.0909090909090909,0.1666666666666666,llama_clean_0.80_all
 Function Name,0,0,6,0.0,0.0,0.0,llama_clean_0.80_all
 Function Output,6,0,0,1.0,1.0,1.0,llama_clean_0.80_all
-Join Condition,0,0,3,0.0,0.0,0.0,llama_clean_0.80_all
+Join,0,0,3,0.0,0.0,0.0,llama_clean_0.80_all
 Ontology Property,33,0,0,1.0,1.0,1.0,llama_clean_0.80_all
 Related Entity Class,2,0,0,1.0,1.0,1.0,llama_clean_0.80_all
 Subject Generation,0,0,33,0.0,0.0,0.0,llama_clean_0.80_all
@@ -31,7 +31,7 @@ Datatype,12,0,12,1.0,0.5,0.6666666666666666,deepseek_clean_0.80_all
 Entity Class,8,0,25,1.0,0.2424242424242424,0.3902439024390244,deepseek_clean_0.80_all
 Function Name,0,0,6,0.0,0.0,0.0,deepseek_clean_0.80_all
 Function Output,5,0,1,1.0,0.8333333333333334,0.9090909090909092,deepseek_clean_0.80_all
-Join Condition,0,0,3,0.0,0.0,0.0,deepseek_clean_0.80_all
+Join,0,0,3,0.0,0.0,0.0,deepseek_clean_0.80_all
 Ontology Property,33,0,3,1.0,0.9166666666666666,0.9565217391304348,deepseek_clean_0.80_all
 Related Entity Class,6,0,1,1.0,0.8571428571428571,0.923076923076923,deepseek_clean_0.80_all
 Subject Generation,36,0,0,1.0,1.0,1.0,deepseek_clean_0.80_all
@@ -40,7 +40,7 @@ Datatype,22,0,2,1.0,0.9166666666666666,0.9565217391304348,gpt4o_clean_0.80_all
 Entity Class,21,0,12,1.0,0.6363636363636364,0.7777777777777778,gpt4o_clean_0.80_all
 Function Name,0,0,6,0.0,0.0,0.0,gpt4o_clean_0.80_all
 Function Output,6,0,0,1.0,1.0,1.0,gpt4o_clean_0.80_all
-Join Condition,2,0,1,1.0,0.6666666666666666,0.8,gpt4o_clean_0.80_all
+Join,2,0,1,1.0,0.6666666666666666,0.8,gpt4o_clean_0.80_all
 Ontology Property,33,0,0,1.0,1.0,1.0,gpt4o_clean_0.80_all
 Related Entity Class,6,0,0,1.0,1.0,1.0,gpt4o_clean_0.80_all
 Subject Generation,11,0,12,1.0,0.4782608695652174,0.6470588235294118,gpt4o_clean_0.80_all
@@ -49,7 +49,7 @@ Datatype,22,0,2,1.0,0.9166666666666666,0.9565217391304348,gemini_2.5_clean_0.80_
 Entity Class,24,0,9,1.0,0.7272727272727273,0.8421052631578948,gemini_2.5_clean_0.80_all
 Function Name,0,0,6,0.0,0.0,0.0,gemini_2.5_clean_0.80_all
 Function Output,4,0,2,1.0,0.6666666666666666,0.8,gemini_2.5_clean_0.80_all
-Join Condition,2,0,1,1.0,0.6666666666666666,0.8,gemini_2.5_clean_0.80_all
+Join,2,0,1,1.0,0.6666666666666666,0.8,gemini_2.5_clean_0.80_all
 Ontology Property,29,0,5,1.0,0.8529411764705882,0.9206349206349206,gemini_2.5_clean_0.80_all
 Related Entity Class,9,0,0,1.0,1.0,1.0,gemini_2.5_clean_0.80_all
 Subject Generation,0,0,34,0.0,0.0,0.0,gemini_2.5_clean_0.80_all

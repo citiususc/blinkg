@@ -1,4 +1,4 @@
-Method,Data Reference,Ontology Property,Entity Class,Related Entity Class,Subject Generation,Join Condition,Datatype,Function Name,Function Output
+Method,Data Reference,Ontology Property,Entity Class,Related Entity Class,Subject Generation,Join,Datatype,Function Name,Function Output
 Deepseek R1,0.90,0.959972863,0.914970602,0.774167009,0.682055692,0.323213156,0.782036392,0.894736842,0.864912281
 Gemini 2.5 Pro,0.91,0.995169082,0.948690425,0.987654321,0.990267121,0.662801932,0.904761905,0.857278331,0.288288288
 GPT4o,0.92,0.985329633,0.985329633,0.959722556,0.946727262,0.453535354,0.901858728,0.749170223,0.694736842

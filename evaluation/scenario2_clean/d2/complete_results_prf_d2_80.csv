@@ -2,42 +2,42 @@ column,TP,FP,FN,precision,recall,f1,method
 CSV Column,15,0,0,1.0,1.0,1.0,o3_clean_0.80_all
 Datatype,9,0,6,1.0,0.6,0.7499999999999999,o3_clean_0.80_all
 Entity Class,18,0,0,1.0,1.0,1.0,o3_clean_0.80_all
-Join Condition,1,0,2,1.0,0.3333333333333333,0.5,o3_clean_0.80_all
+Join,1,0,2,1.0,0.3333333333333333,0.5,o3_clean_0.80_all
 Ontology Property,18,0,0,1.0,1.0,1.0,o3_clean_0.80_all
 Related Entity Class,3,0,0,1.0,1.0,1.0,o3_clean_0.80_all
 Subject Generation,18,0,0,1.0,1.0,1.0,o3_clean_0.80_all
 CSV Column,15,0,0,1.0,1.0,1.0,mixtral_clean_0.80_all
 Datatype,15,0,0,1.0,1.0,1.0,mixtral_clean_0.80_all
 Entity Class,15,0,0,1.0,1.0,1.0,mixtral_clean_0.80_all
-Join Condition,0,0,0,0.0,0.0,0.0,mixtral_clean_0.80_all
+Join,0,0,0,0.0,0.0,0.0,mixtral_clean_0.80_all
 Ontology Property,15,0,0,1.0,1.0,1.0,mixtral_clean_0.80_all
 Related Entity Class,0,0,0,0.0,0.0,0.0,mixtral_clean_0.80_all
 Subject Generation,5,0,10,1.0,0.3333333333333333,0.5,mixtral_clean_0.80_all
 CSV Column,15,0,0,1.0,1.0,1.0,llama_clean_0.80_all
 Datatype,15,0,0,1.0,1.0,1.0,llama_clean_0.80_all
 Entity Class,15,0,0,1.0,1.0,1.0,llama_clean_0.80_all
-Join Condition,0,0,0,0.0,0.0,0.0,llama_clean_0.80_all
+Join,0,0,0,0.0,0.0,0.0,llama_clean_0.80_all
 Ontology Property,15,0,0,1.0,1.0,1.0,llama_clean_0.80_all
 Related Entity Class,0,0,0,0.0,0.0,0.0,llama_clean_0.80_all
 Subject Generation,12,0,3,1.0,0.8,0.888888888888889,llama_clean_0.80_all
 CSV Column,15,0,0,1.0,1.0,1.0,deepseek_clean_0.80_all
 Datatype,13,0,2,1.0,0.8666666666666667,0.9285714285714286,deepseek_clean_0.80_all
 Entity Class,15,0,0,1.0,1.0,1.0,deepseek_clean_0.80_all
-Join Condition,0,0,0,0.0,0.0,0.0,deepseek_clean_0.80_all
+Join,0,0,0,0.0,0.0,0.0,deepseek_clean_0.80_all
 Ontology Property,15,0,0,1.0,1.0,1.0,deepseek_clean_0.80_all
 Related Entity Class,0,0,0,0.0,0.0,0.0,deepseek_clean_0.80_all
 Subject Generation,15,0,0,1.0,1.0,1.0,deepseek_clean_0.80_all
 CSV Column,15,0,0,1.0,1.0,1.0,gpt4o_clean_0.80_all
 Datatype,15,0,0,1.0,1.0,1.0,gpt4o_clean_0.80_all
 Entity Class,18,0,0,1.0,1.0,1.0,gpt4o_clean_0.80_all
-Join Condition,1,0,2,1.0,0.3333333333333333,0.5,gpt4o_clean_0.80_all
+Join,1,0,2,1.0,0.3333333333333333,0.5,gpt4o_clean_0.80_all
 Ontology Property,18,0,0,1.0,1.0,1.0,gpt4o_clean_0.80_all
 Related Entity Class,3,0,0,1.0,1.0,1.0,gpt4o_clean_0.80_all
 Subject Generation,14,0,4,1.0,0.7777777777777778,0.8750000000000001,gpt4o_clean_0.80_all
 CSV Column,15,0,0,1.0,1.0,1.0,gemini_2.5_clean_0.80_all
 Datatype,15,0,0,1.0,1.0,1.0,gemini_2.5_clean_0.80_all
 Entity Class,18,0,0,1.0,1.0,1.0,gemini_2.5_clean_0.80_all
-Join Condition,0,0,3,0.0,0.0,0.0,gemini_2.5_clean_0.80_all
+Join,0,0,3,0.0,0.0,0.0,gemini_2.5_clean_0.80_all
 Ontology Property,18,0,0,1.0,1.0,1.0,gemini_2.5_clean_0.80_all
 Related Entity Class,3,0,0,1.0,1.0,1.0,gemini_2.5_clean_0.80_all
 Subject Generation,6,0,12,1.0,0.3333333333333333,0.5,gemini_2.5_clean_0.80_all

@@ -1,4 +1,4 @@
-| CSV Column | Ontology Property | Entity Class | Related Entity Class | Subject Generation | Join Condition | Datatype |
+| CSV Column | Ontology Property | Entity Class | Related Entity Class | Subject Generation | Join | Datatype |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | `shape_id` | `gtfs:id` | `gtfs:Shape` | | `gtfs:Shape/{shape_id}` | | `xsd:string` |
 | | `gtfs:shapePoint` | `gtfs:Shape` | `gtfs:ShapePoint` | `gtfs:Shape/{shape_id}` | `shape_id` value from `gtfs:Shape` must match the `shape_id` part of the `gtfs:ShapePoint` subject | |

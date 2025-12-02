@@ -1,4 +1,4 @@
-| CSV Column | Ontology Property | Entity Class | Related Entity Class | Subject Generation | Join Condition | Datatype |
+| CSV Column | Ontology Property | Entity Class | Related Entity Class | Subject Generation | Join | Datatype |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | shape_id | gtfs:id | gtfs:Shape | | ex:shape/{shape_id} | | xsd:string |
 | | gtfs:shapePoint | gtfs:Shape | gtfs:ShapePoint | ex:shape/{shape_id} | The subject is generated for each unique `shape_id`. | |

@@ -1,4 +1,4 @@
-| CSV Column             | Ontology Property        | Entity Class      | Related Entity Class | Subject Generation                                   | Join Condition              | Datatype               | 
+| CSV Column             | Ontology Property        | Entity Class      | Related Entity Class | Subject Generation                                   | Join              | Datatype               | 
 |------------------------|--------------------------|-------------------|-----------------------|------------------------------------------------------|-----------------------------|-------------------------|
 | `shape_id`             | `gtfs:id`                | `gtfs:Shape`      | N/A                   | `URI(<http://vocab.gtfs.org/Shape/{SHAPE_ID}>)`      | `SHAPE_ID = SUBJECT.shape_id` | `xsd:string`            | 
 | `shape_pt_lat`         | `gtfs:latitude`          | `gtfs:ShapePoint` | N/A                   | `float(SHAPE_PT_LAT)`                                | `None`                      | `geo:lat`               | 

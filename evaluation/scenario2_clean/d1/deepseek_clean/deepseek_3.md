@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property    | Entity Class | Related Entity Class | Subject Generation               | Join Condition          | Datatype                  | Function Name       | Function Output                                                                 |
+| CSV Column           | Ontology Property    | Entity Class | Related Entity Class | Subject Generation               | Join          | Datatype                  | Function Name       | Function Output                                                                 |
 |----------------------|----------------------|--------------|----------------------|----------------------------------|-------------------------|---------------------------|----------------------|---------------------|
 | agency_id (agency)   | gtfs:id              | gtfs:Agency  | -                    | http://example.org/agency/{id}  | -                       | xsd:string               | | |
 | agency_name          | gtfs:name            | gtfs:Agency  | -                    | -                                | -                       | xsd:string               | -                   | |

@@ -1,4 +1,4 @@
-| CSV Column | Ontology Property | Entity Class | Related Entity Class | Subject Generation | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column | Ontology Property | Entity Class | Related Entity Class | Subject Generation | Join | Datatype | Function Name | Function Output |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | stop_id | gtfs:id | gtfs:Location | - | `http://transport.linkeddata.es/madrid/metro/stops/<stop_id>` | - | xsd:string | - | - |
 | stop_code | gtfs:code | gtfs:Location | - | `http://transport.linkeddata.es/madrid/metro/stops/<stop_id>` | - | xsd:string | - | - |

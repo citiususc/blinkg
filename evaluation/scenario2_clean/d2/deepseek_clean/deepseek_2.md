@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property       | Entity Class      | Related Entity Class | Subject Generation                   | Join Condition                                 | Datatype                  | 
+| CSV Column           | Ontology Property       | Entity Class      | Related Entity Class | Subject Generation                   | Join                                 | Datatype                  | 
 |----------------------|-------------------------|-------------------|----------------------|---------------------------------------|-----------------------------------------------|---------------------------|
 | `shape_id`           | `gtfs:id`               | `gtfs:Shape`      | —                    | `http://example.org/shapes/{shape_id}`     | —                                             | `xsd:string`              | 
 | `shape_pt_lat`       | `gtfs:latitude`         | `gtfs:ShapePoint` | —                    | `http://example.org/shape_points/{shape_id}{shape_pt_sequence}`     | Linked via `gtfs:shapePoint` to parent Shape  | `geo:lat` (xsd:float)     | 
