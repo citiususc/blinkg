@@ -29,12 +29,12 @@ Function Output,gpt4o_clean,0.12740102306836176
 Function Output,llama_clean,0.20909975691595012
 Function Output,mixtral_clean,0.1402030382615824
 Function Output,o3_clean,0.37731159592254293
-Join Condition,deepseek_clean,0.14542578014922308
-Join Condition,gemini_clean,0.12938203451530825
-Join Condition,gpt4o_clean,0.14352896124538445
-Join Condition,llama_clean,0.1501991959605275
-Join Condition,mixtral_clean,0.13699384580942844
-Join Condition,o3_clean,0.1556369759695925
+Join,deepseek_clean,0.14542578014922308
+Join,gemini_clean,0.12938203451530825
+Join,gpt4o_clean,0.14352896124538445
+Join,llama_clean,0.1501991959605275
+Join,mixtral_clean,0.13699384580942844
+Join,o3_clean,0.1556369759695925
 Ontology Property,deepseek_clean,0.4094446388244618
 Ontology Property,gemini_clean,0.38113737871328424
 Ontology Property,gpt4o_clean,0.3220625676929543

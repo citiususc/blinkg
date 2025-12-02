@@ -1,4 +1,4 @@
-| XML Path | Ontology Property | Entity Class | Related Entity Class | Subject Generation | Join Condition | Datatype | Function Name | Function Output |
+| XML Path | Ontology Property | Entity Class | Related Entity Class | Subject Generation | Join | Datatype | Function Name | Function Output |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | `/entry/cac-place-ext:ContractFolderStatus/cbc:ContractFolderID` | `:hasIdentifierValue` | `:Identifier` | | `ex:identifier/{value}` | The `:Procedure` (`ex:procedure/{value}`) is linked via `:hasID` to this Identifier. | `xsd:string` | | |
 | `/entry/cac-place-ext:ContractFolderStatus/cac:ProcurementProject/cbc:Name` | `dcterms:title` | `:Procedure` | | `ex:procedure/{ContractFolderID}` | | `xsd:string` | | |

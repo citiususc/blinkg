@@ -1,4 +1,4 @@
-| XML Path | Ontology Property | Entity Class | Related Entity Class | Subject Generation | Join Condition | Datatype | Function Name | Function Output |
+| XML Path | Ontology Property | Entity Class | Related Entity Class | Subject Generation | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | id | :hasID | :ProcurementObject | :Identifier | id_value | N/A | - | - | - |
 | link/@href | owl:sameAs | :ProcurementObject | :Document | get_document_uri(id_value) | N/A | - | - | - |

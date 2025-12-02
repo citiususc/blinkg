@@ -1,4 +1,4 @@
-| XML Path | Ontology Property | Entity Class | Related Entity Class | Subject Generation | Join Condition | Datatype | Function Name | Function Output |
+| XML Path | Ontology Property | Entity Class | Related Entity Class | Subject Generation | Join | Datatype | Function Name | Function Output |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | `entry/cac-place-ext:ContractFolderStatus/cbc:ContractFolderID` | `:hasID` | `:Procedure` | `:Identifier` | `procurement-procedure:{entry/cac-place-ext:ContractFolderStatus/cbc:ContractFolderID}` | - | - | - | - |
 | `entry/title` | `dcterms:title` | `:Procedure` | - | `procurement-procedure:{entry/cac-place-ext:ContractFolderStatus/cbc:ContractFolderID}` | - | `xsd:string` | - | - |

@@ -1,4 +1,4 @@
-| XML Path  | Ontology Property | Entity Class | Related Entity Class | Subject Generation  | Join Condition  | Datatype  | Function Name | Function Output  |
+| XML Path  | Ontology Property | Entity Class | Related Entity Class | Subject Generation  | Join  | Datatype  | Function Name | Function Output  |
 |--------------------------------------------------------------------------|-------------------------------------------|--------------------|----------------------------|------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|--------------------------|------------------------|---------------------------------------------------------------------------------|
 | `/entry/id`  | `dcterms:identifier`    | `:ResultNotice`    | - | Value of `/entry/id`| | `xsd:anyURI`    | - | - |
 | `/entry/updated`   | `:hasDispatchDate`| `:ResultNotice`    | - | Value of `/entry/id`| | `xsd:dateTime`  | - | - |

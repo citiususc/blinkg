@@ -1,4 +1,4 @@
-| XML Path | Ontology Property | Entity Class | Related Entity Class | Subject Generation | Join Condition | Datatype | Function Name | Function Output |
+| XML Path | Ontology Property | Entity Class | Related Entity Class | Subject Generation | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | /entry/id | :hasID | :ProcurementObject |  | concat("https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/", ./id) |  | string |  ||
 | /entry/summary | :describesLot | :LotAwardOutcome | :Lot | ./summary | ./lot = ./summary/@lot |  |  |  |

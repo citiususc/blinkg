@@ -1,4 +1,4 @@
-| XML Path | Ontology Property | Entity Class | Related Entity Class | Subject Generation | Join Condition | Datatype | Function Name | Function Output |
+| XML Path | Ontology Property | Entity Class | Related Entity Class | Subject Generation | Join | Datatype | Function Name | Function Output |
 |---|---|---|---|---|---|---|---|---|
 | `/entry` | - | `:ResultNotice` | - | `notice:{/entry/id}` | - | - | - | - |
 | `/entry` | - | `:Procedure` | - | `procedure:{/entry/id}` | A `:ResultNotice` is generated for the `:Procedure` with the same ID. | - | - | - |

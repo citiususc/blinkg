@@ -1,4 +1,4 @@
-| XML Path | Ontology Property | Entity Class | Related Entity Class | Subject Generation | Join Condition | Datatype | Function Name | Function Output |
+| XML Path | Ontology Property | Entity Class | Related Entity Class | Subject Generation | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | id | hasID | Procurement Object | Identifier | URI(prefix, input.id) |  | - |  |  |
 | link | address | Procurement Object | Address | URI(prefix, input.link) |  | - |  |  |

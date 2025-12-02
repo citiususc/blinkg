@@ -3,7 +3,7 @@ Datatype,0.2746416750467486,o3_clean,max_all
 Entity Class,0.2972965405872441,o3_clean,max_all
 Function Name,0.1198371818496121,o3_clean,max_all
 Function Output,0.3673561759707,o3_clean,max_all
-Join Condition,0.1660082505636469,o3_clean,max_all
+Join,0.1660082505636469,o3_clean,max_all
 Ontology Property,0.6500001462732415,o3_clean,max_all
 Related Entity Class,0.4996437189465172,o3_clean,max_all
 Subject Generation,0.3115159385712892,o3_clean,max_all
@@ -12,7 +12,7 @@ Datatype,0.1880756436105541,gemini_clean,max_all
 Entity Class,0.635385257800099,gemini_clean,max_all
 Function Name,0.2450009914425512,gemini_clean,max_all
 Function Output,0.3405771293366949,gemini_clean,max_all
-Join Condition,0.1400980247852619,gemini_clean,max_all
+Join,0.1400980247852619,gemini_clean,max_all
 Ontology Property,0.4232210832186522,gemini_clean,max_all
 Related Entity Class,0.4064473536864993,gemini_clean,max_all
 Subject Generation,0.4026423116641151,gemini_clean,max_all
@@ -22,7 +22,7 @@ Datatype,0.1737268998162958,mixtral_clean,max_all
 Entity Class,0.2759373732160109,mixtral_clean,max_all
 Function Name,0.0950587002187822,mixtral_clean,max_all
 Function Output,0.1684598026176293,mixtral_clean,max_all
-Join Condition,0.1303358716535426,mixtral_clean,max_all
+Join,0.1303358716535426,mixtral_clean,max_all
 Ontology Property,0.3035498388351787,mixtral_clean,max_all
 Related Entity Class,0.2073853105537124,mixtral_clean,max_all
 Subject Generation,0.2639440172385434,mixtral_clean,max_all
@@ -31,7 +31,7 @@ Datatype,0.1864813742848734,llama_clean,max_all
 Entity Class,0.4028886346260925,llama_clean,max_all
 Function Name,0.1982571832939154,llama_clean,max_all
 Function Output,0.2519529663647215,llama_clean,max_all
-Join Condition,0.1794924769150324,llama_clean,max_all
+Join,0.1794924769150324,llama_clean,max_all
 Ontology Property,0.4377213359263952,llama_clean,max_all
 Related Entity Class,0.2753823921637323,llama_clean,max_all
 Subject Generation,0.4060218761665652,llama_clean,max_all
@@ -40,7 +40,7 @@ Datatype,0.2233926915447619,deepseek_clean,max_all
 Entity Class,0.6032049088565747,deepseek_clean,max_all
 Function Name,0.1766707482230332,deepseek_clean,max_all
 Function Output,0.2440232958437668,deepseek_clean,max_all
-Join Condition,0.145006771661655,deepseek_clean,max_all
+Join,0.145006771661655,deepseek_clean,max_all
 Ontology Property,0.3903305865104401,deepseek_clean,max_all
 Related Entity Class,0.2301180751284515,deepseek_clean,max_all
 Subject Generation,0.3735021870090327,deepseek_clean,max_all
@@ -49,7 +49,7 @@ Datatype,0.1378417974337935,gpt4o_clean,max_all
 Entity Class,0.6290883234168728,gpt4o_clean,max_all
 Function Name,0.0577206313610076,gpt4o_clean,max_all
 Function Output,0.1700925417244434,gpt4o_clean,max_all
-Join Condition,0.1670620525876681,gpt4o_clean,max_all
+Join,0.1670620525876681,gpt4o_clean,max_all
 Ontology Property,0.4036144953755456,gpt4o_clean,max_all
 Related Entity Class,0.3753147627271356,gpt4o_clean,max_all
 Subject Generation,0.2937847660647498,gpt4o_clean,max_all

@@ -1,4 +1,4 @@
-| XML Path | Ontology Property | Entity Class | Related Entity Class | Subject Generation | Join Condition | Datatype | Function Name | Function Output |
+| XML Path | Ontology Property | Entity Class | Related Entity Class | Subject Generation | Join | Datatype | Function Name | Function Output |
 |----------|-------------------|--------------|-----------------------|--------------------|----------------|----------|----------------|------------------|
 | entry/id | :hasID | :Procedure | :Identifier | http://data.example.org/procurement/entry/id | ||  ||
 | entry/cac-place-ext:ContractFolderStatus/cac-place-ext:LocatedContractingParty/cac:Party/cac:PartyIdentification[cbc:ID@schemeName='NIF']/cbc:ID | :hasID | org:Organization | :Identifier | http://data.example.org/organization/NIF | | | | |

@@ -1,4 +1,4 @@
-| XML Path | Ontology Property | Entity Class | Related Entity Class | Subject Generation | Join Condition | Datatype | Function Name | Function Output |
+| XML Path | Ontology Property | Entity Class | Related Entity Class | Subject Generation | Join | Datatype | Function Name | Function Output |
 |----------|--------------------|---------------|------------------------|--------------------|----------------|----------|----------------|------------------|
 | `/entry/id` | `:hasID` | `Procedure` | `Identifier` | `concat('lot-', substring-after(text(), 'licitacionesPerfilContratante/'))` |  | | | |
 | `/entry/cac-place-ext:ContractFolderStatus/cbc:ContractFolderID` | `:hasID` | `Lot` | `Identifier` | `concat('lot-', normalize-space(text()))` |  | | | |

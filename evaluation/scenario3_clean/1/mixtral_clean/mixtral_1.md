@@ -1,4 +1,4 @@
-| XML Path | Ontology Property | Entity Class | Related Entity Class | Subject Generation | Join Condition | Datatype | Function Name | Function Output |
+| XML Path | Ontology Property | Entity Class | Related Entity Class | Subject Generation | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | /entry/id | :hasID | :Document | :Identifier | URI of the document | - || | |
 | /entry/summary[@type='text'] | :title | :Document | rdfs:Literal | Concatenate '/entry/' and the value of the @id attribute | - | string | | |

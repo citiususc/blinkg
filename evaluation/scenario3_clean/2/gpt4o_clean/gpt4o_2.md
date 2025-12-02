@@ -1,4 +1,4 @@
-| XML Path  | Ontology Property | Entity Class | Related Entity Class | Subject Generation    | Join Condition| Datatype | Function Name| Function Output  |
+| XML Path  | Ontology Property | Entity Class | Related Entity Class | Subject Generation    | Join| Datatype | Function Name| Function Output  |
 |--------------------------------------------------------------------------------------------|------------------------------------------|-------------------|-----------------------|------------------------------------------|------------------------------------------|----------|----------------------------|----------------------------------------------------------------------------------|
 | entry/id  | :hasID| :Procedure| :Identifier  | concat('proc-', hash(entry/id))| N/A  |  | |    |
 | cac-place-ext:ContractFolderStatus/cbc:ContractFolderID| :hasID| :Procedure| :Identifier  | concat('proc-', hash(entry/id)) | entry/id maps to contract folder|    | | |

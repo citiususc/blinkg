@@ -1,4 +1,4 @@
-| XML Path | Ontology Property | Entity Class | Related Entity Class | Subject Generation | Join Condition | Datatype | Function Name | Function Output |
+| XML Path | Ontology Property | Entity Class | Related Entity Class | Subject Generation | Join | Datatype | Function Name | Function Output |
 |----------|-------------------|--------------|-----------------------|--------------------|----------------|----------|----------------|-----------------|
 | `/entry/id` | `a4g:hasID` | `a4g:Procedure` | `a4g:Identifier` | IRI of Procedure is `/entry/id` | Identifier used as object in `a4g:hasID` |  |  |  |
 | `/entry/cac-place-ext:ContractFolderStatus/cbc:ContractFolderID` | `a4g:hasID` | `a4g:Lot` | `a4g:Identifier` | IRI using `/entry/id` + `/lot/` + normalized ContractFolderID | Identifier used as object in `a4g:hasID` | | | |

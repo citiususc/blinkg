@@ -1,4 +1,4 @@
-| XML Path  | Ontology Property| Entity Class   | Related Entity Class | Subject Generation | Join Condition   | Datatype   | Function Name | Function Output |
+| XML Path  | Ontology Property| Entity Class   | Related Entity Class | Subject Generation | Join   | Datatype   | Function Name | Function Output |
 |----------------------|------------------|----------------|----------------------|--------------------------|-----------------------------|------------|------------|-------------------|
 | entry/cac-place-ext:ContractFolderStatus/cbc:ContractFolderID   | :hasID | :Procedure| :Identifier| concat('proc_', ContractFolderID)|   |  | | |
 | entry/cac-place-ext:ContractFolderStatus/cac:ProcurementProject/cbc:Name  | rdfs:label  | :Procedure|  | concat('proc_', ContractFolderID)|   | xsd:string | | |

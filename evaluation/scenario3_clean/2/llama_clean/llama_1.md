@@ -1,4 +1,4 @@
-| XML Path | Ontology Property | Entity Class | Related Entity Class | Subject Generation | Join Condition | Datatype | Function Name | Function Output |
+| XML Path | Ontology Property | Entity Class | Related Entity Class | Subject Generation | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | /entry/id | :hasID | :ProcurementObject | - | https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/{id} | - | string | - | - |
 | /entry/summary | :hasDispatchDate | :Document | - | https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/{id} | - | datetime | - | - |
