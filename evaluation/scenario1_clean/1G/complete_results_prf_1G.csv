@@ -2,7 +2,7 @@ column,TP,FP,FN,precision,recall,f1,method
 CSV Column,5,0,12,1.0,0.2941176470588235,0.4545454545454545,gemini_2.5_0.80_all
 Datatype,15,0,0,1.0,1.0,1.0,gemini_2.5_0.80_all
 Entity Class,18,0,0,1.0,1.0,1.0,gemini_2.5_0.80_all
-Join Condition,3,0,0,1.0,1.0,1.0,gemini_2.5_0.80_all
+Join,3,0,0,1.0,1.0,1.0,gemini_2.5_0.80_all
 Language Annotations,0,0,3,0.0,0.0,0.0,gemini_2.5_0.80_all
 Ontology Property,18,0,0,1.0,1.0,1.0,gemini_2.5_0.80_all
 Related Entity Class,3,0,0,1.0,1.0,1.0,gemini_2.5_0.80_all
@@ -10,7 +10,7 @@ Subject Generation,12,0,6,1.0,0.6666666666666666,0.8,gemini_2.5_0.80_all
 CSV Column,9,0,15,1.0,0.375,0.5454545454545454,o3_0.80_all
 Datatype,11,0,6,1.0,0.6470588235294118,0.7857142857142858,o3_0.80_all
 Entity Class,16,0,8,1.0,0.6666666666666666,0.8,o3_0.80_all
-Join Condition,2,0,2,1.0,0.5,0.6666666666666666,o3_0.80_all
+Join,2,0,2,1.0,0.5,0.6666666666666666,o3_0.80_all
 Language Annotations,0,0,3,0.0,0.0,0.0,o3_0.80_all
 Ontology Property,11,0,13,1.0,0.4583333333333333,0.6285714285714286,o3_0.80_all
 Related Entity Class,1,0,1,1.0,0.5,0.6666666666666666,o3_0.80_all
@@ -18,7 +18,7 @@ Subject Generation,21,0,3,1.0,0.875,0.9333333333333332,o3_0.80_all
 CSV Column,5,0,14,1.0,0.2631578947368421,0.4166666666666667,deepseek_0.80_all
 Datatype,14,0,0,1.0,1.0,1.0,deepseek_0.80_all
 Entity Class,17,0,0,1.0,1.0,1.0,deepseek_0.80_all
-Join Condition,0,0,3,0.0,0.0,0.0,deepseek_0.80_all
+Join,0,0,3,0.0,0.0,0.0,deepseek_0.80_all
 Language Annotations,3,0,0,1.0,1.0,1.0,deepseek_0.80_all
 Ontology Property,15,0,2,1.0,0.8823529411764706,0.9375,deepseek_0.80_all
 Related Entity Class,3,0,0,1.0,1.0,1.0,deepseek_0.80_all
@@ -26,7 +26,7 @@ Subject Generation,8,0,9,1.0,0.4705882352941176,0.6399999999999999,deepseek_0.80
 CSV Column,0,0,18,0.0,0.0,0.0,gpt4o_0.80_all
 Datatype,16,0,0,1.0,1.0,1.0,gpt4o_0.80_all
 Entity Class,19,0,0,1.0,1.0,1.0,gpt4o_0.80_all
-Join Condition,0,0,3,0.0,0.0,0.0,gpt4o_0.80_all
+Join,0,0,3,0.0,0.0,0.0,gpt4o_0.80_all
 Language Annotations,1,0,0,1.0,1.0,1.0,gpt4o_0.80_all
 Ontology Property,17,0,2,1.0,0.8947368421052632,0.9444444444444444,gpt4o_0.80_all
 Related Entity Class,3,0,0,1.0,1.0,1.0,gpt4o_0.80_all
@@ -34,7 +34,7 @@ Subject Generation,5,0,14,1.0,0.2631578947368421,0.4166666666666667,gpt4o_0.80_a
 CSV Column,0,0,16,0.0,0.0,0.0,llama_hf_0.80_all
 Datatype,14,0,0,1.0,1.0,1.0,llama_hf_0.80_all
 Entity Class,16,0,0,1.0,1.0,1.0,llama_hf_0.80_all
-Join Condition,0,0,2,0.0,0.0,0.0,llama_hf_0.80_all
+Join,0,0,2,0.0,0.0,0.0,llama_hf_0.80_all
 Language Annotations,3,0,0,1.0,1.0,1.0,llama_hf_0.80_all
 Ontology Property,12,0,4,1.0,0.75,0.8571428571428571,llama_hf_0.80_all
 Related Entity Class,2,0,0,1.0,1.0,1.0,llama_hf_0.80_all
@@ -42,7 +42,7 @@ Subject Generation,16,0,0,1.0,1.0,1.0,llama_hf_0.80_all
 CSV Column,0,0,19,0.0,0.0,0.0,mixtral_hf_0.80_all
 Datatype,17,0,0,1.0,1.0,1.0,mixtral_hf_0.80_all
 Entity Class,19,0,0,1.0,1.0,1.0,mixtral_hf_0.80_all
-Join Condition,0,0,1,0.0,0.0,0.0,mixtral_hf_0.80_all
+Join,0,0,1,0.0,0.0,0.0,mixtral_hf_0.80_all
 Language Annotations,0,0,1,0.0,0.0,0.0,mixtral_hf_0.80_all
 Ontology Property,15,0,4,1.0,0.7894736842105263,0.8823529411764706,mixtral_hf_0.80_all
 Related Entity Class,1,0,0,1.0,1.0,1.0,mixtral_hf_0.80_all

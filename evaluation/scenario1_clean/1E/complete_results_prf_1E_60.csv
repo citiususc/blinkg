@@ -1,37 +1,37 @@
 column,TP,FP,FN,precision,recall,f1,method
 CSV Column,15,0,0,1.0,1.0,1.0,gemini_2.5_0.60_all
 Entity Class,15,0,0,1.0,1.0,1.0,gemini_2.5_0.60_all
-Join Condition,3,0,0,1.0,1.0,1.0,gemini_2.5_0.60_all
+Join,3,0,0,1.0,1.0,1.0,gemini_2.5_0.60_all
 Ontology Property,15,0,0,1.0,1.0,1.0,gemini_2.5_0.60_all
 Related Entity Class,3,0,0,1.0,1.0,1.0,gemini_2.5_0.60_all
 Subject Generation,15,0,0,1.0,1.0,1.0,gemini_2.5_0.60_all
 CSV Column,15,0,0,1.0,1.0,1.0,o3_0.60_all
 Entity Class,15,0,0,1.0,1.0,1.0,o3_0.60_all
-Join Condition,3,0,0,1.0,1.0,1.0,o3_0.60_all
+Join,3,0,0,1.0,1.0,1.0,o3_0.60_all
 Ontology Property,13,0,2,1.0,0.8666666666666667,0.9285714285714286,o3_0.60_all
 Related Entity Class,3,0,0,1.0,1.0,1.0,o3_0.60_all
 Subject Generation,15,0,0,1.0,1.0,1.0,o3_0.60_all
 CSV Column,15,0,0,1.0,1.0,1.0,deepseek_0.60_all
 Entity Class,15,0,0,1.0,1.0,1.0,deepseek_0.60_all
-Join Condition,3,0,0,1.0,1.0,1.0,deepseek_0.60_all
+Join,3,0,0,1.0,1.0,1.0,deepseek_0.60_all
 Ontology Property,15,0,0,1.0,1.0,1.0,deepseek_0.60_all
 Related Entity Class,3,0,0,1.0,1.0,1.0,deepseek_0.60_all
 Subject Generation,15,0,0,1.0,1.0,1.0,deepseek_0.60_all
 CSV Column,3,0,12,1.0,0.2,0.3333333333333333,gpt4o_0.60_all
 Entity Class,15,0,0,1.0,1.0,1.0,gpt4o_0.60_all
-Join Condition,3,0,0,1.0,1.0,1.0,gpt4o_0.60_all
+Join,3,0,0,1.0,1.0,1.0,gpt4o_0.60_all
 Ontology Property,15,0,0,1.0,1.0,1.0,gpt4o_0.60_all
 Related Entity Class,3,0,0,1.0,1.0,1.0,gpt4o_0.60_all
 Subject Generation,15,0,0,1.0,1.0,1.0,gpt4o_0.60_all
 CSV Column,15,0,0,1.0,1.0,1.0,llama_hf_0.60_all
 Entity Class,15,0,0,1.0,1.0,1.0,llama_hf_0.60_all
-Join Condition,1,0,2,1.0,0.3333333333333333,0.5,llama_hf_0.60_all
+Join,1,0,2,1.0,0.3333333333333333,0.5,llama_hf_0.60_all
 Ontology Property,15,0,0,1.0,1.0,1.0,llama_hf_0.60_all
 Related Entity Class,3,0,0,1.0,1.0,1.0,llama_hf_0.60_all
 Subject Generation,15,0,0,1.0,1.0,1.0,llama_hf_0.60_all
 CSV Column,0,0,15,0.0,0.0,0.0,mixtral_hf_0.60_all
 Entity Class,15,0,0,1.0,1.0,1.0,mixtral_hf_0.60_all
-Join Condition,3,0,0,1.0,1.0,1.0,mixtral_hf_0.60_all
+Join,3,0,0,1.0,1.0,1.0,mixtral_hf_0.60_all
 Ontology Property,14,0,1,1.0,0.9333333333333332,0.9655172413793104,mixtral_hf_0.60_all
 Related Entity Class,3,0,0,1.0,1.0,1.0,mixtral_hf_0.60_all
 Subject Generation,10,0,5,1.0,0.6666666666666666,0.8,mixtral_hf_0.60_all

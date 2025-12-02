@@ -1,37 +1,37 @@
 column,mean_similarity,LLM,method
 Data Reference,0.9702111641565958,gemini,max_all
 Entity Class,1.0,gemini,max_all
-Join Condition,0.7176752885182699,gemini,max_all
+Join,0.7176752885182699,gemini,max_all
 Ontology Property,1.0,gemini,max_all
 Related Entity Class,1.0,gemini,max_all
 Subject Generation,0.9524062673250834,gemini,max_all
 Data Reference,0.944421676794688,o3,max_all
 Entity Class,1.0,o3,max_all
-Join Condition,0.9831384420394896,o3,max_all
+Join,0.9831384420394896,o3,max_all
 Ontology Property,0.7690659562746683,o3,max_all
 Related Entity Class,1.0,o3,max_all
 Subject Generation,0.9267096678415934,o3,max_all
 Data Reference,0.7250437992293627,deepseek,max_all
 Entity Class,1.0,deepseek,max_all
-Join Condition,0.9831384420394896,deepseek,max_all
+Join,0.9831384420394896,deepseek,max_all
 Ontology Property,1.0,deepseek,max_all
 Related Entity Class,1.0,deepseek,max_all
 Subject Generation,0.9157556056976318,deepseek,max_all
 Data Reference,0.4617187045869372,gpt4o,max_all
 Entity Class,1.0,gpt4o,max_all
-Join Condition,0.6136860350767771,gpt4o,max_all
+Join,0.6136860350767771,gpt4o,max_all
 Ontology Property,1.0,gpt4o,max_all
 Related Entity Class,1.0,gpt4o,max_all
 Subject Generation,0.9788790384928386,gpt4o,max_all
 Data Reference,0.9772910833358764,llama,max_all
 Entity Class,1.0,llama,max_all
-Join Condition,0.6104049682617188,llama,max_all
+Join,0.6104049682617188,llama,max_all
 Ontology Property,1.0,llama,max_all
 Related Entity Class,1.0,llama,max_all
 Subject Generation,1.0,llama,max_all
 Data Reference,0.328366390296391,mixtral,max_all
 Entity Class,1.0,mixtral,max_all
-Join Condition,0.7461673021316528,mixtral,max_all
+Join,0.7461673021316528,mixtral,max_all
 Ontology Property,0.9706372539202373,mixtral,max_all
 Related Entity Class,1.0,mixtral,max_all
 Subject Generation,0.5155567212239328,mixtral,max_all

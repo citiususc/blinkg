@@ -17,12 +17,12 @@ Entity Class,gpt4o,0.9919582158327103
 Entity Class,llama,0.9959791079163551
 Entity Class,mixtral,1.0
 Entity Class,o3,0.9576265408347051
-Join Condition,deepseek,0.533455232446858
-Join Condition,gemini,0.693204071556367
-Join Condition,gpt4o,0.4564300454376886
-Join Condition,llama,0.3746738369162712
-Join Condition,mixtral,0.417797200459366
-Join Condition,o3,0.594480891750815
+Join,deepseek,0.533455232446858
+Join,gemini,0.693204071556367
+Join,gpt4o,0.4564300454376886
+Join,llama,0.3746738369162712
+Join,mixtral,0.417797200459366
+Join,o3,0.594480891750815
 Language Annotations,deepseek,0.9053728735005413
 Language Annotations,gemini,0.8333333333333333
 Language Annotations,gpt4o,0.6555465459823608

@@ -1,7 +1,7 @@
 column,TP,FP,FN,precision,recall,f1
 CSV Column,0,0,22,0.0,0.0,0.0
 Entity Class,25,0,0,1.0,1.0,1.0
-Join Condition,0,0,3,0.0,0.0,0.0
+Join,0,0,3,0.0,0.0,0.0
 Ontology Property,23,0,2,1.0,0.92,0.9583333333333334
 Related Entity Class,3,0,0,1.0,1.0,1.0
 Subject Generation,4,0,21,1.0,0.16,0.2758620689655173

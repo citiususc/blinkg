@@ -8,7 +8,7 @@ header_list = [
     "Entity Class",
     "Related Entity Class",
     "Subject Generation",
-    "Join Condition",
+    "Join",
     "Datatype",
     #"Language Annotations",
     "Function Name",

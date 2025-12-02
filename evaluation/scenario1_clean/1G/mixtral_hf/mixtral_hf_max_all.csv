@@ -2,7 +2,7 @@ column,mean_similarity
 CSV Column,0.37159192589698015
 Datatype,0.9097998847288115
 Entity Class,1.0
-Join Condition,0.10955105442553759
+Join,0.10955105442553759
 Language Annotations,0.32334589792622465
 Ontology Property,0.914988097217348
 Related Entity Class,0.24833360562721887

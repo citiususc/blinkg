@@ -1,4 +1,4 @@
-|       CSV Column        | Ontology Property | Entity Class | Related Entity Class |            Subject Generation             |                      Join Condition                       |    Datatype    | Language Annotations |
+|       CSV Column        | Ontology Property | Entity Class | Related Entity Class |            Subject Generation             |                      Join                       |    Datatype    | Language Annotations |
 |:-----------------------:|:-----------------:|:------------:|:--------------------:|:-----------------------------------------:|:---------------------------------------------------------:|:--------------:|:--------------------:|
 |    fname persons.csv    |   ex:firstname    |  ex:Person   |          -           | http://example.org/person/{fname}_{lname} |                             -                             |   xsd:string   |          -           |
 |    lname persons.csv    |    ex:lastname    |  ex:Person   |          -           | http://example.org/person/{fname}_{lname} |                             -                             |   xsd:string   |          -           |

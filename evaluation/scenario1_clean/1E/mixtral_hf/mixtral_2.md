@@ -1,4 +1,4 @@
-| CSV Column | Ontology Property | Entity Class | Related Entity Class | Subject Generation | Join Condition |
+| CSV Column | Ontology Property | Entity Class | Related Entity Class | Subject Generation | Join |
 | --- | --- | --- | --- | --- | --- |
 | ID | ex:id | ex:Person | - | "http://example.org/#Person" + ID | - |
 | Sport | ex:practises | ex:Person | ex:Sport | "http://example.org/#Person" + ID | sport.csv.ID = student.csv.Sport |
