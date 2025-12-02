@@ -2,7 +2,7 @@ column,TP,FP,FN,precision,recall,f1
 CSV Column,0,0,19,0.0,0.0,0.0
 Datatype,17,0,2,1.0,0.8947368421052632,0.9444444444444444
 Entity Class,19,0,0,1.0,1.0,1.0
-Join Condition,0,0,0,0.0,0.0,0.0
+Join,0,0,0,0.0,0.0,0.0
 Language Annotations,0,0,1,0.0,0.0,0.0
 Ontology Property,17,0,2,1.0,0.8947368421052632,0.9444444444444444
 Related Entity Class,1,0,0,1.0,1.0,1.0

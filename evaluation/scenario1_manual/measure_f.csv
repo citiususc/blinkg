@@ -1,4 +1,4 @@
-Method,Data Reference,Ontology Property,Entity Class,Related Entity Class,Subject Generation,Join Condition,Datatype,Language Annotations
+Method,Data Reference,Ontology Property,Entity Class,Related Entity Class,Subject Generation,Join,Datatype,Language Annotations
 Deepseek R1,0.83,0.92,0.92,0.89,0.93,0.47,0.87,1.00
 Gemini 2.5 Pro,0.89,0.97,0.97,1.00,0.97,0.92,0.96,1.00
 GPT4o,0.80,0.92,0.91,0.93,0.89,0.43,0.86,0.73

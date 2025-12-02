@@ -1,4 +1,4 @@
-|CSV Column|Ontology Property|Entity Class|Related Entity Class|Subject Generation|Join Condition
+|CSV Column|Ontology Property|Entity Class|Related Entity Class|Subject Generation|Join
 |---|---|---|---|---|---|
 |Student|ex:fullname |ex:Person |-|ex:[Student] (e.g. ex:Venus )|N/A (direct property of Person entity)|
 |Sport|ex:sportname |ex:Sport |-|ex:[Sport] (e.g. ex:Tennis )|N/A (direct property of Sport entity)|

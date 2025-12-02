@@ -1,37 +1,37 @@
 column,mean_similarity,LLM,method
 Data Reference,0.6308487939771521,gemini,max_all
 Entity Class,0.921158441901207,gemini,max_all
-Join Condition,0.838685671488444,gemini,max_all
+Join,0.838685671488444,gemini,max_all
 Ontology Property,0.9026457417756318,gemini,max_all
 Related Entity Class,1.0,gemini,max_all
 Subject Generation,0.8710833225399256,gemini,max_all
 Data Reference,0.8608730080581847,o3,max_all
 Entity Class,1.0,o3,max_all
-Join Condition,0.7416194677352905,o3,max_all
+Join,0.7416194677352905,o3,max_all
 Ontology Property,0.98451794896807,o3,max_all
 Related Entity Class,1.0,o3,max_all
 Subject Generation,0.9516170876366752,o3,max_all
 Data Reference,0.7346005527037806,deepseek,max_all
 Entity Class,0.907519482076168,deepseek,max_all
-Join Condition,0.506380209625176,deepseek,max_all
+Join,0.506380209625176,deepseek,max_all
 Ontology Property,0.923626368954068,deepseek,max_all
 Related Entity Class,0.6246098279953003,deepseek,max_all
 Subject Generation,0.7899227983185223,deepseek,max_all
 Data Reference,0.3833330076973454,gpt4o,max_all
 Entity Class,0.935665726661682,gpt4o,max_all
-Join Condition,0.4279861745114128,gpt4o,max_all
+Join,0.4279861745114128,gpt4o,max_all
 Ontology Property,0.8750470301540441,gpt4o,max_all
 Related Entity Class,0.7435714304447174,gpt4o,max_all
 Subject Generation,0.8951959354536875,gpt4o,max_all
 Data Reference,0.883235650403159,llama,max_all
 Entity Class,0.9678328633308412,llama,max_all
-Join Condition,0.249788586050272,llama,max_all
+Join,0.249788586050272,llama,max_all
 Ontology Property,0.8482096940279007,llama,max_all
 Related Entity Class,0.6185454577207565,llama,max_all
 Subject Generation,0.8951959865433828,llama,max_all
 Data Reference,0.4042344045360462,mixtral,max_all
 Entity Class,1.0,mixtral,max_all
-Join Condition,0.4058894198387861,mixtral,max_all
+Join,0.4058894198387861,mixtral,max_all
 Ontology Property,0.943135013182958,mixtral,max_all
 Related Entity Class,1.0,mixtral,max_all
 Subject Generation,0.6117085933133408,mixtral,max_all

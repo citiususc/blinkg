@@ -1,4 +1,4 @@
-| CSV Column | Ontology Property | Entity Class | Related Entity Class | Subject Generation | Join Condition |
+| CSV Column | Ontology Property | Entity Class | Related Entity Class | Subject Generation | Join |
 | --- | --- | --- | --- | --- | --- |
 | ID | ex:id | ex:Person | - | Use ID to generate subject URI (e.g., `<http://example.org/#Person_ID>`) | - |
 | FirstName | ex:firstname | ex:Person | - | Use ID to generate subject URI (e.g., `<http://example.org/#Person_ID>`) | - |

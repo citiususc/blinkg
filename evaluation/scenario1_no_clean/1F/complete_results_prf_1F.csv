@@ -1,37 +1,37 @@
 column,TP,FP,FN,precision,recall,f1,method
 CSV Column,6,0,16,1.0,0.2727272727272727,0.4285714285714285,gemini_2.5_0.80_all
 Entity Class,19,0,0,1.0,1.0,1.0,gemini_2.5_0.80_all
-Join Condition,2,0,1,1.0,0.6666666666666666,0.8,gemini_2.5_0.80_all
+Join,2,0,1,1.0,0.6666666666666666,0.8,gemini_2.5_0.80_all
 Ontology Property,19,0,0,1.0,1.0,1.0,gemini_2.5_0.80_all
 Related Entity Class,3,0,0,1.0,1.0,1.0,gemini_2.5_0.80_all
 Subject Generation,16,0,3,1.0,0.8421052631578947,0.9142857142857144,gemini_2.5_0.80_all
 CSV Column,16,0,5,1.0,0.7619047619047619,0.8648648648648648,o3_0.80_all
 Entity Class,21,0,0,1.0,1.0,1.0,o3_0.80_all
-Join Condition,3,0,0,1.0,1.0,1.0,o3_0.80_all
+Join,3,0,0,1.0,1.0,1.0,o3_0.80_all
 Ontology Property,20,0,1,1.0,0.9523809523809524,0.975609756097561,o3_0.80_all
 Related Entity Class,3,0,0,1.0,1.0,1.0,o3_0.80_all
 Subject Generation,18,0,3,1.0,0.8571428571428571,0.923076923076923,o3_0.80_all
 CSV Column,13,0,9,1.0,0.5909090909090909,0.7428571428571429,deepseek_0.80_all
 Entity Class,19,0,3,1.0,0.8636363636363636,0.9268292682926828,deepseek_0.80_all
-Join Condition,4,0,0,1.0,1.0,1.0,deepseek_0.80_all
+Join,4,0,0,1.0,1.0,1.0,deepseek_0.80_all
 Ontology Property,20,0,2,1.0,0.9090909090909092,0.9523809523809524,deepseek_0.80_all
 Related Entity Class,3,0,1,1.0,0.75,0.8571428571428571,deepseek_0.80_all
 Subject Generation,13,0,9,1.0,0.5909090909090909,0.7428571428571429,deepseek_0.80_all
 CSV Column,0,0,21,0.0,0.0,0.0,gpt4o_0.80_all
 Entity Class,19,0,2,1.0,0.9047619047619048,0.95,gpt4o_0.80_all
-Join Condition,0,0,3,0.0,0.0,0.0,gpt4o_0.80_all
+Join,0,0,3,0.0,0.0,0.0,gpt4o_0.80_all
 Ontology Property,18,0,1,1.0,0.9473684210526316,0.972972972972973,gpt4o_0.80_all
 Related Entity Class,3,0,0,1.0,1.0,1.0,gpt4o_0.80_all
 Subject Generation,15,0,6,1.0,0.7142857142857143,0.8333333333333333,gpt4o_0.80_all
 CSV Column,18,0,3,1.0,0.8571428571428571,0.923076923076923,llama_hf_0.80_all
 Entity Class,20,0,1,1.0,0.9523809523809524,0.975609756097561,llama_hf_0.80_all
-Join Condition,0,0,3,0.0,0.0,0.0,llama_hf_0.80_all
+Join,0,0,3,0.0,0.0,0.0,llama_hf_0.80_all
 Ontology Property,17,0,4,1.0,0.8095238095238095,0.8947368421052632,llama_hf_0.80_all
 Related Entity Class,3,0,0,1.0,1.0,1.0,llama_hf_0.80_all
 Subject Generation,15,0,6,1.0,0.7142857142857143,0.8333333333333333,llama_hf_0.80_all
 CSV Column,0,0,22,0.0,0.0,0.0,mixtral_hf_0.80_all
 Entity Class,25,0,0,1.0,1.0,1.0,mixtral_hf_0.80_all
-Join Condition,0,0,3,0.0,0.0,0.0,mixtral_hf_0.80_all
+Join,0,0,3,0.0,0.0,0.0,mixtral_hf_0.80_all
 Ontology Property,23,0,2,1.0,0.92,0.9583333333333334,mixtral_hf_0.80_all
 Related Entity Class,3,0,0,1.0,1.0,1.0,mixtral_hf_0.80_all
 Subject Generation,4,0,21,1.0,0.16,0.2758620689655173,mixtral_hf_0.80_all

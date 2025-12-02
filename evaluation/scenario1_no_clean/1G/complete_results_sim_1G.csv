@@ -2,7 +2,7 @@ column,mean_similarity,LLM,method
 Data Reference,0.5169034184817906,gemini,max_all
 Datatype,0.8503883257508278,gemini,max_all
 Entity Class,1.0,gemini,max_all
-Join Condition,0.0567560835431019,gemini,max_all
+Join,0.0567560835431019,gemini,max_all
 Language Annotations,0.6666666666666666,gemini,max_all
 Ontology Property,1.0,gemini,max_all
 Related Entity Class,1.0,gemini,max_all
@@ -10,7 +10,7 @@ Subject Generation,0.8321918893342066,gemini,max_all
 Data Reference,0.643965414891035,o3,max_all
 Datatype,0.7337485731889805,o3,max_all
 Entity Class,0.8482411752144495,o3,max_all
-Join Condition,0.1076360193391641,o3,max_all
+Join,0.1076360193391641,o3,max_all
 Language Annotations,0.6685183048248291,o3,max_all
 Ontology Property,0.7235132270101188,o3,max_all
 Related Entity Class,0.4399820317824681,o3,max_all
@@ -18,7 +18,7 @@ Subject Generation,0.9016694352030754,o3,max_all
 Data Reference,0.5306325886874785,deepseek,max_all
 Datatype,0.8520446775192775,deepseek,max_all
 Entity Class,0.9387448330720266,deepseek,max_all
-Join Condition,0.050600684380957,deepseek,max_all
+Join,0.050600684380957,deepseek,max_all
 Language Annotations,1.0,deepseek,max_all
 Ontology Property,0.9172088326530412,deepseek,max_all
 Related Entity Class,1.0,deepseek,max_all
@@ -26,7 +26,7 @@ Subject Generation,0.6307306227571831,deepseek,max_all
 Data Reference,0.3661665182692298,gpt4o,max_all
 Datatype,0.9125243060361772,gpt4o,max_all
 Entity Class,1.0,gpt4o,max_all
-Join Condition,0.0569924368301317,gpt4o,max_all
+Join,0.0569924368301317,gpt4o,max_all
 Language Annotations,0.3,gpt4o,max_all
 Ontology Property,0.9806749139513288,gpt4o,max_all
 Related Entity Class,1.0,gpt4o,max_all
@@ -34,7 +34,7 @@ Subject Generation,0.5258026380087579,gpt4o,max_all
 Data Reference,0.3812223904662661,llama,max_all
 Datatype,0.9074417716926998,llama,max_all
 Entity Class,1.0,llama,max_all
-Join Condition,0.0122137310811214,llama,max_all
+Join,0.0122137310811214,llama,max_all
 Language Annotations,0.5833333333333334,llama,max_all
 Ontology Property,0.8977776898278131,llama,max_all
 Related Entity Class,0.3945379588339063,llama,max_all
@@ -42,7 +42,7 @@ Subject Generation,0.8270496841933991,llama,max_all
 Data Reference,0.3695892388070071,mixtral,max_all
 Datatype,0.9228681430772498,mixtral,max_all
 Entity Class,1.0,mixtral,max_all
-Join Condition,0.1058904694186316,mixtral,max_all
+Join,0.1058904694186316,mixtral,max_all
 Language Annotations,0.3124549521340264,mixtral,max_all
 Ontology Property,0.914988097217348,mixtral,max_all
 Related Entity Class,0.2621879205107689,mixtral,max_all
