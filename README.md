@@ -103,7 +103,8 @@ Results of our evaluation can be found in folder ```evaluation```.
 ## Authors
 
 - David Chaves-Fraga (main contact) - david.chaves at usc.es
-- Carla Castedo
+- Carla Castedo [@carlacastedo]https://github.com/carlacastedo
+- Javier Garea Cidre [@javiergarea](https://github.com/javiergarea)
 
 
 CiTIUS - University of Santiago de Compostela, July 2025 - Present
