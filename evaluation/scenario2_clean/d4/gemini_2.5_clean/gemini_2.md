@@ -1,4 +1,4 @@
-| CSV Column | Ontology Property | Entity Class | Related Entity Class | Subject Generation | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column | Ontology Property | Entity Class | Related Entity Class | Subject Generation | Join | Datatype | Function Name | Function Output |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | `service_id` | `gtfs:id` | `gtfs:Service` | N/A | `resource:Service/{service_id}` | N/A | `xsd:string` | N/A | N/A |
 | `service_id` | `gtfs:serviceRule` | `gtfs:Service` | `gtfs:CalendarRule` | `resource:Service/{service_id}` | N/A | N/A | N/A |  |

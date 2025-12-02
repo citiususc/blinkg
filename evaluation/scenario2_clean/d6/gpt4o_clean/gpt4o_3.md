@@ -1,4 +1,4 @@
-| CSV Column | Ontology Property | Entity Class | Related Entity Class | Subject Generation | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column | Ontology Property | Entity Class | Related Entity Class | Subject Generation | Join | Datatype | Function Name | Function Output |
 |------------|-------------------|--------------|----------------------|--------------------|----------------|----------|----------------------|---------------|
 | trip_id | gtfs:trip | gtfs:StopTime | gtfs:Trip | `concat('http://example.org/StopTime/', trip_id, '_', stop_id)` | stop_times.trip_id = trips.trip_id || None | None |
 | arrival_time | gtfs:arrivalTime | gtfs:StopTime | None | None | None | schema:Time | None | None |

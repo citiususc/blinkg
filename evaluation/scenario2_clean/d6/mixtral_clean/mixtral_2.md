@@ -1,5 +1,5 @@
 
-| CSV Column            | Ontology Property         | Entity Class      | Related Entity Class | Subject Generation                                | Join Condition | Datatype     | Function Name     | Function Output                                                                 |
+| CSV Column            | Ontology Property         | Entity Class      | Related Entity Class | Subject Generation                                | Join | Datatype     | Function Name     | Function Output                                                                 |
 |-----------------------|---------------------------|-------------------|----------------------|---------------------------------------------------|----------------|--------------|--------------------|----------------------------------------------------------------------------------|
 | `trip_id`             | `gtfs:trip`               | `gtfs:Trip`       | -                    | `http://transport.linkeddata.es/mmt/{trip_id}`    | -              | | |    |
 | `arrival_time`        | `gtfs:arrivalTime`        | `gtfs:StopTime`   | `gtfs:Trip`          | Inferred from `trip_id`                           | `trip_id`      | `Time`       | -                  | |

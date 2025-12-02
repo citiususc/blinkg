@@ -1,4 +1,4 @@
-| CSV Column | Ontology Property | Entity Class | Related Entity Class | Subject Generation | Join Condition | Datatype | Function Name | Function Output |
+| CSV Column | Ontology Property | Entity Class | Related Entity Class | Subject Generation | Join | Datatype | Function Name | Function Output |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | trip_id | `gtfs:id` | `gtfs:Trip` | | `ex:Trip/{trip_id}` | | `xsd:string` | | |
 | route_id | `gtfs:route` | `gtfs:Trip` | `gtfs:Route` | `ex:Trip/{trip_id}` | `trips.csv.route_id` = `routes.csv.route_id` || `| |

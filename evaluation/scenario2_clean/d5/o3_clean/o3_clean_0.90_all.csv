@@ -4,7 +4,7 @@ Datatype,6,0,12,1.0,0.3333333333333333,0.5
 Entity Class,39,0,0,1.0,1.0,1.0
 Function Name,0,0,9,0.0,0.0,0.0
 Function Output,0,0,8,0.0,0.0,0.0
-Join Condition,9,0,3,1.0,0.75,0.8571428571428571
+Join,9,0,3,1.0,0.75,0.8571428571428571
 Ontology Property,39,0,0,1.0,1.0,1.0
 Related Entity Class,16,0,5,1.0,0.7619047619047619,0.8648648648648648
 Subject Generation,0,0,39,0.0,0.0,0.0

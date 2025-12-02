@@ -1,4 +1,4 @@
-| CSV Column  | Ontology Property      | Entity Class     | Related Entity Class | Subject Generation  | Join Condition      | Datatype     | Function Name      | Function Output      |
+| CSV Column  | Ontology Property      | Entity Class     | Related Entity Class | Subject Generation  | Join      | Datatype     | Function Name      | Function Output      |
 |---------------------|------------------------|------------------|----------------------|--------------------------------------------------------------------|----------------------------------------------------|----------------------|--------------------|------------------------------------------------------|
 | `arrival_time`      | `gtfs:arrivalTime`     | `gtfs:StopTime`  | -      | `subject + "/arrival_time"`       | StopTime.trip_id = Trip.id   | `schema:Time`|  |  |
 | `departure_time`    | `gtfs:departureTime`   | `gtfs:StopTime`  | -      | `subject + "/departure_time"`     | StopTime.trip_id = Trip.id   | `schema:Time`|  |  |
