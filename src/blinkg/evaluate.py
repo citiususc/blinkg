@@ -1,9 +1,18 @@
 import Levenshtein
-from .utils import *
 import numpy as np
+import pandas as pd
 from sentence_transformers import util
 from rdflib import Graph
 import re
+
+from .utils import (
+    empty_values,
+    model,
+    get_property_lexicalization,
+    strip_shared_prefixes,
+    expand_to_full_uri,
+    clean_values
+)
 
 # Patterns to detect canonical fields regardless of exact header text
 _field_patterns = {
@@ -270,3 +279,26 @@ def calculate_prf(t1: pd.DataFrame,
         agg[col]['f1'] = 2 * p * r / (p + r) if (p + r) > 0 else 0.0
 
     return agg
+
+
+def evaluate(predictions: pd.DataFrame,
+             ground_truth: pd.DataFrame,
+             ontology: Graph,
+             threshold: float = 0.8):
+    """
+    Evaluate predictions against ground truth.
+
+    Args:
+        predictions: DataFrame with predicted mappings
+        ground_truth: DataFrame with expected mappings
+        ontology: RDFLib Graph with the ontology
+        threshold: Similarity threshold for TP/FP/FN (default: 0.8)
+
+    Returns:
+        dict: Metrics per column with format:
+            {column_name: {'TP': int, 'FP': int, 'FN': int,
+                          'precision': float, 'recall': float, 'f1': float}}
+    """
+    pairs, common_cols, _ = match_tables(predictions, ground_truth)
+    metrics = calculate_prf(predictions, ground_truth, pairs, common_cols, ontology, threshold)
+    return metrics

@@ -1,34 +1,23 @@
 """
 Example of using BLINKG programmatically to evaluate predictions.
 """
-from blinkg import evaluate
-from rdflib import Graph
-import pandas as pd
+from blinkg import evaluate, load_test_case, list_test_cases
 
-# Example: Load ground truth
-ground_truth = pd.DataFrame({
-    "CSV Column": ["id", "name", "age"],
-    "Ontology Property": ["schema:identifier", "schema:name", "schema:age"],
-    "Entity Class": ["schema:Person", "schema:Person", "schema:Person"],
-})
+# List available test cases
+test_case_ids = list_test_cases()
+print("Available test cases:", test_case_ids)
 
-# Example: Your predictions
-# This would come from your mapping tool output
-predictions = pd.DataFrame({
-    "CSV Column": ["id", "name", "age"],
-    "Ontology Property": ["schema:identifier", "schema:name", "schema:age"],
-    "Entity Class": ["schema:Person", "schema:Person", "schema:Person"],
-})
+# Load a benchmark test case
+test_case = load_test_case(test_case_ids[0])
+print(f"\nLoaded: {test_case.description}")
+print(f"Input files: {list(test_case.input_data.keys())}")
 
-# Load ontology
-ontology = Graph()
-# ontology.parse("path/to/your/ontology.ttl", format="turtle")
-# For this example, we'll use an empty graph
-ontology.parse(data="@prefix schema: <http://schema.org/> .", format="turtle")
+# Your predictions (for this example, we use ground truth for perfect score)
+predictions = test_case.ground_truth.copy()
 
 # Evaluate predictions against ground truth
 print("Running BLINKG evaluation...")
-metrics = evaluate(predictions, ground_truth, ontology, threshold=0.8)
+metrics = evaluate(predictions, test_case.ground_truth, test_case.ontology, threshold=0.8)
 
 # Display results
 print("\n=== Evaluation Results ===")
@@ -38,5 +27,3 @@ for col, m in metrics.items():
     print(f"  Recall:    {m['recall']:.3f}")
     print(f"  F1:        {m['f1']:.3f}")
     print(f"  TP: {m['TP']}, FP: {m['FP']}, FN: {m['FN']}")
-
-print("\nEvaluation complete!")
