@@ -103,7 +103,7 @@ Results of our evaluation can be found in folder ```evaluation```.
 ## Authors
 
 - David Chaves-Fraga (main contact) - david.chaves at usc.es
-- Carla Castedo [@carlacastedo]https://github.com/carlacastedo
+- Carla Castedo [@carlacastedo](https://github.com/carlacastedo)
 - Javier Garea Cidre [@javiergarea](https://github.com/javiergarea)
 
 
