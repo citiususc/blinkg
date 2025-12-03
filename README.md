@@ -56,11 +56,9 @@ The primary matching criterion is the Ontology Property, as it usually contains 
 If the Ontology Property is ambiguous or insufficiently discriminative (e.g., contains repeated or noisy values), we fall back to a composite key using Entity Class and Data Reference, which we identified empirically as the most informative pair of fields across scenarios.
 This step ensures that each predicted row is compared against the most appropriate reference, minimizing false negatives due to misalignment.
 
-## How can I add a different LLM model to the comparison?
+## How can I use the benchmark?
 
-To replicate the procedure, you can use the script ```hf_inference.py``` from the ```src/blinkg/execution``` folder. This script allows you to add any model that supports inference in HuggingFace to the comparison. In our comparison, it has been used for the *Llama-3.3-70B-Instruct* and *Mixtral-8x22B-Instruct-v0.1 models*.
-
-In order to use it, you can add the model to the ```MODEL_OPTIONS``` dictionary. 
+To replicate the procedure, the ```hf_inference.py``` script is provided in the ```src/blinkg/execution``` folder. This script allows you to integrate any model that supports inference in HuggingFace to the comparison. In our comparison, it has been used for the *Llama-3.3-70B-Instruct* and *Mixtral-8x22B-Instruct-v0.1 models*. You can add a different model by expanding the ```MODEL_OPTIONS``` dictionary. 
 
 The recommended procedure is creating a virtual environment and installing Huggingface Hub.
 
@@ -71,13 +69,13 @@ source .blinkg/bin/activate
 pip install -e .[examples]
 ```
 
-To run the script, you must pass as arguments the prompt file, the chosen model from the dictionary list, and the name of the output file (if not passed, “output.txt” will be used).
+Execute the script by providing the prompt file, the selected model, and an optional output filename (defaults to "output.txt")
 
 ```bash
 python3 hf_inference.py prompt.txt -m 0 -o your_output_file.txt
 ```
 
-With the inference script, the only thing needed to adding a LLM is a prompt. Users can use their own prompt, or generate with the ```prompt_template.py``` from the same folder. An example, with all the needed input files is provided in the ```examples``` folder. 
+With the inference script, the only thing needed is the prompt. Users can use their own prompt, or generate it with the ```prompt_template.py``` script from the same folder. An example from Scenario 2, with all the needed input files, is provided in the ```examples``` folder.
 
 The script must be called as follows:
 
@@ -87,9 +85,9 @@ python3 prompt_template.py -i input_file1 input_file2 -g ontology_file -s skos_f
 
 It's mandatory to introduce at least one input data file and the ontology file. If no output file is provided, prompt.txt will be used.
 
-## How can I add a new scenario?
+## How can I add a new scenario to the benchmark?
 
-
+Adding a new scenario to the benchmark is possible by creating an issue with the ```scenario_request``` template.
 
 ## How can I use BLINKG as a library
 
