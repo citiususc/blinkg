@@ -1,2 +1,0 @@
-<http://example.org/Venus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/Person> .
-<http://example.org/Venus> <http://example.org/fullname> "Venus" .
