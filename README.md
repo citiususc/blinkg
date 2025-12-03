@@ -56,9 +56,9 @@ The primary matching criterion is the Ontology Property, as it usually contains 
 If the Ontology Property is ambiguous or insufficiently discriminative (e.g., contains repeated or noisy values), we fall back to a composite key using Entity Class and Data Reference, which we identified empirically as the most informative pair of fields across scenarios.
 This step ensures that each predicted row is compared against the most appropriate reference, minimizing false negatives due to misalignment.
 
-## How can I add a different LLM model to the comparison? And how can I create a new scenario?
+## How can I add a different LLM model to the comparison?
 
-To replicate the procedure, you can use the script ```hf_inference.py``` from the ```src/executions/hf``` folder. This script allows you to add any model that supports inference in HuggingFace to the comparison. In our comparison, it has been used for the *Llama-3.3-70B-Instruct* and *Mixtral-8x22B-Instruct-v0.1 models*.
+To replicate the procedure, you can use the script ```hf_inference.py``` from the ```src/blinkg/execution``` folder. This script allows you to add any model that supports inference in HuggingFace to the comparison. In our comparison, it has been used for the *Llama-3.3-70B-Instruct* and *Mixtral-8x22B-Instruct-v0.1 models*.
 
 In order to use it, you can add the model to the ```MODEL_OPTIONS``` dictionary. 
 
@@ -77,7 +77,7 @@ To run the script, you must pass as arguments the prompt file, the chosen model 
 python3 hf_inference.py prompt.txt -m 0 -o your_output_file.txt
 ```
 
-With the inference script, the only thing needed to adding a LLM or creating a new scenario is a new prompt. Users can use their own prompt, but one example prompt from Scenario 2 is given in the ```src/execution/example``` folder. This prompt was generated using the script ```promtp_template.py``` from the ```src/execution``` folder. All the input files are in the ```example``` folder.  
+With the inference script, the only thing needed to adding a LLM is a prompt. Users can use their own prompt, or generate with the ```prompt_template.py``` from the same folder. An example, with all the needed input files is provided in the ```examples``` folder. 
 
 The script must be called as follows:
 
@@ -85,7 +85,11 @@ The script must be called as follows:
 python3 prompt_template.py -i input_file1 input_file2 -g ontology_file -s skos_file -o output_file
 ```
 
-It's mandatory to introduce at least one input file and the ontology file. If no output file is provided, prompt.txt will be used.
+It's mandatory to introduce at least one input data file and the ontology file. If no output file is provided, prompt.txt will be used.
+
+## How can I add a new scenario?
+
+
 
 ## How can I use BLINKG as a library
 
