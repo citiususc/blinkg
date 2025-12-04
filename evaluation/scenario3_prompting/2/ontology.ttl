@@ -1,0 +1,236 @@
+@prefix : <http://data.europa.eu/a4g/ontology#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#Classes
+
+:ProcurementObject a owl:Class ;
+    rdfs:label "Procurement object"@en ;
+    rdfs:comment "A procurement component."@en ;
+    rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality 1 ;
+            owl:onProperty :hasID ] .
+
+:Lot a owl:Class ;
+    rdfs:label "Lot"@en ;
+    rdfs:comment "A qualitative, quantitative or strategic subdivision of the goods, services or works to be procured, allowing the award of one or more contracts."@en ;
+    rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
+    rdfs:subClassOf :ProcurementObject ;
+    owl:disjointWith :Procedure.
+
+:Procedure a owl:Class ;
+    rdfs:label "Procedure"@en ;
+    rdfs:comment "A legally defined set of administrative activities conducted  to conclude one or more contracts."@en ;
+    rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
+    rdfs:subClassOf :ProcurementObject ;
+    owl:disjointWith :Lot;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty :hasProcurementScopeDividedIntoLot ].
+
+:TechniqueUsage a owl:Class ;
+    rdfs:label "Technique usage"@en ;
+    rdfs:comment "Methods used for conducting procurement procedure."@en ;
+    rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+:FrameworkAgreementTechniqueUsage a owl:Class ;
+    rdfs:label "Framework agreement technique usage"@en ;
+    rdfs:comment "Technique that establishes the terms governing contracts to be awarded during a given period, in particular with regard to price and, where appropriate, the quantity envisaged."@en ;
+    rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
+    rdfs:subClassOf :TechniqueUsage .
+
+:Document a owl:Class ;
+    rdfs:label "Document"@en ;
+    rdfs:comment "A set of interrelated Business Information representing the business facts and associated metadata. The information may be conveyed in any language, medium or form, including textual, numerical, graphic, cartographic, audio-visual forms, etc."@en ;
+    rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty :hasDispatchDate ] .
+
+:Notice a owl:Class ;
+    rdfs:label "Notice"@en ;
+    rdfs:comment "Document published by the buyer about market opportunities and results."@en ;
+    rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
+    rdfs:subClassOf :Document .
+
+:ResultNotice a owl:Class ;
+    rdfs:label "Result notice"@en ;
+    rdfs:comment "An announcement of the award or non-award of a contract by a buyer."@en ;
+    rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
+    rdfs:subClassOf :Notice ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty :refersToRole ].
+
+:ContextSpecificDescription a owl:Class ;
+    rdfs:label "Context specific description"@en ;
+    rdfs:comment "A description concerning a procurement object or a notice in a specific situation context."@en ;
+    rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+:StatisticalInformation a owl:Class ;
+    rdfs:label "Statistical information"@en ;
+    rdfs:comment "Statistical data on the procedure and the lot."@en ;
+    rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
+    rdfs:subClassOf :ContextSpecificDescription .
+
+:SubmissionStatisticalInformation a owl:Class ;
+    rdfs:label "Submission statistical information"@en ;
+    rdfs:comment "Statistical information about submissions on a given Lot."@en ;
+    rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
+    rdfs:subClassOf :StatisticalInformation ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality 1 ;
+            owl:onProperty :concernsSubmissionsForLot ].
+
+:ContextualProjection a owl:Class ;
+    rdfs:label "Contextual projection"@en ;
+    rdfs:comment "Projection of an entity and all of its properties that hold in a given situation context."@en ;
+    rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+:LotAwardOutcome a owl:Class ;
+    rdfs:label "Lot award outcome"@en ;
+    rdfs:comment "Result concerning the Lot attributed by the awarder."@en ;
+    rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
+    rdfs:subClassOf :ContextualProjection ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty :hasAwardDecisionDate ] .
+
+:AgentInRole a owl:Class ;
+    rdfs:label "Agent in role"@en ;
+    rdfs:comment "Relative concept that ties an agent to a part they play in a given situational context."@en ;
+    rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality 1 ;
+            owl:onProperty :playedBy ] .
+
+:PrimaryRole a owl:Class ;
+    rdfs:label "Primary role"@en ;
+    rdfs:comment "A primary role within the procurement process that ties an agent to a part they play in a given situation."@en ;
+    rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
+    rdfs:subClassOf :AgentInRole ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality 1 ;
+            owl:onProperty :playedByOrganisation ] .
+
+:Buyer a owl:Class ;
+    rdfs:label "Buyer"@en ;
+    rdfs:comment "A role of an agent that awards a contract and/or purchases items."@en ;
+    rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
+    rdfs:subClassOf :PrimaryRole .
+
+:Identifier a owl:Class ;
+    rdfs:label "Identifier"@en ;
+    rdfs:comment "A character string to identify and distinguish uniquely, one instance of an object in an identification scheme from all other objects in the same scheme together with relevant supplementary information."@en ;
+    rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality 1 ;
+            owl:onProperty :hasIdentifierValue ].
+
+org:Organization a owl:Class ;
+    rdfs:label "Organization"@en ;
+    rdfs:comment "A collection of people organized together into a community or other social, commercial or political structure. The group has some common purpose or reason for existence which goes beyond the set of people belonging to it and can act as an Agent. Organisations are often decomposable into hierarchical structures."@en ;
+    rdfs:subClassOf foaf:Agent ;
+    owl:disjointWith :System,
+        foaf:Person ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty :registeredAddress ].
+
+#Data Properties
+
+:hasIdentifierValue a owl:DatatypeProperty ;
+    rdfs:label "Has identifier value"@en ;
+    rdfs:comment "The literal identifying an entity, like a person or an object."@en ;
+    rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
+    rdfs:domain :Identifier ;
+    rdfs:range rdfs:Literal .
+
+:hasDispatchDate a owl:DatatypeProperty ;
+    rdfs:label "Has dispatch date"@en ;
+    rdfs:comment "Date of transmission of a record to an organisation."@en ;
+    rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+:hasReceivedTenders a owl:DatatypeProperty ;
+    rdfs:label "Has received tenders"@en ;
+    rdfs:comment "The total amount of tenders received."@en ;
+    rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+:hasAwardDecisionDate a owl:DatatypeProperty ;
+    rdfs:label "Has award decision date"@en ;
+    rdfs:comment "The official date of the award decision."@en ;
+    rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+#Object Properties
+
+:usesTechnique a owl:ObjectProperty ;
+    rdfs:label "Uses technique"@en ;
+    rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+:hasProcedureType a owl:ObjectProperty ;
+    rdfs:label "Has procedure type"@en ;
+    rdfs:comment "Identification of the Procedure used."@en ;
+    rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+:hasProcurementScopeDividedIntoLot a owl:ObjectProperty ;
+    rdfs:label "Has procurement scope divided into lot"@en ;
+    rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+:refersToRole a owl:ObjectProperty ;
+    rdfs:label "Refers to role"@en ;
+    rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+:hasID a owl:ObjectProperty ;
+    rdfs:label "Has i d"@en ;
+    rdfs:comment "A unique identifier of the instance of the concept."@en ;
+    rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( :ProcurementObject :Fund foaf:Agent <http://data.europa.eu/m8g/InformationConcept> :Document :CatalogueLine :Batch ) ] ;
+    rdfs:range [ a owl:Class ;
+            owl:unionOf ( :Identifier ) ] .
+
+:concernsSubmissionsForLot a owl:ObjectProperty ;
+    rdfs:label "Concerns submissions for lot"@en ;
+    rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
+    rdfs:domain :SubmissionStatisticalInformation ;
+    rdfs:range :Lot .
+
+:describesLot a owl:ObjectProperty ;
+    rdfs:label "Describes lot"@en ;
+    rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
+    rdfs:domain :LotAwardOutcome ;
+    rdfs:range :Lot .
+
+:hasCountryCode a owl:ObjectProperty ;
+    rdfs:label "Has country code"@en ;
+    rdfs:comment "(locn:Address -> at-voc:country (+epo:hasCountryCode)). The codelist to be used is at-voc:country which is available at http://publications.europa.eu/resource/dataset/country (dct:Location -> at-voc:country (+epo:hasCountryCode)) The codelist to be used is at-voc:country which is available at http://publications.europa.eu/resource/dataset/country (locn:Address -> at-voc:country (+epo:hasCountryCode))"@en ;
+    rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+:playedBy a owl:ObjectProperty ;
+    rdfs:label "Played by"@en ;
+    rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
+    rdfs:domain :AgentInRole ;
+    rdfs:range foaf:Agent .
+
+:playedByOrganisation a owl:ObjectProperty ;
+    rdfs:label "Played by organisation"@en ;
+    rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
+    rdfs:subPropertyOf :playedBy ;
+    rdfs:domain :PrimaryRole ;
+    rdfs:range org:Organization .
+
+:address a owl:ObjectProperty ;
+    rdfs:label "Address"@en ;
+    rdfs:comment "Associates any Resource with the corresponding Address."@en ;
+    rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .

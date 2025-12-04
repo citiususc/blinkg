@@ -1,0 +1,19 @@
+column,LLM,mean_similarity
+Data Reference,deepseekF_few_shot,0.3481641747698429
+Data Reference,deepseek_1_shot,0.3780245967125056
+Datatype,deepseekF_few_shot,0.0973828235810453
+Datatype,deepseek_1_shot,0.13347660675312256
+Entity Class,deepseekF_few_shot,0.4948437803973449
+Entity Class,deepseek_1_shot,0.4374157911217158
+Function Name,deepseekF_few_shot,0.18331630037328792
+Function Name,deepseek_1_shot,0.11021773087171216
+Function Output,deepseekF_few_shot,0.18691391320455641
+Function Output,deepseek_1_shot,0.17352956787993506
+Join Condition,deepseekF_few_shot,0.1982717181725258
+Join Condition,deepseek_1_shot,0.31329314820468424
+Ontology Property,deepseekF_few_shot,0.3663323394926893
+Ontology Property,deepseek_1_shot,0.40364756773012633
+Related Entity Class,deepseekF_few_shot,0.28217628216716956
+Related Entity Class,deepseek_1_shot,0.3112002908128799
+Subject Generation,deepseekF_few_shot,0.659966792251523
+Subject Generation,deepseek_1_shot,0.6704699005566391

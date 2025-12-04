@@ -1,0 +1,19 @@
+column,TP,FP,FN,precision,recall,f1,method
+Datatype,1,0,1,1.0,0.5,0.6666666666666666,deepseek_1_shot_0.80_all
+Entity Class,5,0,10,1.0,0.3333333333333333,0.5,deepseek_1_shot_0.80_all
+Function Name,0,0,1,0.0,0.0,0.0,deepseek_1_shot_0.80_all
+Function Output,0,0,1,0.0,0.0,0.0,deepseek_1_shot_0.80_all
+Join Condition,0,0,6,0.0,0.0,0.0,deepseek_1_shot_0.80_all
+Ontology Property,5,0,10,1.0,0.3333333333333333,0.5,deepseek_1_shot_0.80_all
+Related Entity Class,1,0,6,1.0,0.1428571428571428,0.25,deepseek_1_shot_0.80_all
+Subject Generation,12,0,3,1.0,0.8,0.888888888888889,deepseek_1_shot_0.80_all
+XML Path,7,0,0,1.0,1.0,1.0,deepseek_1_shot_0.80_all
+Datatype,0,0,3,0.0,0.0,0.0,deepseekF_few_shot_0.80_all
+Entity Class,3,0,14,1.0,0.1764705882352941,0.3,deepseekF_few_shot_0.80_all
+Function Name,0,0,0,0.0,0.0,0.0,deepseekF_few_shot_0.80_all
+Function Output,0,0,0,0.0,0.0,0.0,deepseekF_few_shot_0.80_all
+Join Condition,0,0,5,0.0,0.0,0.0,deepseekF_few_shot_0.80_all
+Ontology Property,3,0,14,1.0,0.1764705882352941,0.3,deepseekF_few_shot_0.80_all
+Related Entity Class,0,0,7,0.0,0.0,0.0,deepseekF_few_shot_0.80_all
+Subject Generation,12,0,5,1.0,0.7058823529411765,0.8275862068965517,deepseekF_few_shot_0.80_all
+XML Path,5,0,0,1.0,1.0,1.0,deepseekF_few_shot_0.80_all

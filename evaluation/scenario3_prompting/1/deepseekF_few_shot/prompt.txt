@@ -1,0 +1,513 @@
+I have this XML file (that follows this XSD https://contrataciondelestado.es/codice/2.0/xsd/2.04/), and I want to build a knowledge graph with all possible mappings using this ontology and SKOS file. Could you make a table with the column names with the reference to the ontology property? Link all the ontology properties that you can with the information that you have. Provide also the class of the entities or both the classes that it relates and a way to generate the subject for all of them and the condition to join entities. Use functions when it is necessary, adapting to ontology restrictions or transforming input values into the corresponding values in the SKOS file. For every function, give the expected output template or all the possible values. Use the following header: XML Path (full path), Ontology Property, Entity Class, Related Entity Class, Subject Generation, Join Condition, Datatype, Function Name, Function Output. You have an example of the expected output at the end.
+input.xml
+<entry>
+<id>https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/6854467</id>
+<link href="https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&amp;idEvl=fol9j9H4t%2F0BPRBxZ4nJ%2Fg%3D%3D"/>
+<summary type="text">Id licitación: 942P LOTE 2; Órgano de Contratación: Gerencia de EMAYA, Empresa Municipal d'Aigües i Clavegueram, S.A.; Importe: 96657.62 EUR; Estado: RES</summary>
+<title>Suministro de piezas de recambio originales para equipos mecánicos y eléctricos de EMAYA.</title>
+<updated>2021-01-07T10:47:01.782+01:00</updated>
+cac-place-ext:ContractFolderStatus
+cbc:ContractFolderID942P LOTE 2</cbc:ContractFolderID>
+<cbc-place-ext:ContractFolderStatusCode languageID="es" listURI="https://contrataciondelestado.es/codice/cl/2.04/SyndicationContractFolderStatusCode-2.04.gc">RES</cbc-place-ext:ContractFolderStatusCode>
+cac-place-ext:LocatedContractingParty
+<cbc:ContractingPartyTypeCode listURI="http://contrataciondelestado.es/codice/cl/1.04/ContractingAuthorityCode-1.04.gc">5</cbc:ContractingPartyTypeCode>
+cac:Party
+cbc:WebsiteURIhttp://www.emaya.es</cbc:WebsiteURI>
+cac:PartyIdentification
+<cbc:ID schemeName="NIF">A07000029</cbc:ID>
+</cac:PartyIdentification>
+cac:PartyName
+cbc:NameGerencia de EMAYA, Empresa Municipal d'Aigües i Clavegueram, S.A.</cbc:Name>
+</cac:PartyName>
+cac:PostalAddress
+cbc:CityNamePalma</cbc:CityName>
+cbc:PostalZone07010</cbc:PostalZone>
+cac:AddressLine
+cbc:LineCamino de los Reyes 400, Edificio Central de Son Pacs</cbc:Line>
+</cac:AddressLine>
+cac:Country
+<cbc:IdentificationCode listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/CountryIdentificationCode-2.0.gc">ES</cbc:IdentificationCode>
+cbc:NameEspaña</cbc:Name>
+</cac:Country>
+</cac:PostalAddress>
+cac:Contact
+cbc:NameGerencia de EMAYA, Empresa Municipal d'Aigües i Clavegueram, S.A.</cbc:Name>
+cbc:Telephone971774305</cbc:Telephone>
+cbc:Telefax971774310</cbc:Telefax>
+cbc:ElectronicMaillicitacions@emaya.es</cbc:ElectronicMail>
+</cac:Contact>
+</cac:Party>
+cac-place-ext:ParentLocatedParty
+cac:PartyName
+cbc:NameEMAYA, Empresa Municipal d'Aigües i Clavegueram, S.A.</cbc:Name>
+</cac:PartyName>
+cac-place-ext:ParentLocatedParty
+cac:PartyName
+cbc:NamePalma</cbc:Name>
+</cac:PartyName>
+cac-place-ext:ParentLocatedParty
+cac:PartyName
+cbc:NameBaleares</cbc:Name>
+</cac:PartyName>
+cac-place-ext:ParentLocatedParty
+cac:PartyName
+cbc:NameSOCIEDADES, FUNDACIONES Y CONSORCIOS ENTIDADES LOCALES</cbc:Name>
+</cac:PartyName>
+cac-place-ext:ParentLocatedParty
+cac:PartyName
+cbc:NameOTRAS ENTIDADES DEL SECTOR PÚBLICO</cbc:Name>
+</cac:PartyName>
+cac-place-ext:ParentLocatedParty
+cac:PartyName
+cbc:NameSector Público</cbc:Name>
+</cac:PartyName>
+</cac-place-ext:ParentLocatedParty>
+</cac-place-ext:ParentLocatedParty>
+</cac-place-ext:ParentLocatedParty>
+</cac-place-ext:ParentLocatedParty>
+</cac-place-ext:ParentLocatedParty>
+</cac-place-ext:ParentLocatedParty>
+</cac-place-ext:LocatedContractingParty>
+cac:ProcurementProject
+cbc:NameSuministro de piezas de recambio originales para equipos mecánicos y eléctricos de EMAYA.</cbc:Name>
+<cbc:TypeCode listURI="http://contrataciondelestado.es/codice/cl/2.08/ContractCode-2.08.gc">1</cbc:TypeCode>
+<cbc:SubTypeCode listURI="http://contrataciondelestado.es/codice/cl/1.04/GoodsContractCode-1.04.gc">1</cbc:SubTypeCode>
+cac:BudgetAmount
+<cbc:EstimatedOverallContractAmount currencyID="EUR">115989.14</cbc:EstimatedOverallContractAmount>
+<cbc:TotalAmount currencyID="EUR">116955.72</cbc:TotalAmount>
+<cbc:TaxExclusiveAmount currencyID="EUR">96657.62</cbc:TaxExclusiveAmount>
+</cac:BudgetAmount>
+cac:RequiredCommodityClassification
+<cbc:ItemClassificationCode listURI="http://contrataciondelestado.es/codice/cl/1.04/CPV2007-1.04.gc">31681000</cbc:ItemClassificationCode>
+</cac:RequiredCommodityClassification>
+cac:RealizedLocation
+cbc:CountrySubentityMallorca</cbc:CountrySubentity>
+<cbc:CountrySubentityCode listURI="http://contrataciondelestado.es/codice/cl/2.06/NUTS-2016.gc">ES532</cbc:CountrySubentityCode>
+cac:Address
+cac:Country
+<cbc:IdentificationCode listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/CountryIdentificationCode-2.0.gc">ES</cbc:IdentificationCode>
+cbc:NameEspaña</cbc:Name>
+</cac:Country>
+</cac:Address>
+</cac:RealizedLocation>
+cac:PlannedPeriod
+<cbc:DurationMeasure unitCode="ANN">1</cbc:DurationMeasure>
+</cac:PlannedPeriod>
+</cac:ProcurementProject>
+cac:TenderResult
+<cbc:ResultCode listURI="http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc">8</cbc:ResultCode>
+cbc:DescriptionSe prorroga el contrato inicial con ID 1715</cbc:Description>
+cbc:AwardDate2021-01-04</cbc:AwardDate>
+cbc:ReceivedTenderQuantity1</cbc:ReceivedTenderQuantity>
+cac:Contract
+cbc:IDID 2534</cbc:ID>
+cbc:IssueDate2021-01-07</cbc:IssueDate>
+</cac:Contract>
+cac:WinningParty
+cac:PartyIdentification
+<cbc:ID schemeName="NIF">A28388023</cbc:ID>
+</cac:PartyIdentification>
+cac:PartyName
+cbc:NameSULZER PUMPS WASTEWATER SPAIN S.A.</cbc:Name>
+</cac:PartyName>
+</cac:WinningParty>
+cac:AwardedTenderedProject
+cac:LegalMonetaryTotal
+<cbc:TaxExclusiveAmount currencyID="EUR">96657.62</cbc:TaxExclusiveAmount>
+<cbc:PayableAmount currencyID="EUR">116955.72</cbc:PayableAmount>
+</cac:LegalMonetaryTotal>
+</cac:AwardedTenderedProject>
+</cac:TenderResult>
+cac:TenderingTerms
+cbc:RequiredCurriculaIndicatorfalse</cbc:RequiredCurriculaIndicator>
+cbc:VariantConstraintIndicatorfalse</cbc:VariantConstraintIndicator>
+cac:ProcurementLegislationDocumentReference
+cbc:ID2014/24/EU</cbc:ID>
+</cac:ProcurementLegislationDocumentReference>
+cac:Language
+cbc:IDes</cbc:ID>
+</cac:Language>
+</cac:TenderingTerms>
+cac:TenderingProcess
+<cbc:ProcedureCode listURI="https://contrataciondelestado.es/codice/cl/2.07/SyndicationTenderingProcessCode-2.07.gc">1</cbc:ProcedureCode>
+<cbc:UrgencyCode listURI="http://contrataciondelestado.es/codice/cl/1.04/DiligenceTypeCode-1.04.gc">1</cbc:UrgencyCode>
+<cbc:ContractingSystemCode listURI="http://contrataciondelestado.es/codice/cl/2.08/ContractingSystemTypeCode-2.08.gc">3</cbc:ContractingSystemCode>
+<cbc:SubmissionMethodCode listURI="http://contrataciondelestado.es/codice/cl/1.04/TenderDeliveryCode-1.04.gc">2</cbc:SubmissionMethodCode>
+</cac:TenderingProcess>
+cac-place-ext:ValidNoticeInfo
+<cbc-place-ext:NoticeTypeCode listURI="http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc">DOC_CAN_ADJ</cbc-place-ext:NoticeTypeCode>
+cac-place-ext:AdditionalPublicationStatus
+cbc-place-ext:PublicationMediaNamePerfil del Contratante</cbc-place-ext:PublicationMediaName>
+cac-place-ext:AdditionalPublicationDocumentReference
+cbc:IssueDate2021-01-07</cbc:IssueDate>
+</cac-place-ext:AdditionalPublicationDocumentReference>
+cac-place-ext:AdditionalPublicationDocumentReference
+<cbc:DocumentTypeCode listURI="http://contrataciondelestado.es/codice/cl/2.07/TenderingDocumentTypeCode-2.07.gc" name="Documento de Acta de Adjudicación">ACTA_ADJ</cbc:DocumentTypeCode>
+cac:Attachment
+cac:ExternalReference
+cbc:URIhttps://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&amp;cmpntname=GetDocumentsById&amp;source=library&amp;DocumentIdParam=fb481d3e-9aa4-4032-bebf-33912ffaaeaf</cbc:URI>
+cbc:FileNameResolucion prorroga exp 942.pdf</cbc:FileName>
+</cac:ExternalReference>
+</cac:Attachment>
+</cac-place-ext:AdditionalPublicationDocumentReference>
+</cac-place-ext:AdditionalPublicationStatus>
+</cac-place-ext:ValidNoticeInfo>
+cac-place-ext:ValidNoticeInfo
+<cbc-place-ext:NoticeTypeCode listURI="http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc">DOC_FORM</cbc-place-ext:NoticeTypeCode>
+cac-place-ext:AdditionalPublicationStatus
+cbc-place-ext:PublicationMediaNamePerfil del Contratante</cbc-place-ext:PublicationMediaName>
+cac-place-ext:AdditionalPublicationDocumentReference
+cbc:IssueDate2021-01-07</cbc:IssueDate>
+</cac-place-ext:AdditionalPublicationDocumentReference>
+</cac-place-ext:AdditionalPublicationStatus>
+</cac-place-ext:ValidNoticeInfo>
+</cac-place-ext:ContractFolderStatus>
+</entry>
+skos.ttl
+@prefix owl: http://www.w3.org/2002/07/owl# .
+@prefix rdfs: http://www.w3.org/2000/01/rdf-schema# .
+@prefix skos: http://www.w3.org/2004/02/skos/core# .
+@prefix xsd: http://www.w3.org/2001/XMLSchema# .
+
+http://publications.europa.eu/resource/authority/buyer-legal-type a skos:ConceptScheme ;
+skos:hasTopConcept http://publications.europa.eu/resource/authority/buyer-legal-type/OP_DATPRO,
+http://publications.europa.eu/resource/authority/buyer-legal-type/body-pl,
+http://publications.europa.eu/resource/authority/buyer-legal-type/body-pl-cga,
+http://publications.europa.eu/resource/authority/buyer-legal-type/body-pl-la,
+http://publications.europa.eu/resource/authority/buyer-legal-type/body-pl-ra,
+http://publications.europa.eu/resource/authority/buyer-legal-type/cga,
+http://publications.europa.eu/resource/authority/buyer-legal-type/def-cont,
+http://publications.europa.eu/resource/authority/buyer-legal-type/eu-ins-bod-ag,
+http://publications.europa.eu/resource/authority/buyer-legal-type/eu-int-org,
+http://publications.europa.eu/resource/authority/buyer-legal-type/grp-p-aut,
+http://publications.europa.eu/resource/authority/buyer-legal-type/int-org,
+http://publications.europa.eu/resource/authority/buyer-legal-type/la,
+http://publications.europa.eu/resource/authority/buyer-legal-type/org-sub,
+http://publications.europa.eu/resource/authority/buyer-legal-type/org-sub-cga,
+http://publications.europa.eu/resource/authority/buyer-legal-type/org-sub-la,
+http://publications.europa.eu/resource/authority/buyer-legal-type/org-sub-ra,
+http://publications.europa.eu/resource/authority/buyer-legal-type/pub-undert,
+http://publications.europa.eu/resource/authority/buyer-legal-type/pub-undert-cga,
+http://publications.europa.eu/resource/authority/buyer-legal-type/pub-undert-la,
+http://publications.europa.eu/resource/authority/buyer-legal-type/pub-undert-ra,
+http://publications.europa.eu/resource/authority/buyer-legal-type/ra,
+http://publications.europa.eu/resource/authority/buyer-legal-type/rl-aut,
+http://publications.europa.eu/resource/authority/buyer-legal-type/spec-rights-entity .
+
+http://publications.europa.eu/resource/authority/procurement-procedure-type a skos:ConceptScheme ;
+skos:hasTopConcept http://publications.europa.eu/resource/authority/procurement-procedure-type/OP_DATPRO,
+http://publications.europa.eu/resource/authority/procurement-procedure-type/comp-dial,
+http://publications.europa.eu/resource/authority/procurement-procedure-type/comp-tend,
+http://publications.europa.eu/resource/authority/procurement-procedure-type/exp-int-rail,
+http://publications.europa.eu/resource/authority/procurement-procedure-type/innovation,
+http://publications.europa.eu/resource/authority/procurement-procedure-type/neg-w-call,
+http://publications.europa.eu/resource/authority/procurement-procedure-type/neg-wo-call,
+http://publications.europa.eu/resource/authority/procurement-procedure-type/open,
+http://publications.europa.eu/resource/authority/procurement-procedure-type/oth-mult,
+http://publications.europa.eu/resource/authority/procurement-procedure-type/oth-single,
+http://publications.europa.eu/resource/authority/procurement-procedure-type/restricted .
+
+http://publications.europa.eu/resource/authority/country a skos:ConceptScheme ;
+skos:hasTopConcept
+http://publications.europa.eu/resource/authority/country/ALB,
+http://publications.europa.eu/resource/authority/country/AND,
+http://publications.europa.eu/resource/authority/country/ARM,
+http://publications.europa.eu/resource/authority/country/AUT,
+http://publications.europa.eu/resource/authority/country/AZE,
+http://publications.europa.eu/resource/authority/country/BEL,
+http://publications.europa.eu/resource/authority/country/BIH,
+http://publications.europa.eu/resource/authority/country/BLR,
+http://publications.europa.eu/resource/authority/country/BGR,
+http://publications.europa.eu/resource/authority/country/CHE,
+http://publications.europa.eu/resource/authority/country/CYP,
+http://publications.europa.eu/resource/authority/country/CZE,
+http://publications.europa.eu/resource/authority/country/DDR,
+http://publications.europa.eu/resource/authority/country/DEU,
+http://publications.europa.eu/resource/authority/country/DNK,
+http://publications.europa.eu/resource/authority/country/ESP,
+http://publications.europa.eu/resource/authority/country/EST,
+http://publications.europa.eu/resource/authority/country/FIN,
+http://publications.europa.eu/resource/authority/country/FRA,
+http://publications.europa.eu/resource/authority/country/FXX,
+http://publications.europa.eu/resource/authority/country/GBR,
+http://publications.europa.eu/resource/authority/country/GEO,
+http://publications.europa.eu/resource/authority/country/GRC,
+http://publications.europa.eu/resource/authority/country/HRV,
+http://publications.europa.eu/resource/authority/country/HUN,
+http://publications.europa.eu/resource/authority/country/IRL,
+http://publications.europa.eu/resource/authority/country/ISL,
+http://publications.europa.eu/resource/authority/country/ITA,
+http://publications.europa.eu/resource/authority/country/LIE,
+http://publications.europa.eu/resource/authority/country/LTU,
+http://publications.europa.eu/resource/authority/country/LUX,
+http://publications.europa.eu/resource/authority/country/LVA,
+http://publications.europa.eu/resource/authority/country/MCO,
+http://publications.europa.eu/resource/authority/country/MDA,
+http://publications.europa.eu/resource/authority/country/MKD,
+http://publications.europa.eu/resource/authority/country/MLT,
+http://publications.europa.eu/resource/authority/country/MNE,
+http://publications.europa.eu/resource/authority/country/NLD,
+http://publications.europa.eu/resource/authority/country/NOR,
+http://publications.europa.eu/resource/authority/country/POL,
+http://publications.europa.eu/resource/authority/country/PRT,
+http://publications.europa.eu/resource/authority/country/ROU,
+http://publications.europa.eu/resource/authority/country/RUS,
+http://publications.europa.eu/resource/authority/country/SCG,
+http://publications.europa.eu/resource/authority/country/SVK,
+http://publications.europa.eu/resource/authority/country/SVN,
+http://publications.europa.eu/resource/authority/country/SWE,
+http://publications.europa.eu/resource/authority/country/SMR,
+http://publications.europa.eu/resource/authority/country/SRB,
+http://publications.europa.eu/resource/authority/country/UKR,
+http://publications.europa.eu/resource/authority/country/VAT,
+http://publications.europa.eu/resource/authority/country/XKX,
+http://publications.europa.eu/resource/authority/country/YUG .
+ontology.ttl
+@prefix : http://data.europa.eu/a4g/ontology# .
+@prefix cc: http://creativecommons.org/ns# .
+@prefix dc: http://purl.org/dc/elements/1.1/ .
+@prefix dcterms: http://purl.org/dc/terms/ .
+@prefix foaf: http://xmlns.com/foaf/0.1/ .
+@prefix org: http://www.w3.org/ns/org# .
+@prefix owl: http://www.w3.org/2002/07/owl# .
+@prefix rdfs: http://www.w3.org/2000/01/rdf-schema# .
+@prefix schema: https://schema.org/ .
+@prefix skos: http://www.w3.org/2004/02/skos/core# .
+@prefix time: http://www.w3.org/2006/time# .
+@prefix vann: http://purl.org/vocab/vann/ .
+@prefix xsd: http://www.w3.org/2001/XMLSchema# .
+
+#Classes
+
+:ProcurementObject a owl:Class ;
+rdfs:label "Procurement object"@en ;
+rdfs:comment "A procurement component."@en ;
+rdfs:isDefinedBy http://data.europa.eu/a4g/ontology ;
+rdfs:subClassOf [ a owl:Restriction ;
+owl:cardinality 1 ;
+owl:onProperty :hasID ] .
+
+:Lot a owl:Class ;
+rdfs:label "Lot"@en ;
+rdfs:comment "A qualitative, quantitative or strategic subdivision of the goods, services or works to be procured, allowing the award of one or more contracts."@en ;
+rdfs:isDefinedBy http://data.europa.eu/a4g/ontology ;
+rdfs:subClassOf :ProcurementObject ;
+owl:disjointWith :Procedure.
+
+:Procedure a owl:Class ;
+rdfs:label "Procedure"@en ;
+rdfs:comment "A legally defined set of administrative activities conducted  to conclude one or more contracts."@en ;
+rdfs:isDefinedBy http://data.europa.eu/a4g/ontology ;
+rdfs:subClassOf :ProcurementObject ;
+owl:disjointWith :Lot;
+rdfs:subClassOf [ a owl:Restriction ;
+owl:minCardinality 1 ;
+owl:onProperty :hasProcurementScopeDividedIntoLot ].
+
+:TechniqueUsage a owl:Class ;
+rdfs:label "Technique usage"@en ;
+rdfs:comment "Methods used for conducting procurement procedure."@en ;
+rdfs:isDefinedBy http://data.europa.eu/a4g/ontology .
+
+:FrameworkAgreementTechniqueUsage a owl:Class ;
+rdfs:label "Framework agreement technique usage"@en ;
+rdfs:comment "Technique that establishes the terms governing contracts to be awarded during a given period, in particular with regard to price and, where appropriate, the quantity envisaged."@en ;
+rdfs:isDefinedBy http://data.europa.eu/a4g/ontology ;
+rdfs:subClassOf :TechniqueUsage .
+
+:Document a owl:Class ;
+rdfs:label "Document"@en ;
+rdfs:comment "A set of interrelated Business Information representing the business facts and associated metadata. The information may be conveyed in any language, medium or form, including textual, numerical, graphic, cartographic, audio-visual forms, etc."@en ;
+rdfs:isDefinedBy http://data.europa.eu/a4g/ontology ;
+rdfs:subClassOf [ a owl:Restriction ;
+owl:maxCardinality 1 ;
+owl:onProperty :hasDispatchDate ] .
+
+:Notice a owl:Class ;
+rdfs:label "Notice"@en ;
+rdfs:comment "Document published by the buyer about market opportunities and results."@en ;
+rdfs:isDefinedBy http://data.europa.eu/a4g/ontology ;
+rdfs:subClassOf :Document .
+
+:ResultNotice a owl:Class ;
+rdfs:label "Result notice"@en ;
+rdfs:comment "An announcement of the award or non-award of a contract by a buyer."@en ;
+rdfs:isDefinedBy http://data.europa.eu/a4g/ontology ;
+rdfs:subClassOf :Notice ;
+rdfs:subClassOf [ a owl:Restriction ;
+owl:minCardinality 1 ;
+owl:onProperty :refersToRole ].
+
+:ContextSpecificDescription a owl:Class ;
+rdfs:label "Context specific description"@en ;
+rdfs:comment "A description concerning a procurement object or a notice in a specific situation context."@en ;
+rdfs:isDefinedBy http://data.europa.eu/a4g/ontology .
+
+:StatisticalInformation a owl:Class ;
+rdfs:label "Statistical information"@en ;
+rdfs:comment "Statistical data on the procedure and the lot."@en ;
+rdfs:isDefinedBy http://data.europa.eu/a4g/ontology ;
+rdfs:subClassOf :ContextSpecificDescription .
+
+:SubmissionStatisticalInformation a owl:Class ;
+rdfs:label "Submission statistical information"@en ;
+rdfs:comment "Statistical information about submissions on a given Lot."@en ;
+rdfs:isDefinedBy http://data.europa.eu/a4g/ontology ;
+rdfs:subClassOf :StatisticalInformation ;
+rdfs:subClassOf [ a owl:Restriction ;
+owl:cardinality 1 ;
+owl:onProperty :concernsSubmissionsForLot ].
+
+:ContextualProjection a owl:Class ;
+rdfs:label "Contextual projection"@en ;
+rdfs:comment "Projection of an entity and all of its properties that hold in a given situation context."@en ;
+rdfs:isDefinedBy http://data.europa.eu/a4g/ontology .
+
+:LotAwardOutcome a owl:Class ;
+rdfs:label "Lot award outcome"@en ;
+rdfs:comment "Result concerning the Lot attributed by the awarder."@en ;
+rdfs:isDefinedBy http://data.europa.eu/a4g/ontology ;
+rdfs:subClassOf :ContextualProjection ;
+rdfs:subClassOf [ a owl:Restriction ;
+owl:maxCardinality 1 ;
+owl:onProperty :hasAwardDecisionDate ] .
+
+:AgentInRole a owl:Class ;
+rdfs:label "Agent in role"@en ;
+rdfs:comment "Relative concept that ties an agent to a part they play in a given situational context."@en ;
+rdfs:isDefinedBy http://data.europa.eu/a4g/ontology ;
+rdfs:subClassOf [ a owl:Restriction ;
+owl:cardinality 1 ;
+owl:onProperty :playedBy ] .
+
+:PrimaryRole a owl:Class ;
+rdfs:label "Primary role"@en ;
+rdfs:comment "A primary role within the procurement process that ties an agent to a part they play in a given situation."@en ;
+rdfs:isDefinedBy http://data.europa.eu/a4g/ontology ;
+rdfs:subClassOf :AgentInRole ;
+rdfs:subClassOf [ a owl:Restriction ;
+owl:cardinality 1 ;
+owl:onProperty :playedByOrganisation ] .
+
+:Buyer a owl:Class ;
+rdfs:label "Buyer"@en ;
+rdfs:comment "A role of an agent that awards a contract and/or purchases items."@en ;
+rdfs:isDefinedBy http://data.europa.eu/a4g/ontology ;
+rdfs:subClassOf :PrimaryRole .
+
+:Identifier a owl:Class ;
+rdfs:label "Identifier"@en ;
+rdfs:comment "A character string to identify and distinguish uniquely, one instance of an object in an identification scheme from all other objects in the same scheme together with relevant supplementary information."@en ;
+rdfs:isDefinedBy http://data.europa.eu/a4g/ontology ;
+rdfs:subClassOf [ a owl:Restriction ;
+owl:cardinality 1 ;
+owl:onProperty :hasIdentifierValue ].
+
+org:Organization a owl:Class ;
+rdfs:label "Organization"@en ;
+rdfs:comment "A collection of people organized together into a community or other social, commercial or political structure. The group has some common purpose or reason for existence which goes beyond the set of people belonging to it and can act as an Agent. Organisations are often decomposable into hierarchical structures."@en ;
+rdfs:subClassOf foaf:Agent ;
+owl:disjointWith :System,
+foaf:Person ;
+rdfs:subClassOf [ a owl:Restriction ;
+owl:maxCardinality 1 ;
+owl:onProperty :registeredAddress ].
+
+#Data Properties
+
+:hasIdentifierValue a owl:DatatypeProperty ;
+rdfs:label "Has identifier value"@en ;
+rdfs:comment "The literal identifying an entity, like a person or an object."@en ;
+rdfs:isDefinedBy http://data.europa.eu/a4g/ontology ;
+rdfs:domain :Identifier ;
+rdfs:range rdfs:Literal .
+
+:hasDispatchDate a owl:DatatypeProperty ;
+rdfs:label "Has dispatch date"@en ;
+rdfs:comment "Date of transmission of a record to an organisation."@en ;
+rdfs:isDefinedBy http://data.europa.eu/a4g/ontology .
+
+:hasReceivedTenders a owl:DatatypeProperty ;
+rdfs:label "Has received tenders"@en ;
+rdfs:comment "The total amount of tenders received."@en ;
+rdfs:isDefinedBy http://data.europa.eu/a4g/ontology .
+
+:hasAwardDecisionDate a owl:DatatypeProperty ;
+rdfs:label "Has award decision date"@en ;
+rdfs:comment "The official date of the award decision."@en ;
+rdfs:isDefinedBy http://data.europa.eu/a4g/ontology .
+
+#Object Properties
+
+:usesTechnique a owl:ObjectProperty ;
+rdfs:label "Uses technique"@en ;
+rdfs:isDefinedBy http://data.europa.eu/a4g/ontology .
+
+:hasProcedureType a owl:ObjectProperty ;
+rdfs:label "Has procedure type"@en ;
+rdfs:comment "Identification of the Procedure used."@en ;
+rdfs:isDefinedBy http://data.europa.eu/a4g/ontology .
+
+:hasProcurementScopeDividedIntoLot a owl:ObjectProperty ;
+rdfs:label "Has procurement scope divided into lot"@en ;
+rdfs:isDefinedBy http://data.europa.eu/a4g/ontology .
+
+:refersToRole a owl:ObjectProperty ;
+rdfs:label "Refers to role"@en ;
+rdfs:isDefinedBy http://data.europa.eu/a4g/ontology .
+
+:hasID a owl:ObjectProperty ;
+rdfs:label "Has i d"@en ;
+rdfs:comment "A unique identifier of the instance of the concept."@en ;
+rdfs:isDefinedBy http://data.europa.eu/a4g/ontology ;
+rdfs:domain [ a owl:Class ;
+owl:unionOf ( :ProcurementObject :Fund foaf:Agent http://data.europa.eu/m8g/InformationConcept :Document :CatalogueLine :Batch ) ] ;
+rdfs:range [ a owl:Class ;
+owl:unionOf ( :Identifier ) ] .
+
+:concernsSubmissionsForLot a owl:ObjectProperty ;
+rdfs:label "Concerns submissions for lot"@en ;
+rdfs:isDefinedBy http://data.europa.eu/a4g/ontology ;
+rdfs:domain :SubmissionStatisticalInformation ;
+rdfs:range :Lot .
+
+:describesLot a owl:ObjectProperty ;
+rdfs:label "Describes lot"@en ;
+rdfs:isDefinedBy http://data.europa.eu/a4g/ontology ;
+rdfs:domain :LotAwardOutcome ;
+rdfs:range :Lot .
+
+:hasCountryCode a owl:ObjectProperty ;
+rdfs:label "Has country code"@en ;
+rdfs:comment "(locn:Address -> at-voc:country (+epo:hasCountryCode)). The codelist to be used is at-voc:country which is available at http://publications.europa.eu/resource/dataset/country (dct:Location -> at-voc:country (+epo:hasCountryCode)) The codelist to be used is at-voc:country which is available at http://publications.europa.eu/resource/dataset/country (locn:Address -> at-voc:country (+epo:hasCountryCode))"@en ;
+rdfs:isDefinedBy http://data.europa.eu/a4g/ontology .
+
+:playedBy a owl:ObjectProperty ;
+rdfs:label "Played by"@en ;
+rdfs:isDefinedBy http://data.europa.eu/a4g/ontology ;
+rdfs:domain :AgentInRole ;
+rdfs:range foaf:Agent .
+
+:playedByOrganisation a owl:ObjectProperty ;
+rdfs:label "Played by organisation"@en ;
+rdfs:isDefinedBy http://data.europa.eu/a4g/ontology ;
+rdfs:subPropertyOf :playedBy ;
+rdfs:domain :PrimaryRole ;
+rdfs:range org:Organization .
+
+:address a owl:ObjectProperty ;
+rdfs:label "Address"@en ;
+rdfs:comment "Associates any Resource with the corresponding Address."@en ;
+rdfs:isDefinedBy http://data.europa.eu/a4g/ontology .
+
+# expected output
+| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|  | epo:hasProcurementScopeDevidedIntoLot | epo:Procedure | epo:Lot | ``http://data.europa.eu/a4g/resource/epo/procedure/codice_$(replace(/entry/id,'https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/',''))`` | id==id |  |  |  |
+| ``/entry/cac-place-ext:ContractFolderStatus/cac:TenderResult/cbc:AwardDate`` | epo:hasAwardDecisionDate | epo:LotAwardOutcome |  | ``http://data.europa.eu/a4g/resource/epo/lotAwardOutcome/codice_$(replace(/entry/id,'https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/',''))`` |  | xsd:date |  |  |
+|  | epo:describesLot | epo:LotAwardOutcome | epo:Lot | ``http://data.europa.eu/a4g/resource/epo/lotAwardOutcome/codice_$(replace(/entry/id,'https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/',''))`` | id==id |  |  |  |
+| ``/entry/cac-place-ext:ContractFolderStatus/cac:TenderResult/cbc:ReceivedTenderQuantity`` | epo:hasReceivedTenders | epo:SubmissionStatisticalInformation |  | ``http://data.europa.eu/a4g/resource/epo/submissionStatisticalInformation/codice_$(replace(/entry/id,'https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/',''))`` |  | xsd:integer |  |  |
+|  | epo:hasProcedureType | epo:Procedure | skos:Concept | ``http://data.europa.eu/a4g/resource/epo/procedure/codice_$(replace(/entry/id,'https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/',''))`` |  |  | procedureType() | INPUT: 1
+OUTPUT: http://publications.europa.eu/resource/authority/buyer-legal-type/cga	
+INPUT: 2
+OUTPUT: http://publications.europa.eu/resource/authority/buyer-legal-type/ra |
