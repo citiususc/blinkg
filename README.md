@@ -72,7 +72,7 @@ pip install -e .[examples]
 Execute the script by providing the prompt file, the selected model, and an optional output filename (defaults to "output.txt")
 
 ```bash
-python3 hf_inference.py prompt.txt -m 0 -o your_output_file.txt
+python3 hf_inference.py prompt.txt -m model_id -o your_output_file.txt
 ```
 
 With the inference script, the only thing needed is the prompt. Users can use their own prompt, or generate it with the ```prompt_template.py``` script from the same folder. An example from Scenario 2, with all the needed input files, is provided in the ```examples``` folder.
