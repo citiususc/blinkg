@@ -12,6 +12,8 @@ requires-python = ">=3.9"
 authors = [
     {name = "David Chaves-Fraga", email = "david.chaves@usc.es"},
     {name = "Carla Castedo"},
+    {name = "Javier Garea"},
+
 ]
 dependencies = [
     "pandas",
