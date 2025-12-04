@@ -89,7 +89,7 @@ It's mandatory to introduce at least one input data file and the ontology file. 
 
 Adding a new scenario to the benchmark is also supported: contributors can open a GitHub issue using the dedicated _Add new BLINKG scenario_ template (```scenario_request```), where they specify the target ontology, input data, and gold-standard format so that the new scenario can be integrated consistently into BLINKG. 
 
-## How can I use BLINKG as a library
+## How can I use BLINKG as a library?
 
 You can use BLINKG as a library in your own code. After installing with:
 
