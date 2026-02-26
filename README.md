@@ -102,6 +102,23 @@ Use the `evaluate()` function to evaluate your mapping predictions against groun
 ## Results
 Results of our evaluation can be found in folder ```evaluation```.
 
+## Cite this work:
+If you used BLINKG in your work, please cite the [TGDK](https://drops.dagstuhl.de/entities/journal/TGDK) [paper]():
+
+```bib
+@article{castedo2026blinkg,
+  title={BLINKG: A Benchmark for LLM-Integrated Knowledge Graph Generation},
+  author={Castedo, Carla and Iglesias, Enrique and Lama, Manuel and Bugarín-Diz, Alberto and Vidal, Maria-Esther and Chaves-Fraga, David},
+  journal={Transactions on Graph Data and Knowledge},
+  volume={TBC},
+  number={TBC},
+  pages={TBC},
+  publisher = {Schloss Dagstuhl -- Leibniz-Zentrum f{\"u}r Informatik},
+  address =	{Dagstuhl, Germany},
+  year={2026}
+}
+```
+
 ## Authors
 
 - David Chaves-Fraga (main contact) - david.chaves at usc.es
