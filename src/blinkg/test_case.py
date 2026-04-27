@@ -1,7 +1,8 @@
 from dataclasses import dataclass
-from typing import List, Dict
+from typing import List, Dict, Union
 import pandas as pd
 from rdflib import Graph
+from lxml.etree import _ElementTree
 
 
 @dataclass
@@ -12,13 +13,13 @@ class TestCase:
     Attributes:
         id: Unique identifier (e.g., 'scenario1_1A')
         description: Human-readable description
-        input_data: Source data as DataFrames (filename -> DataFrame)
+        input_data: Source data (filename -> DataFrame for CSV, ElementTree for XML)
         ontology: Target ontology (RDF Graph, includes SKOS)
         ground_truth: Expected mappings (DataFrame)
     """
     id: str
     description: str
-    input_data: Dict[str, pd.DataFrame]
+    input_data: Dict[str, Union[pd.DataFrame, _ElementTree]]
     ontology: Graph
     ground_truth: pd.DataFrame
 

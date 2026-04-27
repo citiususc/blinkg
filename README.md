@@ -11,7 +11,7 @@ knowledge graphs from (semi)structured data. It provides:
 
 
 ## Benchmark Resources
-We have divided the benchmark en three different scenarios, increasing their complexity. They can be found in the folder `scenarios`:
+We have divided the benchmark en three different scenarios, increasing their complexity. They are included in the package at `src/blinkg/scenarios` and are automatically available when the package is installed:
 
 - Scenario 1: Schema-Aligned Mapping:
 The structure and vocabulary of the input data closely match the target ontology. Mapping tasks involve straightforward identification of classes, properties, and entities. This scenario represents low-complexity environments where LLMs can operate with minimal ambiguity.

@@ -7,3 +7,4 @@ evaluation/*/mean_column_transpose_prf.csv
 evaluation/*/results
 evaluation/*/*.png
 *.egg-info
+build

@@ -1,9 +1,9 @@
 from typing import List
 import re
 from ..test_case import TestCase
+from ..scenarios import SCENARIOS_PATH
 from ._utils import (
-    get_scenarios_base,
-    load_csv_inputs,
+    load_inputs,
     load_ontology,
     load_skos,
     load_ground_truth,
@@ -31,11 +31,10 @@ SCENARIO_REGISTRY = {
 
 
 def list_all_test_cases() -> List[str]:
-    scenarios_base = get_scenarios_base()
     test_case_ids = []
 
     for scenario_name in SCENARIO_REGISTRY.keys():
-        scenario_path = scenarios_base / scenario_name
+        scenario_path = SCENARIOS_PATH / scenario_name
         try:
             test_cases = list_test_cases_in(scenario_path)
             for test_case in test_cases:
@@ -61,13 +60,12 @@ def load_test_case_from_disk(test_case_id: str) -> TestCase:
         raise ValueError(f"Unknown scenario: '{scenario_name}'")
 
     config = SCENARIO_REGISTRY[scenario_name]
-    scenarios_dir = get_scenarios_base()
-    test_dir = scenarios_dir / scenario_name / test_case
+    test_dir = SCENARIOS_PATH / scenario_name / test_case
 
     if not test_dir.exists():
         raise FileNotFoundError(f"Test case '{test_case_id}' not found at {test_dir}")
 
-    input_data = load_csv_inputs(test_dir)
+    input_data = load_inputs(test_dir)
 
     ontology_file = config['ontology'].format(test_case=test_case)
     ontology = load_ontology(test_dir, ontology_file)
