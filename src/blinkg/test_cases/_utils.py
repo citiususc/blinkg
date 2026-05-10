@@ -24,12 +24,16 @@ def parse_md_table(md_text: str) -> pd.DataFrame:
     return df.map(lambda x: str(x).replace('`', '').strip())
 
 
-def load_inputs(test_dir: Path) -> Dict[str, Union[pd.DataFrame, etree._ElementTree]]:
+def load_inputs(
+    test_dir: Path,
+    input_format: str = "csv",
+) -> Dict[str, Union[pd.DataFrame, etree._ElementTree]]:
     """
-    Load input data files from a test case directory.
+    Load input data files from a test case directory in the canonical format.
 
     Args:
         test_dir: Path to test case directory
+        input_format: 'csv' or 'xml'. Selects which file format to expose.
 
     Returns:
         Dict mapping filename to parsed data:
@@ -38,14 +42,15 @@ def load_inputs(test_dir: Path) -> Dict[str, Union[pd.DataFrame, etree._ElementT
     """
     input_data = {}
 
-    # Load CSV files
-    for csv_file in test_dir.glob("*.csv"):
-        input_data[csv_file.name] = pd.read_csv(csv_file)
-
-    # Load XML files
-    for xml_file in test_dir.glob("*.xml"):
-        parser = etree.XMLParser(recover=True)
-        input_data[xml_file.name] = etree.parse(str(xml_file), parser)
+    if input_format == "csv":
+        for csv_file in test_dir.glob("*.csv"):
+            input_data[csv_file.name] = pd.read_csv(csv_file)
+    elif input_format == "xml":
+        for xml_file in test_dir.glob("*.xml"):
+            parser = etree.XMLParser(recover=True)
+            input_data[xml_file.name] = etree.parse(str(xml_file), parser)
+    else:
+        raise ValueError(f"Unsupported input_format: {input_format!r}")
 
     return input_data
 

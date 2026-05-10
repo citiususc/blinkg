@@ -16,16 +16,19 @@ SCENARIO_REGISTRY = {
         'description': 'Schema-Aligned Mapping',
         'ontology': 'ontology.ttl',
         'skos': None,
+        'input_format': 'csv',
     },
     'scenario2': {
         'description': 'GTFS Functional Mapping',
         'ontology': 'ontology_{test_case}.ttl',
         'skos': 'skos_{test_case}.ttl',
+        'input_format': 'csv',
     },
     'scenario3': {
         'description': 'Schema-Distant High Abstraction',
         'ontology': 'ontology.ttl',
         'skos': 'skos.ttl',
+        'input_format': 'xml',
     },
 }
 
@@ -65,7 +68,7 @@ def load_test_case_from_disk(test_case_id: str) -> TestCase:
     if not test_dir.exists():
         raise FileNotFoundError(f"Test case '{test_case_id}' not found at {test_dir}")
 
-    input_data = load_inputs(test_dir)
+    input_data = load_inputs(test_dir, config['input_format'])
 
     ontology_file = config['ontology'].format(test_case=test_case)
     ontology = load_ontology(test_dir, ontology_file)
