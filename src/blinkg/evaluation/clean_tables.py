@@ -32,15 +32,15 @@ def extract_tables(md_text: str) -> list[str]:
 
     return tables
 
-def clean_md_file(path: str) -> None:
+def clean_md_file(path: str, *, data_ref: str = "CSV Column") -> None:
     with open(path, 'r', encoding='utf-8') as f:
         text = f.read()
 
     tables = extract_tables(text)
 
     new_header = (
-        "| CSV Column           | Ontology Property | Entity Class | "
-        "Rel. Entity Class | Subject Generation    | Join Condition | "
+        f"| {data_ref}           | Ontology Property | Entity Class | "
+        "Rel. Entity Class | Subject Generation    | Join | "
         "Datatype | Function Name | Function Output |"
     )
     new_delimiter = "| --- | --- | --- | --- | --- | --- | --- | --- | --- |"
