@@ -103,7 +103,7 @@ Use the `evaluate()` function to evaluate your mapping predictions against groun
 Results of our evaluation can be found in folder ```evaluation```.
 
 ## Cite this work:
-If you used BLINKG in your work, please cite the [TGDK](https://drops.dagstuhl.de/entities/journal/TGDK) [paper]():
+If you used BLINKG in your work, please cite the [TGDK](https://drops.dagstuhl.de/entities/journal/TGDK) [paper](https://doi.org/10.48550/arXiv.2605.19518):
 
 ```bib
 @article{castedo2026blinkg,
