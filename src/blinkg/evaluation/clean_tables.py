@@ -32,7 +32,7 @@ def extract_tables(md_text: str) -> list[str]:
 
     return tables
 
-def clean_md_file(path: str, *, data_ref: str = "CSV Column") -> None:
+def clean_md_file(path: str, *, data_ref: str = "Data Reference") -> None:
     with open(path, 'r', encoding='utf-8') as f:
         text = f.read()
 

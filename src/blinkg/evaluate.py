@@ -16,8 +16,10 @@ from .utils import (
 
 # Patterns to detect canonical fields regardless of exact header text
 _field_patterns = {
-    #'column': re.compile(r'\bcsv\s*_?\s*column\b|\bcolumn\b', re.IGNORECASE),
-    'column': re.compile(r'\bXML\s*_?\s*Path\b|\bPath\b', re.IGNORECASE),
+    'column': re.compile(
+        r'\bdata\s*_?\s*reference\b|\bCSV\s*_?\s*Column\b|\bXML\s*_?\s*Path\b|\bPath\b',
+        re.IGNORECASE,
+    ),
     'ontology_prop': re.compile(r'\bontology\s*_?\s*property\b|\bprop(er)?\b', re.IGNORECASE),
     'entity_class': re.compile(r'\bentity\s*_?\s*class\b|\bclass\b', re.IGNORECASE),
     'related_entity_class': re.compile(
@@ -54,7 +56,7 @@ def normalized_levenshtein(s1: str, s2: str) -> float:
     max_len = max(len(s1), len(s2), 1)
     return 1.0 - dist / max_len
 
-def match_tables(t1: pd.DataFrame, t2: pd.DataFrame):
+def match_tables(t1: pd.DataFrame, t2: pd.DataFrame, ontology: Graph | None = None):
     """
     Match rows between prediction (t1) and ground truth (t2) DataFrames.
     Returns: (pairs, common_cols, pairs_column)
@@ -86,7 +88,7 @@ def match_tables(t1: pd.DataFrame, t2: pd.DataFrame):
             vc1 = t1[h1].value_counts()
             uniques_pred = vc1[vc1 == 1].index
             for val in uniques_pred:
-                sims = t2[h2].apply(lambda v2: max(normalized_levenshtein(val, v2),calculate_bert(val,v2)))
+                sims = t2[h2].apply(lambda v2: max(normalized_levenshtein(val, v2),calculate_bert(val, v2, ontology)))
                 candidate_idxs = sims[sims > threshold].index
                 for r2 in candidate_idxs:
                     j = t2.index.get_loc(r2)
@@ -127,7 +129,7 @@ def match_tables(t1: pd.DataFrame, t2: pd.DataFrame):
                 sim = 1.0
             else:
                 sim_lev = normalized_levenshtein(", ".join(v1_list), ", ".join(v2_list))
-                sim_bert = calculate_bert(", ".join(v1_list), ", ".join(v2_list))
+                sim_bert = calculate_bert(", ".join(v1_list), ", ".join(v2_list), ontology)
                 sim = max(sim_lev, sim_bert)
 
             cost_matrix[i, j] = 1.0 - sim
@@ -191,11 +193,11 @@ def match_tables(t1: pd.DataFrame, t2: pd.DataFrame):
 
 
 def calculate_bert_lex(v1, v2, ontology):
-    v1 = expand_to_full_uri(v1)
-    v2 = expand_to_full_uri(v2)
+    v1 = expand_to_full_uri(v1, ontology)
+    v2 = expand_to_full_uri(v2, ontology)
     lex_v1, lex_v2 = get_property_lexicalization(v1, ontology), get_property_lexicalization(v2, ontology)
     if lex_v1 == v1 and lex_v2 == v2:
-        v1, v2 = strip_shared_prefixes(v1, v2)
+        v1, v2 = strip_shared_prefixes(v1, v2, ontology)
     else:
         v1, v2 = lex_v1, lex_v2
     emb1 = model.encode(v1, convert_to_tensor=True)
@@ -203,15 +205,15 @@ def calculate_bert_lex(v1, v2, ontology):
     sim = util.pytorch_cos_sim(emb1, emb2).item()
     return sim
 
-def calculate_bert(v1, v2):
-    v1, v2 = clean_values(v1, v2)
+def calculate_bert(v1, v2, ontology=None):
+    v1, v2 = clean_values(v1, v2, ontology)
     emb1 = model.encode(v1, convert_to_tensor=True)
     emb2 = model.encode(v2, convert_to_tensor=True)
     sim = util.pytorch_cos_sim(emb1, emb2).item()
     return sim
 
-def calculate_levenshtein(v1, v2):
-    v1, v2 = clean_values(v1, v2)
+def calculate_levenshtein(v1, v2, ontology=None):
+    v1, v2 = clean_values(v1, v2, ontology)
     sim = normalized_levenshtein(v1, v2)
     return sim
 
@@ -220,14 +222,19 @@ def calculate_prf(t1: pd.DataFrame,
                   assigned_pairs: list,
                   common_cols: list,
                   ontology: Graph,
-                  threshold: float = 0.8):
+                  threshold: float = 0.8,
+                  threshold_per_column: dict | None = None):
     """
     Calculate precision/recall/F1 for each column based on assigned row pairs.
+    threshold is the default applied to every column. threshold_per_column overrides the default for the listed columns.
     Returns: dict mapping column -> {'TP': int, 'FP': int, 'FN': int, 'precision': float, 'recall': float, 'f1': float}
     """
+    overrides = threshold_per_column or {}
+
     agg = {col: {'TP': 0, 'FP': 0, 'FN': 0} for col in common_cols}
 
     for col in common_cols:
+        col_thr = overrides.get(col, threshold)
         # Matched pairs
         for r2, r1 in assigned_pairs:
             if col not in t1.columns or col not in t2.columns:
@@ -236,12 +243,12 @@ def calculate_prf(t1: pd.DataFrame,
             if v1 in empty_values or v2 in empty_values:
                 continue
             sims = [
-                calculate_levenshtein(v1, v2),
-                calculate_bert(v1, v2),
+                calculate_levenshtein(v1, v2, ontology),
+                calculate_bert(v1, v2, ontology),
                 calculate_bert_lex(v1, v2, ontology)
             ]
             sim = max(sims)
-            if sim >= threshold:
+            if sim >= col_thr:
                 agg[col]['TP'] += 1
             else:
                 agg[col]['FN'] += 1
@@ -262,12 +269,12 @@ def calculate_prf(t1: pd.DataFrame,
                 if v2 in empty_values:
                     continue
                 sims = [
-                    calculate_levenshtein(v1, v2),
-                    calculate_bert(v1, v2),
+                    calculate_levenshtein(v1, v2, ontology),
+                    calculate_bert(v1, v2, ontology),
                     calculate_bert_lex(v1, v2, ontology)
                 ]
                 best_sim = max(best_sim, max(sims))
-            if best_sim >= threshold:
+            if best_sim >= col_thr:
                 agg[col]['FP'] += 1
 
     # Calculate P/R/F1 from counts
@@ -284,7 +291,8 @@ def calculate_prf(t1: pd.DataFrame,
 def evaluate(predictions: pd.DataFrame,
              ground_truth: pd.DataFrame,
              ontology: Graph,
-             threshold: float = 0.8):
+             threshold: float = 0.8,
+             threshold_per_column: dict | None = None):
     """
     Evaluate predictions against ground truth.
 
@@ -292,13 +300,15 @@ def evaluate(predictions: pd.DataFrame,
         predictions: DataFrame with predicted mappings
         ground_truth: DataFrame with expected mappings
         ontology: RDFLib Graph with the ontology
-        threshold: Similarity threshold for TP/FP/FN (default: 0.8)
+        threshold: default similarity threshold applied to every column (default 0.8).
+        threshold_per_column: mapping from column name to a threshold that overrides the default for that column.
 
     Returns:
         dict: Metrics per column with format:
             {column_name: {'TP': int, 'FP': int, 'FN': int,
                           'precision': float, 'recall': float, 'f1': float}}
     """
-    pairs, common_cols, _ = match_tables(predictions, ground_truth)
-    metrics = calculate_prf(predictions, ground_truth, pairs, common_cols, ontology, threshold)
+    pairs, common_cols, _ = match_tables(predictions, ground_truth, ontology)
+    metrics = calculate_prf(predictions, ground_truth, pairs, common_cols, ontology,
+                             threshold, threshold_per_column)
     return metrics

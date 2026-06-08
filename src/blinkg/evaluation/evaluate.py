@@ -8,8 +8,10 @@ import re
 import glob
 # Patterns to detect canonical fields regardless of exact header text
 _field_patterns = {
-    #'column': re.compile(r'\bcsv\s*_?\s*column\b|\bcolumn\b', re.IGNORECASE),
-    'column': re.compile(r'\bXML\s*_?\s*Path\b|\bPath\b', re.IGNORECASE),
+    'column': re.compile(
+        r'\bdata\s*_?\s*reference\b|\bCSV\s*_?\s*Column\b|\bXML\s*_?\s*Path\b',
+        re.IGNORECASE,
+    ),
     'ontology_prop': re.compile(r'\bontology\s*_?\s*property\b|\bprop(er)?\b', re.IGNORECASE),
     'entity_class': re.compile(r'\bentity\s*_?\s*class\b|\bclass\b', re.IGNORECASE),
     'related_entity_class': re.compile(

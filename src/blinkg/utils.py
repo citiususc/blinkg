@@ -22,6 +22,15 @@ prefix_map = {
 }
 
 
+def _prefixes(ontology: Graph | None) -> dict:
+    """Union of the built-in prefix_map and the ontology's declared namespaces."""
+    out = dict(prefix_map)
+    if ontology is not None:
+        for prefix, ns in ontology.namespaces():
+            out[prefix] = str(ns)
+    return out
+
+
 def get_property_lexicalization(property_uri: str, g: Graph, lang: str = None) -> str:
     """
     Carga la ontología desde ontology_path y busca la propiedad property_uri.
@@ -66,13 +75,14 @@ def get_property_lexicalization(property_uri: str, g: Graph, lang: str = None) -
 
 
 
-def strip_shared_prefixes(v1: str, v2: str) -> tuple[str, str]:
+def strip_shared_prefixes(v1: str, v2: str, ontology: Graph | None = None) -> tuple[str, str]:
     """
     Remove only those prefixes or base URIs that appear in both v1 and v2.
+    When the ontology is provided, its declared namespaces extend the built-in prefix_map.
     """
     if not isinstance(v1, str) or not isinstance(v2, str):
         return v1, v2
-    for prefix, base_uri in prefix_map.items():
+    for prefix, base_uri in _prefixes(ontology).items():
         # strip prefix:LocalName if both share the prefix
         if v1.startswith(f"{prefix}:") and v2.startswith(f"{prefix}:"):
             v1 = v1.split(":", 1)[1]
@@ -83,19 +93,24 @@ def strip_shared_prefixes(v1: str, v2: str) -> tuple[str, str]:
             v2 = v2[len(base_uri):]
     return v1, v2
 
-def expand_to_full_uri(text: str) -> str:
+_CURIE_RE = re.compile(r"(?<![\w/:])(\w*):([\w.-]+)")
+
+
+def expand_to_full_uri(text: str, ontology: Graph | None = None) -> str:
     """
-    Expande prefix:LocalName a base_uriLocalName usando prefix_map.
+    Expand every prefix:LocalName occurrence in ``text`` to base_uri+LocalName.
+    When the ontology is provided, its declared namespaces extend the built-in prefix_map.
     """
     if not isinstance(text, str):
         return text
-    for prefix, base_uri in prefix_map.items():
-        if text.startswith(f"{prefix}:"):
-            return base_uri + text.split(":", 1)[1]
-    return text
+    prefixes = _prefixes(ontology)
+    return _CURIE_RE.sub(
+        lambda m: prefixes[m.group(1)] + m.group(2) if m.group(1) in prefixes else m.group(0),
+        text,
+    )
 
 
-def clean_values(v1,v2):
-    raw1, raw2 = expand_to_full_uri(v1), expand_to_full_uri(v2)
-    v1, v2 = strip_shared_prefixes(raw1, raw2)
+def clean_values(v1, v2, ontology: Graph | None = None):
+    raw1, raw2 = expand_to_full_uri(v1, ontology), expand_to_full_uri(v2, ontology)
+    v1, v2 = strip_shared_prefixes(raw1, raw2, ontology)
     return v1, v2
