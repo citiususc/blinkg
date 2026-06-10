@@ -3,6 +3,7 @@
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -234,3 +235,31 @@ org:Organization a owl:Class ;
     rdfs:label "Address"@en ;
     rdfs:comment "Associates any Resource with the corresponding Address."@en ;
     rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+:refersToProcedure a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "Refers to procedure"@en ;
+    rdfs:domain :Notice ;
+    rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
+    rdfs:range :Procedure ;
+    skos:prefLabel "Refers to procedure"@en .
+
+:hasBuyerLegalType a owl:ObjectProperty ;
+    rdfs:label "Has buyer legal type"@en ;
+    rdfs:comment """A category that indicates the right of an organisation to play the role of a buyer.
+
+Additional Information:
+The category also effects the rules that the buyer has to abide to within the public procurement procedure.
+WG 07/09/2021
+
+The codelist to be used is at-voc:buyer-legal-type which is available at http://publications.europa.eu/resource/dataset/buyer-legal-type (org:Organization -> at-voc:buyer-legal-type (+epo:hasBuyerLegalType)) """@en ;
+    rdfs:domain org:Organization ;
+    rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
+    rdfs:range skos:Concept ;
+    skos:prefLabel "Has buyer legal type"@en .
+
+locn:Address a rdfs:Class ;
+    rdfs:label "Address"@en ;
+    dcterms:identifier "locn:Address"^^xsd:string ;
+    rdfs:comment "An \"address representation\" as conceptually defined by the INSPIRE Address Representation data type. The locn:addressId property may be used to link this locn:Address to other representations."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/locn> .
