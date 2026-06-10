@@ -1,4 +1,4 @@
-| CSV Column | Ontology Property | Entity Class | Related Entity Class | Subject Generation |Join |
+| CSV Column | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation |Join |
 |:----------:|:-----------------:|:------------:|:--------------:|:------------------:|:---:|
 | Student | ex:fullname | ex:Person | | http://example.org/person/{Student} | |
 | Sport | ex:sportname | ex:Sport | | http://example.org/person/{Sport} | |

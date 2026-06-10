@@ -1,4 +1,4 @@
-| CSV Column           | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join Condition | Datatype | Function Name | Function Output |
+| XML Path | Ontology Property | Entity Class | Rel. Entity Class | Subject Generation    | Join | Datatype | Function Name | Function Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 |  | epo:hasProcurementScopeDevidedIntoLot | epo:Procedure | epo:Lot | ``http://data.europa.eu/a4g/resource/epo/procedure/codice_$(replace(/entry/id,'https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/',''))_$(/entry/cac-place-ext:ContractFolderStatus/cac:ProcurementProjectLot/cbc:ID[@schemeName="ID_LOTE"])`` | id==id |  |  |  |
 | ``/entry/cac-place-ext:ContractFolderStatus/cac:TenderResult/cbc:AwardDate`` | epo:hasAwardDecisionDate | epo:LotAwardOutcome |  | ``http://data.europa.eu/a4g/resource/epo/lotAwardOutcome/codice_$(replace(/entry/id,'https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/',''))_$(/entry/cac-place-ext:ContractFolderStatus/cac:TenderResult/cac:AwardedTenderedProject/cbc:ProcurementProjectLotID)`` |  | xsd:date |  |  |
