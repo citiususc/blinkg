@@ -1,6 +1,6 @@
-| CSV Column | Ontology Property | Entity Class | Subject Generation | Datatype |
+| Data Reference | Ontology Property | Entity Class | Subject Generation | Datatype |
 |:----------:|:-----------------:|:------------:|:------------------:|:--------:|
-| fname | ex:firstname | ex:Person | http://example.org/person/{fname}_{lname} | xsd:string |
-| lname | ex:lastname | ex:Person | http://example.org/person/{fname}_{lname} | xsd:string |
-| concat(fname,lname) | ex:fullname | ex:Person | http://example.org/person/{fname}_{lname} | xsd:string |
-| amount | ex:owes | ex:Person | http://example.org/person/{fname}_{lname} | xsd:double |
+| ious.csv fname | ex:firstname | ex:Person | http://example.org/person/{fname}_{lname} | xsd:string |
+| ious.csv lname | ex:lastname | ex:Person | http://example.org/person/{fname}_{lname} | xsd:string |
+| concat(ious.csv fname, ious.csv lname) | ex:fullname | ex:Person | http://example.org/person/{fname}_{lname} | xsd:string |
+| ious.csv amount | ex:owes | ex:Person | http://example.org/person/{fname}_{lname} | xsd:double |
