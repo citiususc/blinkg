@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Benchmark for LLM-Integrated Knowledge Graph Generation"
 readme = "README.md"
 license = {text = "Apache-2.0"}
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 authors = [
     {name = "David Chaves-Fraga", email = "david.chaves@usc.es"},
     {name = "Carla Castedo"},
@@ -16,11 +16,12 @@ authors = [
 
 ]
 dependencies = [
-    "pandas",
+    "pandas>=2.1",
     "numpy",
     "Levenshtein",
     "sentence-transformers",
     "rdflib",
+    "lxml",
 ]
 
 [project.optional-dependencies]
@@ -36,3 +37,6 @@ Repository = "https://github.com/citiususc/blinkg"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+"blinkg.scenarios" = ["**/*"]

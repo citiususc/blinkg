@@ -1,41 +1,57 @@
-from typing import Dict, List
+from typing import Dict, List, Union
 import pandas as pd
 from pathlib import Path
 from rdflib import Graph
+from lxml import etree
 
 
 def parse_md_table(md_text: str) -> pd.DataFrame:
+    import re
+    # Split into non-empty lines
     lines = [line.strip() for line in md_text.strip().split('\n') if line.strip()]
-
-    if len(lines) < 2:
-        raise ValueError("Markdown table must have at least header and separator rows")
-
-    headers = [h.strip() for h in lines[0].split('|') if h.strip()]
-
-    data = []
-    for line in lines[2:]:
-        row = [cell.strip() for cell in line.split('|') if cell.strip()]
-        if len(row) == len(headers):
-            data.append(row)
-
-    return pd.DataFrame(data, columns=headers)
-
-
-def get_scenarios_base() -> Path:
-    module_dir = Path(__file__).parent
-    repo_root = module_dir.parent.parent.parent
-    scenarios_dir = repo_root / "scenarios"
-
-    if not scenarios_dir.exists():
-        raise FileNotFoundError(f"Scenarios directory not found at {scenarios_dir}")
-
-    return scenarios_dir
+    # First line is header, rest are data or delimiter
+    header = lines[0]
+    data_lines = lines[2:]
+    # Split each line by '|' into cells
+    rows = [line.strip('|').split('|') for line in [header] + data_lines]
+    # Create DataFrame from data rows
+    df = pd.DataFrame(rows[1:], columns=rows[0])
+    # Trim whitespace in column names
+    df.columns = df.columns.str.strip()
+    # Drop delimiter rows composed only of hyphens
+    df = df[~df.apply(lambda row: all(re.fullmatch(r'-+', cell.strip()) for cell in row), axis=1)]
+    # Strip whitespace and remove backticks from each cell
+    return df.map(lambda x: str(x).replace('`', '').strip())
 
 
-def load_csv_inputs(test_dir: Path) -> Dict[str, pd.DataFrame]:
+def load_inputs(
+    test_dir: Path,
+    input_format: str = "csv",
+) -> Dict[str, Union[pd.DataFrame, etree._ElementTree]]:
+    """
+    Load input data files from a test case directory in the canonical format.
+
+    Args:
+        test_dir: Path to test case directory
+        input_format: 'csv' or 'xml'. Selects which file format to expose.
+
+    Returns:
+        Dict mapping filename to parsed data:
+        - CSV files -> pd.DataFrame
+        - XML files -> lxml.etree._ElementTree
+    """
     input_data = {}
-    for csv_file in test_dir.glob("*.csv"):
-        input_data[csv_file.name] = pd.read_csv(csv_file)
+
+    if input_format == "csv":
+        for csv_file in test_dir.glob("*.csv"):
+            input_data[csv_file.name] = pd.read_csv(csv_file)
+    elif input_format == "xml":
+        for xml_file in test_dir.glob("*.xml"):
+            parser = etree.XMLParser(recover=True)
+            input_data[xml_file.name] = etree.parse(str(xml_file), parser)
+    else:
+        raise ValueError(f"Unsupported input_format: {input_format!r}")
+
     return input_data
 
 

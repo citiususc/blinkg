@@ -1,4 +1,7 @@
-<entry>
+<entry xmlns:cac="urn:dgpe:names:draft:codice:schema:xsd:CommonAggregateComponents-2"
+       xmlns:cbc="urn:dgpe:names:draft:codice:schema:xsd:CommonBasicComponents-2"
+       xmlns:cac-place-ext="urn:dgpe:names:draft:codice-place-ext:schema:xsd:CommonAggregateComponents-2"
+       xmlns:cbc-place-ext="urn:dgpe:names:draft:codice-place-ext:schema:xsd:CommonBasicComponents-2">
     <id>https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/6854467</id>
     <link href="https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&amp;idEvl=fol9j9H4t%2F0BPRBxZ4nJ%2Fg%3D%3D"/>
     <summary type="text">Id licitación: 942P LOTE 2; Órgano de Contratación: Gerencia de EMAYA, Empresa Municipal d'Aigües i Clavegueram, S.A.; Importe: 96657.62 EUR; Estado: RES</summary>

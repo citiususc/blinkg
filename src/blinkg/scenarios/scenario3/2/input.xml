@@ -1,4 +1,7 @@
-<entry>
+<entry xmlns:cac="urn:dgpe:names:draft:codice:schema:xsd:CommonAggregateComponents-2"
+       xmlns:cbc="urn:dgpe:names:draft:codice:schema:xsd:CommonBasicComponents-2"
+       xmlns:cac-place-ext="urn:dgpe:names:draft:codice-place-ext:schema:xsd:CommonAggregateComponents-2"
+       xmlns:cbc-place-ext="urn:dgpe:names:draft:codice-place-ext:schema:xsd:CommonBasicComponents-2">
     <id>https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/6565138</id>
     <link href="https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&amp;idEvl=IZQ77oJ45x6iEJrVRqloyA%3D%3D"/>
     <summary type="text">Id licitación: 561770M; Órgano de Contratación: Presidencia de Diputación Provincial de Albacete; Importe: 47272.73 EUR; Estado: RES</summary>
