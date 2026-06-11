@@ -2,7 +2,9 @@
 @prefix cc: <http://creativecommons.org/ns#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix epo: <http://data.europa.eu/a4g/ontology#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -14,223 +16,251 @@
 
 #Classes
 
-:ProcurementObject a owl:Class ;
+epo:ProcurementObject a owl:Class ;
     rdfs:label "Procurement object"@en ;
     rdfs:comment "A procurement component."@en ;
     rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality 1 ;
-            owl:onProperty :hasID ] .
+            owl:onProperty epo:hasID ] .
 
-:Lot a owl:Class ;
+epo:Lot a owl:Class ;
     rdfs:label "Lot"@en ;
     rdfs:comment "A qualitative, quantitative or strategic subdivision of the goods, services or works to be procured, allowing the award of one or more contracts."@en ;
     rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
-    rdfs:subClassOf :ProcurementObject ;
-    owl:disjointWith :Procedure.
+    rdfs:subClassOf epo:ProcurementObject ;
+    owl:disjointWith epo:Procedure.
 
-:Procedure a owl:Class ;
+epo:Procedure a owl:Class ;
     rdfs:label "Procedure"@en ;
     rdfs:comment "A legally defined set of administrative activities conducted  to conclude one or more contracts."@en ;
     rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
-    rdfs:subClassOf :ProcurementObject ;
-    owl:disjointWith :Lot;
+    rdfs:subClassOf epo:ProcurementObject ;
+    owl:disjointWith epo:Lot;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty :hasProcurementScopeDividedIntoLot ].
+            owl:onProperty epo:hasProcurementScopeDividedIntoLot ].
 
-:TechniqueUsage a owl:Class ;
+epo:TechniqueUsage a owl:Class ;
     rdfs:label "Technique usage"@en ;
     rdfs:comment "Methods used for conducting procurement procedure."@en ;
     rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
-:FrameworkAgreementTechniqueUsage a owl:Class ;
+epo:FrameworkAgreementTechniqueUsage a owl:Class ;
     rdfs:label "Framework agreement technique usage"@en ;
     rdfs:comment "Technique that establishes the terms governing contracts to be awarded during a given period, in particular with regard to price and, where appropriate, the quantity envisaged."@en ;
     rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
-    rdfs:subClassOf :TechniqueUsage .
+    rdfs:subClassOf epo:TechniqueUsage .
 
-:Document a owl:Class ;
+epo:Document a owl:Class ;
     rdfs:label "Document"@en ;
     rdfs:comment "A set of interrelated Business Information representing the business facts and associated metadata. The information may be conveyed in any language, medium or form, including textual, numerical, graphic, cartographic, audio-visual forms, etc."@en ;
     rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty :hasDispatchDate ] .
+            owl:onProperty epo:hasDispatchDate ] .
 
-:Notice a owl:Class ;
+epo:Notice a owl:Class ;
     rdfs:label "Notice"@en ;
     rdfs:comment "Document published by the buyer about market opportunities and results."@en ;
     rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
-    rdfs:subClassOf :Document .
+    rdfs:subClassOf epo:Document .
 
-:ResultNotice a owl:Class ;
+epo:ResultNotice a owl:Class ;
     rdfs:label "Result notice"@en ;
     rdfs:comment "An announcement of the award or non-award of a contract by a buyer."@en ;
     rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
-    rdfs:subClassOf :Notice ;
+    rdfs:subClassOf epo:Notice ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty :refersToRole ].
+            owl:onProperty epo:refersToRole ].
 
-:ContextSpecificDescription a owl:Class ;
+epo:ContextSpecificDescription a owl:Class ;
     rdfs:label "Context specific description"@en ;
     rdfs:comment "A description concerning a procurement object or a notice in a specific situation context."@en ;
     rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
-:StatisticalInformation a owl:Class ;
+epo:StatisticalInformation a owl:Class ;
     rdfs:label "Statistical information"@en ;
     rdfs:comment "Statistical data on the procedure and the lot."@en ;
     rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
-    rdfs:subClassOf :ContextSpecificDescription .
+    rdfs:subClassOf epo:ContextSpecificDescription .
 
-:SubmissionStatisticalInformation a owl:Class ;
+epo:SubmissionStatisticalInformation a owl:Class ;
     rdfs:label "Submission statistical information"@en ;
     rdfs:comment "Statistical information about submissions on a given Lot."@en ;
     rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
-    rdfs:subClassOf :StatisticalInformation ;
+    rdfs:subClassOf epo:StatisticalInformation ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality 1 ;
-            owl:onProperty :concernsSubmissionsForLot ].
+            owl:onProperty epo:concernsSubmissionsForLot ].
 
-:ContextualProjection a owl:Class ;
+epo:ContextualProjection a owl:Class ;
     rdfs:label "Contextual projection"@en ;
     rdfs:comment "Projection of an entity and all of its properties that hold in a given situation context."@en ;
     rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
-:LotAwardOutcome a owl:Class ;
+epo:LotAwardOutcome a owl:Class ;
     rdfs:label "Lot award outcome"@en ;
     rdfs:comment "Result concerning the Lot attributed by the awarder."@en ;
     rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
-    rdfs:subClassOf :ContextualProjection ;
+    rdfs:subClassOf epo:ContextualProjection ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty :hasAwardDecisionDate ] .
+            owl:onProperty epo:hasAwardDecisionDate ] .
 
-:AgentInRole a owl:Class ;
+epo:AgentInRole a owl:Class ;
     rdfs:label "Agent in role"@en ;
     rdfs:comment "Relative concept that ties an agent to a part they play in a given situational context."@en ;
     rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality 1 ;
-            owl:onProperty :playedBy ] .
+            owl:onProperty epo:playedBy ] .
 
-:PrimaryRole a owl:Class ;
+epo:PrimaryRole a owl:Class ;
     rdfs:label "Primary role"@en ;
     rdfs:comment "A primary role within the procurement process that ties an agent to a part they play in a given situation."@en ;
     rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
-    rdfs:subClassOf :AgentInRole ;
+    rdfs:subClassOf epo:AgentInRole ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality 1 ;
-            owl:onProperty :playedByOrganisation ] .
+            owl:onProperty epo:playedByOrganisation ] .
 
-:Buyer a owl:Class ;
+epo:Buyer a owl:Class ;
     rdfs:label "Buyer"@en ;
     rdfs:comment "A role of an agent that awards a contract and/or purchases items."@en ;
     rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
-    rdfs:subClassOf :PrimaryRole .
+    rdfs:subClassOf epo:PrimaryRole .
 
-:Identifier a owl:Class ;
+epo:Identifier a owl:Class ;
     rdfs:label "Identifier"@en ;
     rdfs:comment "A character string to identify and distinguish uniquely, one instance of an object in an identification scheme from all other objects in the same scheme together with relevant supplementary information."@en ;
     rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality 1 ;
-            owl:onProperty :hasIdentifierValue ].
+            owl:onProperty epo:hasIdentifierValue ].
 
 org:Organization a owl:Class ;
     rdfs:label "Organization"@en ;
     rdfs:comment "A collection of people organized together into a community or other social, commercial or political structure. The group has some common purpose or reason for existence which goes beyond the set of people belonging to it and can act as an Agent. Organisations are often decomposable into hierarchical structures."@en ;
     rdfs:subClassOf foaf:Agent ;
-    owl:disjointWith :System,
+    owl:disjointWith epo:System,
         foaf:Person ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty :registeredAddress ].
+            owl:onProperty epo:registeredAddress ].
 
 #Data Properties
 
-:hasIdentifierValue a owl:DatatypeProperty ;
+epo:hasIdentifierValue a owl:DatatypeProperty ;
     rdfs:label "Has identifier value"@en ;
     rdfs:comment "The literal identifying an entity, like a person or an object."@en ;
     rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
-    rdfs:domain :Identifier ;
+    rdfs:domain epo:Identifier ;
     rdfs:range rdfs:Literal .
 
-:hasDispatchDate a owl:DatatypeProperty ;
+epo:hasDispatchDate a owl:DatatypeProperty ;
     rdfs:label "Has dispatch date"@en ;
     rdfs:comment "Date of transmission of a record to an organisation."@en ;
     rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
-:hasReceivedTenders a owl:DatatypeProperty ;
+epo:hasReceivedTenders a owl:DatatypeProperty ;
     rdfs:label "Has received tenders"@en ;
     rdfs:comment "The total amount of tenders received."@en ;
     rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
-:hasAwardDecisionDate a owl:DatatypeProperty ;
+epo:hasAwardDecisionDate a owl:DatatypeProperty ;
     rdfs:label "Has award decision date"@en ;
     rdfs:comment "The official date of the award decision."@en ;
     rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 #Object Properties
 
-:usesTechnique a owl:ObjectProperty ;
+epo:usesTechnique a owl:ObjectProperty ;
     rdfs:label "Uses technique"@en ;
     rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
-:hasProcedureType a owl:ObjectProperty ;
+epo:hasProcedureType a owl:ObjectProperty ;
     rdfs:label "Has procedure type"@en ;
     rdfs:comment "Identification of the Procedure used."@en ;
     rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
-:hasProcurementScopeDividedIntoLot a owl:ObjectProperty ;
+epo:hasProcurementScopeDividedIntoLot a owl:ObjectProperty ;
     rdfs:label "Has procurement scope divided into lot"@en ;
     rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
-:refersToRole a owl:ObjectProperty ;
+epo:refersToRole a owl:ObjectProperty ;
     rdfs:label "Refers to role"@en ;
     rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
-:hasID a owl:ObjectProperty ;
+epo:hasID a owl:ObjectProperty ;
     rdfs:label "Has i d"@en ;
     rdfs:comment "A unique identifier of the instance of the concept."@en ;
     rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
     rdfs:domain [ a owl:Class ;
-            owl:unionOf ( :ProcurementObject :Fund foaf:Agent <http://data.europa.eu/m8g/InformationConcept> :Document :CatalogueLine :Batch ) ] ;
+            owl:unionOf ( epo:ProcurementObject epo:Fund foaf:Agent <http://data.europa.eu/m8g/InformationConcept> epo:Document epo:CatalogueLine epo:Batch ) ] ;
     rdfs:range [ a owl:Class ;
-            owl:unionOf ( :Identifier ) ] .
+            owl:unionOf ( epo:Identifier ) ] .
 
-:concernsSubmissionsForLot a owl:ObjectProperty ;
+epo:concernsSubmissionsForLot a owl:ObjectProperty ;
     rdfs:label "Concerns submissions for lot"@en ;
     rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
-    rdfs:domain :SubmissionStatisticalInformation ;
-    rdfs:range :Lot .
+    rdfs:domain epo:SubmissionStatisticalInformation ;
+    rdfs:range epo:Lot .
 
-:describesLot a owl:ObjectProperty ;
+epo:describesLot a owl:ObjectProperty ;
     rdfs:label "Describes lot"@en ;
     rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
-    rdfs:domain :LotAwardOutcome ;
-    rdfs:range :Lot .
+    rdfs:domain epo:LotAwardOutcome ;
+    rdfs:range epo:Lot .
 
-:hasCountryCode a owl:ObjectProperty ;
+epo:hasCountryCode a owl:ObjectProperty ;
     rdfs:label "Has country code"@en ;
     rdfs:comment "(locn:Address -> at-voc:country (+epo:hasCountryCode)). The codelist to be used is at-voc:country which is available at http://publications.europa.eu/resource/dataset/country (dct:Location -> at-voc:country (+epo:hasCountryCode)) The codelist to be used is at-voc:country which is available at http://publications.europa.eu/resource/dataset/country (locn:Address -> at-voc:country (+epo:hasCountryCode))"@en ;
     rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
-:playedBy a owl:ObjectProperty ;
+epo:playedBy a owl:ObjectProperty ;
     rdfs:label "Played by"@en ;
     rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
-    rdfs:domain :AgentInRole ;
+    rdfs:domain epo:AgentInRole ;
     rdfs:range foaf:Agent .
 
-:playedByOrganisation a owl:ObjectProperty ;
+epo:playedByOrganisation a owl:ObjectProperty ;
     rdfs:label "Played by organisation"@en ;
     rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
-    rdfs:subPropertyOf :playedBy ;
-    rdfs:domain :PrimaryRole ;
+    rdfs:subPropertyOf epo:playedBy ;
+    rdfs:domain epo:PrimaryRole ;
     rdfs:range org:Organization .
 
-:address a owl:ObjectProperty ;
+epo:address a owl:ObjectProperty ;
     rdfs:label "Address"@en ;
     rdfs:comment "Associates any Resource with the corresponding Address."@en ;
     rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+epo:refersToProcedure a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "Refers to procedure"@en ;
+    rdfs:domain epo:Notice ;
+    rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
+    rdfs:range epo:Procedure ;
+    skos:prefLabel "Refers to procedure"@en .
+
+epo:hasBuyerLegalType a owl:ObjectProperty ;
+    rdfs:label "Has buyer legal type"@en ;
+    rdfs:comment """A category that indicates the right of an organisation to play the role of a buyer.
+
+Additional Information:
+The category also effects the rules that the buyer has to abide to within the public procurement procedure.
+WG 07/09/2021
+
+The codelist to be used is at-voc:buyer-legal-type which is available at http://publications.europa.eu/resource/dataset/buyer-legal-type (org:Organization -> at-voc:buyer-legal-type (+epo:hasBuyerLegalType)) """@en ;
+    rdfs:domain org:Organization ;
+    rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
+    rdfs:range skos:Concept ;
+    skos:prefLabel "Has buyer legal type"@en .
+
+locn:Address a rdfs:Class ;
+    rdfs:label "Address"@en ;
+    dcterms:identifier "locn:Address"^^xsd:string ;
+    rdfs:comment "An \"address representation\" as conceptually defined by the INSPIRE Address Representation data type. The locn:addressId property may be used to link this locn:Address to other representations."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/locn> .
