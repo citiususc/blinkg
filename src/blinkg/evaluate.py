@@ -217,6 +217,14 @@ def calculate_levenshtein(v1, v2, ontology=None):
     sim = normalized_levenshtein(v1, v2)
     return sim
 
+def _cell(table: pd.DataFrame, row, col: str) -> str:
+    """Cell value at (row, col), with a missing row, missing column, or empty value normalised to ""."""
+    if row is None or col not in table.columns:
+        return ""
+    value = str(table.at[row, col])
+    return "" if value in empty_values else value
+
+
 def calculate_prf(t1: pd.DataFrame,
                   t2: pd.DataFrame,
                   assigned_pairs: list,
@@ -227,63 +235,58 @@ def calculate_prf(t1: pd.DataFrame,
     """
     Calculate precision/recall/F1 for each column based on assigned row pairs.
     threshold is the default applied to every column. threshold_per_column overrides the default for the listed columns.
-    Returns: dict mapping column -> {'TP': int, 'FP': int, 'FN': int, 'precision': float, 'recall': float, 'f1': float}
+
+    A cell pair with similar values on both sides counts as TP. A predicted
+    value the GT does not back counts as FP, and a GT value the prediction
+    misses counts as FN. Pairs below the threshold count twice, once as FP for
+    the wrong value and once as FN for the missed one. Unmatched rows pair
+    against an all-empty row.
+
+    Returns: dict mapping column -> {'TP': int, 'FP': int, 'FN': int, 'precision': float | None, 'recall': float | None, 'f1': float | None}
+    precision, recall and f1 are None when the column has nothing to support them.
     """
     overrides = threshold_per_column or {}
+    matched_pred_rows = {pred_row for _, pred_row in assigned_pairs}
+    matched_gt_rows = {gt_row for gt_row, _ in assigned_pairs}
+    pairs = (list(assigned_pairs)
+             + [(None, pred_row) for pred_row in t1.index if pred_row not in matched_pred_rows]
+             + [(gt_row, None) for gt_row in t2.index if gt_row not in matched_gt_rows])
 
     agg = {col: {'TP': 0, 'FP': 0, 'FN': 0} for col in common_cols}
-
     for col in common_cols:
         col_thr = overrides.get(col, threshold)
-        # Matched pairs
-        for r2, r1 in assigned_pairs:
-            if col not in t1.columns or col not in t2.columns:
+        for gt_row, pred_row in pairs:
+            pred_value = _cell(t1, pred_row, col)
+            gt_value = _cell(t2, gt_row, col)
+            if not pred_value and not gt_value:
                 continue
-            v1, v2 = str(t1.at[r1, col]), str(t2.at[r2, col])
-            if v1 in empty_values or v2 in empty_values:
-                continue
-            sims = [
-                calculate_levenshtein(v1, v2, ontology),
-                calculate_bert(v1, v2, ontology),
-                calculate_bert_lex(v1, v2, ontology)
-            ]
-            sim = max(sims)
-            if sim >= col_thr:
-                agg[col]['TP'] += 1
-            else:
+            if not pred_value:
                 agg[col]['FN'] += 1
-
-        # Unmatched predicted rows
-        used_r1 = {r1 for _, r1 in assigned_pairs}
-        for r1 in t1.index:
-            if r1 in used_r1 or col not in t1.columns:
-                continue
-            v1 = str(t1.at[r1, col])
-            if v1 in empty_values:
-                continue
-            best_sim = 0.0
-            for r2 in t2.index:
-                if col not in t2.columns:
-                    continue
-                v2 = str(t2.at[r2, col])
-                if v2 in empty_values:
-                    continue
-                sims = [
-                    calculate_levenshtein(v1, v2, ontology),
-                    calculate_bert(v1, v2, ontology),
-                    calculate_bert_lex(v1, v2, ontology)
-                ]
-                best_sim = max(best_sim, max(sims))
-            if best_sim >= col_thr:
+            elif not gt_value:
                 agg[col]['FP'] += 1
+            else:
+                sims = [
+                    calculate_levenshtein(pred_value, gt_value, ontology),
+                    calculate_bert(pred_value, gt_value, ontology),
+                    calculate_bert_lex(pred_value, gt_value, ontology)
+                ]
+                if max(sims) >= col_thr:
+                    agg[col]['TP'] += 1
+                else:
+                    agg[col]['FP'] += 1
+                    agg[col]['FN'] += 1
 
-    # Calculate P/R/F1 from counts
     for col in agg:
         tp, fp, fn = agg[col]['TP'], agg[col]['FP'], agg[col]['FN']
-        agg[col]['precision'] = tp / (tp + fp) if (tp + fp) > 0 else 0.0
-        agg[col]['recall'] = tp / (tp + fn) if (tp + fn) > 0 else 0.0
-        p, r = agg[col]['precision'], agg[col]['recall']
-        agg[col]['f1'] = 2 * p * r / (p + r) if (p + r) > 0 else 0.0
+        precision = tp / (tp + fp) if tp + fp else None
+        recall = tp / (tp + fn) if tp + fn else None
+        if precision is None or recall is None:
+            f1 = None
+        elif precision + recall == 0:
+            f1 = 0.0
+        else:
+            f1 = 2 * precision * recall / (precision + recall)
+        agg[col].update(precision=precision, recall=recall, f1=f1)
 
     return agg
 
