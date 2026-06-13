@@ -38,12 +38,13 @@ def clean_md_file(path: str, *, data_ref: str = "Data Reference") -> None:
 
     tables = extract_tables(text)
 
-    new_header = (
-        f"| {data_ref}           | Ontology Property | Entity Class | "
-        "Rel. Entity Class | Subject Generation    | Join | "
-        "Datatype | Function Name | Function Output |"
-    )
-    new_delimiter = "| --- | --- | --- | --- | --- | --- | --- | --- | --- |"
+    names = [
+        data_ref, "Ontology Property", "Entity Class", "Rel. Entity Class",
+        "Subject Generation", "Join", "Datatype", "Function Name",
+        "Function Output", "Language Annotations",
+    ]
+    new_header = "| " + " | ".join(names) + " |"
+    new_delimiter = "|" + " --- |" * len(names)
 
     new_tables = []
     for table in tables:
@@ -53,9 +54,7 @@ def clean_md_file(path: str, *, data_ref: str = "Data Reference") -> None:
             lines[0] = new_header
             lines[1] = new_delimiter
 
-            # Count how many columns we should have
-            header_cells = [cell for cell in lines[0].split('|') if cell.strip()]
-            header_count = len(header_cells)
+            header_count = len(names)
             empty_values = ['', '-', ' ', 'N/A', 'None', '—', '–']
 
             processed_rows = lines[:2]
@@ -74,6 +73,10 @@ def clean_md_file(path: str, *, data_ref: str = "Data Reference") -> None:
                     if extras_clean:
                         valid[-1] = valid[-1] + ' ' + ' '.join(extras_clean)
                     cells = valid
+
+                # If there are fewer cells than headers, pad with empty cells
+                if len(cells) < header_count:
+                    cells = cells + [''] * (header_count - len(cells))
 
                 # Rebuild the Markdown row with the correct number of columns
                 processed_rows.append("| " + " | ".join(cells) + " |")
