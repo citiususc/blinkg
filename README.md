@@ -36,7 +36,7 @@ Tested features distributed by each scenario. Scenario 1 is divided in several a
 | Two or more input sources  |    |    |    |    |    | x  | x  | x  | x               | x               |
 | Duplicate entities         |    |    |    | x  |    |    | x  | x  | x               | x               | 
 | Datatypes generation       |    |    |    | x  |    |    | x  | x  | x               | x               |
-| Language annotations       |    |    |    |    |    |    | x  | x  | x               | x               |
+| Language annotations       |    |    |    |    |    |    | x  | x  |                 |                 |
 | Transformation Functions   |    |    |    |    |    |    |    |    | x               | x               |
 | Distant Schemes            |    |    |    |    |    |    |    |    |                 | x               |
 
