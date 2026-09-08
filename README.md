@@ -106,16 +106,21 @@ Results of our evaluation can be found in folder ```evaluation```.
 If you used BLINKG in your work, please cite the [TGDK](https://drops.dagstuhl.de/entities/journal/TGDK) [paper](https://doi.org/10.48550/arXiv.2605.19518):
 
 ```bib
-@article{castedo2026blinkg,
-  title={BLINKG: A Benchmark for LLM-Integrated Knowledge Graph Generation},
-  author={Castedo, Carla and Iglesias, Enrique and Lama, Manuel and Bugarín-Diz, Alberto and Vidal, Maria-Esther and Chaves-Fraga, David},
-  journal={Transactions on Graph Data and Knowledge},
-  volume={TBC},
-  number={TBC},
-  pages={TBC},
-  publisher = {Schloss Dagstuhl -- Leibniz-Zentrum f{\"u}r Informatik},
+@Article{castedo_et_al:TGDK.4.2.9,
+  author =	{Castedo, Carla and Iglesias, Enrique and Lama, Manuel and Bugar{\'\i}n-Diz, Alberto and Vidal, Maria-Esther and Chaves-Fraga, David},
+  title =	{{BLINKG: A Benchmark for LLM-Integrated Knowledge Graph Generation}},
+  journal =	{Transactions on Graph Data and Knowledge},
+  pages =	{9:1--9:35},
+  ISSN =	{2942-7517},
+  year =	{2026},
+  volume =	{4},
+  number =	{2},
+  publisher =	{Schloss Dagstuhl -- Leibniz-Zentrum f{\"u}r Informatik},
   address =	{Dagstuhl, Germany},
-  year={2026}
+  URL =		{https://drops.dagstuhl.de/entities/document/10.4230/TGDK.4.2.9},
+  URN =		{urn:nbn:de:0030-drops-275901},
+  doi =		{10.4230/TGDK.4.2.9},
+  annote =	{Keywords: Knowledge Graph Construction, Benchmarking, Mapping Languages, Large Language Models}
 }
 ```
 
